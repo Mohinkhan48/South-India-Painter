@@ -1,0 +1,386 @@
+/**
+ * globals.css
+ *
+ * Global stylesheet with CSS design tokens mapped via Tailwind v4 @theme.
+ */
+
+@import 'tailwindcss';
+
+/* -------------------------------------------------------------------------
+   1. Tailwind Theme & Design Tokens
+   ------------------------------------------------------------------------- */
+@theme {
+  /* Colors */
+  --color-primary: #102A43;
+  --color-primary-dark: #081F33;
+  --color-accent: #E7684B;
+  --color-accent-dark: #C94F36;
+  --color-gold: #C89B5B;
+  --color-background: #FAF8F4;
+  --color-surface: #F3EFE8;
+  --color-white: #FFFFFF;
+  --color-text: #18212B;
+  --color-text-muted: #5E6872;
+  --color-border: #E4DED5;
+  --color-success: #27845A;
+
+  /* Typography */
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-soft: 0 2px 8px rgba(16, 42, 67, 0.06);
+  --shadow-card: 0 4px 20px rgba(16, 42, 67, 0.09);
+  --shadow-elevated: 0 8px 40px rgba(16, 42, 67, 0.14);
+}
+
+/* -------------------------------------------------------------------------
+   2. Base Resets & Defaults
+   ------------------------------------------------------------------------- */
+:root {
+  /* Layout Spacing Tokens */
+  --container-max: 1400px;
+  --header-height: 72px;
+
+  /* Mobile Default (overridden in media queries) */
+  --section-padding-y: 56px;
+  --container-padding: 20px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --container-padding: 28px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-padding-y: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-padding-y: 112px;
+    --container-padding: 40px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Ensure accessible focus visible */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------------------
+   3. Typography Scale Utilities
+   ------------------------------------------------------------------------- */
+
+.type-display {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.type-h1 {
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.type-h2 {
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.type-h3 {
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.type-h4 {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.type-body-large {
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.type-body {
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.type-body-small {
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.type-caption {
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  .type-display {
+    font-size: 64px;
+  }
+  .type-h1 {
+    font-size: 52px;
+  }
+  .type-h2 {
+    font-size: 40px;
+  }
+  .type-h3 {
+    font-size: 30px;
+  }
+  .type-h4 {
+    font-size: 22px;
+  }
+  .type-body-large {
+    font-size: 18px;
+  }
+  .type-body {
+    font-size: 16px;
+  }
+  .type-body-small {
+    font-size: 14px;
+  }
+  .type-caption {
+    font-size: 12px;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   4. Layout Utilities
+   ------------------------------------------------------------------------- */
+
+.container {
+  width: calc(100% - 64px);
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+.section {
+  padding-block: var(--section-padding-y);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+@keyframes marquee-slide {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-slide-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.service-marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.service-marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-width: 200%;
+  animation: marquee-slide 28s linear infinite;
+  will-change: transform;
+}
+
+.service-marquee:hover .service-marquee__track {
+  animation-play-state: paused;
+}
+
+.service-logo-card {
+  min-width: 190px;
+  border: 1px solid rgba(16, 42, 67, 0.08);
+}
+
+.light-sweep {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 220%;
+  height: 220%;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.26), transparent 30%);
+  filter: blur(28px);
+  transform: translate3d(0, 0, 0);
+  opacity: 0;
+}
+
+.light-sweep-active {
+  animation: sweep-light 0.82s ease forwards;
+}
+
+@keyframes sweep-light {
+  from {
+    opacity: 0;
+    transform: translate3d(-30%, -30%, 0) rotate(25deg);
+  }
+  20% {
+    opacity: 0.28;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(30%, 30%, 0) rotate(25deg);
+  }
+}
+
+@keyframes floatCardOne {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatCardTwo {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes floatCardThree {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floatCardFour {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
+}
+
+@keyframes floatCardFive {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-11px); }
+}
+
+.float-card-1 { animation: floatCardOne 7s ease-in-out infinite; }
+.float-card-2 { animation: floatCardTwo 8.6s ease-in-out infinite; }
+.float-card-3 { animation: floatCardThree 7.6s ease-in-out infinite; }
+.float-card-4 { animation: floatCardFour 8.2s ease-in-out infinite; }
+.float-card-5 { animation: floatCardFive 7.8s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .service-marquee__track {
+    animation: none;
+  }
+  .light-sweep-active {
+    animation: none;
+  }
+  .float-card-1,
+  .float-card-2,
+  .float-card-3,
+  .float-card-4,
+  .float-card-5 {
+    animation: none;
+  }
+}

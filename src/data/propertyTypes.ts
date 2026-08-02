@@ -1,0 +1,47 @@
+export interface PropertyType {
+  id: string;
+  title: string;
+  image: string;
+  imageAlt: string;
+  imagePosition?: string;
+  bookingValue: string;
+}
+
+export const propertyTypes: PropertyType[] = [
+  {
+    id: 'home-interiors',
+    title: 'INTERIOR SPACES',
+    image:
+      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Bright residential living room interior with sofa, coffee table, and large windows',
+    imagePosition: 'center center',
+    bookingValue: 'Home Interiors',
+  },
+  {
+    id: 'villas-independent-homes',
+    title: 'VILLAS/BUNGALOWS',
+    image:
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Bright daytime exterior of a premium villa with landscaping and modern architectural details',
+    imagePosition: 'center center',
+    bookingValue: 'Villas & Independent Homes',
+  },
+  {
+    id: 'apartments-residential-buildings',
+    title: 'HIGH-RISE APARTMENTS',
+    image:
+      'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Bright apartment building exterior with balconies, windows, and blue sky',
+    imagePosition: 'center center',
+    bookingValue: 'Apartments & Residential Buildings',
+  },
+  {
+    id: 'commercial-spaces',
+    title: 'COMMERCIAL SPACES',
+    image:
+      'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Bright modern office interior with desks, chairs, and large windows',
+    imagePosition: 'center center',
+    bookingValue: 'Commercial Spaces',
+  },
+];
