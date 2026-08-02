@@ -54,99 +54,180 @@ const steps = [
 const sectionVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.08 },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 22 },
+const headingVariants = {
+  hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 },
+};
+
+const cardVariants = {
+  hidden: (side: 'left' | 'right' | 'center') => ({
+    opacity: 0,
+    x: side === 'left' ? -50 : side === 'right' ? 50 : 0,
+    y: side === 'center' ? 40 : 20,
+  }),
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+  },
 };
 
 export default function HowItWorksSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="flex w-full justify-center bg-[var(--color-background)] py-16 sm:py-20 lg:py-24">
-      <div className="w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
+    <section className="flex w-full justify-center bg-[var(--color-background)] pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
+      <div className="w-full max-w-[1200px] px-5 sm:px-8 lg:px-10">
         <m.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: true, amount: 0.08 }}
           variants={sectionVariants}
-          className="mx-auto w-full max-w-[1220px]"
         >
-            <m.div
-              variants={itemVariants}
-              transition={{ duration: shouldReduceMotion ? 0 : 0.55, ease: 'easeOut' }}
-              className="mb-6 text-center"
-            >
-              <h2 className="text-[2.5rem] font-semibold tracking-[-0.05em] text-[var(--color-primary)] sm:text-[3.2rem] lg:text-[4.2rem]">
-                How It Works
-              </h2>
-            </m.div>
-
-            <m.div
-              variants={itemVariants}
-              transition={{ duration: shouldReduceMotion ? 0 : 0.6, ease: 'easeOut', delay: 0.08 }}
-              className="mb-10 text-center"
-            >
-              <p className="mx-auto max-w-[780px] text-[1rem] font-medium leading-relaxed text-[var(--color-primary)] sm:text-[1.15rem] lg:text-[1.3rem]">
-                AakpaPainter will help renovate your house in <span className="font-extrabold">6 simple steps</span>
-              </p>
-              <p className="mt-2 text-[1rem] font-extrabold text-[var(--color-primary)] sm:text-[1.15rem] lg:text-[1.3rem]">
-                Book your inspection today!
-              </p>
-            </m.div>
-
-            <div className="relative mx-auto w-full max-w-[1200px] rounded-[30px] border border-[rgba(231,104,75,0.24)] bg-[#f9f3f0] px-3 py-6 sm:px-5 lg:px-7 lg:py-8">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 1200 420"
-                className="pointer-events-none absolute left-1/2 top-[86px] z-0 hidden h-[300px] w-[92%] -translate-x-1/2 md:block"
-              >
-                <path
-                  d="M 110 120 C 250 20, 360 30, 450 120 S 660 220, 760 110 S 1000 20, 1085 120 M 110 280 C 250 195, 360 190, 450 280 S 660 370, 760 270 S 1000 190, 1085 285"
-                  fill="none"
-                  stroke="rgba(231, 104, 75, 0.85)"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-
-              <div className="relative z-10 mx-auto grid w-full max-w-[1200px] gap-7 md:grid-cols-3 md:justify-between">
-                {steps.map((step, index) => (
-                  <m.article
-                    key={step.id}
-                    variants={itemVariants}
-                    transition={{ duration: shouldReduceMotion ? 0 : 0.55, ease: 'easeOut', delay: index * 0.08 }}
-                    whileHover={shouldReduceMotion ? undefined : { y: -8 }}
-                    className="group mx-auto w-full max-w-[340px] text-center"
-                  >
-                    <div className="mx-auto w-full overflow-hidden rounded-[18px] border border-[rgba(231,104,75,0.38)] bg-white shadow-[0_8px_20px_rgba(16,42,67,0.08)] transition-all duration-350 ease-out group-hover:-translate-y-2 group-hover:border-[var(--color-accent)] group-hover:shadow-[0_18px_32px_rgba(16,42,67,0.12)]">
-                      <img
-                        src={step.image}
-                        alt={step.imageAlt}
-                        className="h-[220px] w-full object-cover transition-transform duration-350 ease-out group-hover:scale-[1.06]"
-                      />
-                    </div>
-
-                    <div className="mt-6 flex items-center justify-center gap-3">
-                      <span className="text-[1.1rem] font-extrabold leading-none text-[var(--color-accent)]">{step.id}</span>
-                      <span className="text-[1.7rem] font-extrabold leading-tight tracking-[-0.04em] text-[var(--color-primary)]">
-                        {step.title}
-                      </span>
-                    </div>
-
-                    <p className="mt-1 text-[1.7rem] font-extrabold leading-tight tracking-[-0.04em] text-[var(--color-primary)]">
-                      {step.subtitle}
-                    </p>
-                  </m.article>
-                ))}
-              </div>
-            </div>
+          {/* ── Header ── */}
+          <m.div
+            variants={headingVariants}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.65, ease: 'easeOut' }}
+            className="mb-5 text-center"
+          >
+            <h2 className="text-[2.5rem] font-semibold tracking-[-0.05em] text-[var(--color-primary)] sm:text-[3.2rem] lg:text-[4.2rem]">
+              How It Works
+            </h2>
           </m.div>
+
+          <m.div
+            variants={headingVariants}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.7, ease: 'easeOut', delay: 0.08 }}
+            className="mb-16 text-center sm:mb-20 lg:mb-24"
+          >
+            <p className="mx-auto max-w-[780px] text-[1rem] font-medium leading-relaxed text-[var(--color-primary)] sm:text-[1.15rem] lg:text-[1.3rem]">
+              AakpaPainter will help renovate your house in <span className="font-extrabold">6 simple steps</span>
+            </p>
+            <p className="mt-2 text-[1rem] font-extrabold text-[var(--color-primary)] sm:text-[1.15rem] lg:text-[1.3rem]">
+              Book your inspection today!
+            </p>
+          </m.div>
+
+          {/* ── Timeline ── */}
+          <div className="relative mx-auto w-full max-w-[1100px]">
+            {/* Vertical spine — desktop only */}
+            <div
+              aria-hidden="true"
+              className="absolute left-1/2 top-0 hidden h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-transparent via-[rgba(231,104,75,0.35)] to-transparent md:block"
+            />
+
+            {/* Mobile vertical spine — left aligned */}
+            <div
+              aria-hidden="true"
+              className="absolute left-6 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-[rgba(231,104,75,0.30)] to-transparent sm:left-8 md:hidden"
+            />
+
+            <div className="flex flex-col gap-12 sm:gap-14 md:gap-20">
+              {steps.map((step, index) => {
+                const isEven = index % 2 === 0;
+
+                return (
+                  <m.div
+                    key={step.id}
+                    custom={shouldReduceMotion ? 'center' : isEven ? 'left' : 'right'}
+                    variants={cardVariants}
+                    transition={{
+                      duration: shouldReduceMotion ? 0 : 0.7,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                      delay: index * 0.1,
+                    }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    initial="hidden"
+                    whileInView="visible"
+                    className="relative"
+                  >
+                    {/* ── Desktop: alternating layout ── */}
+                    <div className="hidden md:grid md:grid-cols-[1fr_60px_1fr] md:items-center">
+                      {/* Left column */}
+                      <div className={isEven ? '' : 'order-3'}>
+                        <div className={`${isEven ? 'ml-auto mr-0' : 'ml-0 mr-auto'} max-w-[460px]`}>
+                          <StepCard step={step} alignment={isEven ? 'right' : 'left'} shouldReduceMotion={shouldReduceMotion} />
+                        </div>
+                      </div>
+
+                      {/* Center dot */}
+                      <div className="relative z-10 flex items-center justify-center order-2">
+                        <div className="flex h-[52px] w-[52px] items-center justify-center rounded-full border-[3px] border-[var(--color-accent)] bg-white shadow-[0_0_0_8px_rgba(231,104,75,0.08),0_4px_16px_rgba(231,104,75,0.18)]">
+                          <span className="text-[0.85rem] font-extrabold leading-none text-[var(--color-accent)]">
+                            {step.id}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Right column */}
+                      <div className={isEven ? 'order-3' : ''}>
+                        {/* Empty space for alternating layout */}
+                      </div>
+                    </div>
+
+                    {/* ── Mobile / Tablet: vertical stack ── */}
+                    <div className="flex items-start gap-5 sm:gap-6 md:hidden">
+                      {/* Timeline dot */}
+                      <div className="relative z-10 mt-1 flex flex-shrink-0 items-center justify-center">
+                        <div className="flex h-[44px] w-[44px] items-center justify-center rounded-full border-[2.5px] border-[var(--color-accent)] bg-white shadow-[0_0_0_6px_rgba(231,104,75,0.08),0_4px_12px_rgba(231,104,75,0.16)] sm:h-[48px] sm:w-[48px]">
+                          <span className="text-[0.8rem] font-extrabold leading-none text-[var(--color-accent)] sm:text-[0.85rem]">
+                            {step.id}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Card */}
+                      <div className="flex-1 max-w-[460px]">
+                        <StepCard step={step} alignment="left" shouldReduceMotion={shouldReduceMotion} />
+                      </div>
+                    </div>
+                  </m.div>
+                );
+              })}
+            </div>
+          </div>
+        </m.div>
       </div>
     </section>
+  );
+}
+
+/* ── Step Card Sub-component ── */
+interface StepCardProps {
+  step: (typeof steps)[number];
+  alignment: 'left' | 'right';
+  shouldReduceMotion: boolean | null;
+}
+
+function StepCard({ step, alignment, shouldReduceMotion }: StepCardProps) {
+  return (
+    <m.article
+      whileHover={shouldReduceMotion ? undefined : { y: -6, transition: { duration: 0.3 } }}
+      className="group w-full"
+    >
+      <div className="overflow-hidden rounded-[20px] border border-[rgba(231,104,75,0.22)] bg-white shadow-[0_8px_28px_rgba(16,42,67,0.07)] transition-all duration-350 ease-out group-hover:border-[var(--color-accent)] group-hover:shadow-[0_20px_40px_rgba(16,42,67,0.12)]">
+        <img
+          src={step.image}
+          alt={step.imageAlt}
+          className="h-[200px] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] sm:h-[220px] lg:h-[240px]"
+        />
+
+        <div className="px-5 py-5 sm:px-6 sm:py-6">
+          <div className={`flex items-center gap-3 ${alignment === 'right' ? 'justify-end' : 'justify-start'} md:justify-start`}>
+            <span className="text-[1.1rem] font-extrabold leading-none text-[var(--color-accent)]">{step.id}</span>
+            <span className="text-[1.5rem] font-extrabold leading-tight tracking-[-0.04em] text-[var(--color-primary)] sm:text-[1.65rem]">
+              {step.title}
+            </span>
+          </div>
+          <p className={`mt-1 text-[1.5rem] font-extrabold leading-tight tracking-[-0.04em] text-[var(--color-primary)] sm:text-[1.65rem] ${alignment === 'right' ? 'text-right' : 'text-left'} md:text-left`}>
+            {step.subtitle}
+          </p>
+        </div>
+      </div>
+    </m.article>
   );
 }
