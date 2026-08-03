@@ -32,7 +32,7 @@ export default function ColourVisualizerSection() {
   const shouldReduceMotion = useReducedMotion();
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const autoplayTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Auto-rotation effect
   useEffect(() => {
