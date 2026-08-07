@@ -26,8 +26,8 @@ export default function BookOurService() {
 
   return (
     <section
-      className="bg-[rgba(248,241,232,0.95)] pt-20 sm:pt-24 lg:pt-28"
-      style={{ paddingBottom: '60px' }}
+      className="bg-[rgba(248,241,232,0.95)]"
+      style={{ paddingTop: '50px', paddingBottom: '60px' }}
     >
       <Container className="space-y-14">
         <m.div
@@ -81,3 +81,5 @@ export default function BookOurService() {
     </section>
   );
 }
+
+

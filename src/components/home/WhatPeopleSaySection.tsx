@@ -217,7 +217,7 @@ export default function WhatPeopleSaySection() {
     <section
       className="flex w-full justify-center bg-[var(--color-background)]"
       style={{
-        paddingTop: 'clamp(70px, 9vw, 120px)',
+        paddingTop: 'clamp(20px, 3vw, 40px)',
         paddingBottom: 'clamp(70px, 9vw, 120px)',
       }}
     >

@@ -80,7 +80,7 @@ export default function HowItWorksSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="flex w-full justify-center bg-[var(--color-background)] pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
+    <section className="flex w-full justify-center bg-[var(--color-background)]" style={{ paddingTop: '120px', paddingBottom: '100px' }}>
       <div className="w-full max-w-[1200px] px-5 sm:px-8 lg:px-10">
         <m.div
           initial="hidden"
@@ -99,21 +99,160 @@ export default function HowItWorksSection() {
             </h2>
           </m.div>
 
-          <m.div
-            variants={headingVariants}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.7, ease: 'easeOut', delay: 0.08 }}
-            className="mb-16 text-center sm:mb-20 lg:mb-24"
+          <div
+  className="relative overflow-hidden rounded-[24px] border bg-white shadow-xl"
+  style={{
+    maxWidth: "900px",
+    width: "100%",
+    border: "1px solid #E8EEF6",
+    marginLeft: "clamp(20px, 8vw, 140px)",
+    marginBottom: "70px",
+  }}
+
+>
+  {/* Left Accent */}
+  <div
+    className="absolute left-0 top-0 h-full w-[6px]"
+    style={{
+      background: "linear-gradient(to bottom,#17324D,#3E73A8)",
+    }}
+  />
+
+  <div
+    className="flex items-center gap-8"
+    style={{
+      padding: "30px 36px",
+    }}
+  >
+    {/* Icon */}
+    <div className="shrink-0">
+      <div
+        className="flex h-16 w-16 items-center justify-center rounded-2xl"
+        style={{
+          background: "linear-gradient(135deg,#17324D,#2E5E91)",
+          boxShadow: "0 10px 25px rgba(23,50,77,.18)",
+        }}
+      >
+        <svg
+          viewBox="0 0 24 24"
+          className="h-8 w-8"
+          fill="none"
+          stroke="white"
+          strokeWidth={2}
+        >
+          <path
+            d="M12 2L2 7l10 5 10-5-10-5z"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M2 17l10 5 10-5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M2 12l10 5 10-5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+
+    {/* Content */}
+    <div className="flex-1">
+      <span
+        className="inline-flex rounded-full"
+        style={{
+          background: "#EEF5FC",
+          color: "#2E5E91",
+          padding: "6px 16px",
+          fontSize: "11px",
+          fontWeight: 700,
+          letterSpacing: "2px",
+          textTransform: "uppercase",
+        }}
+      >
+        Painting Journey
+      </span>
+
+      <h3
+        style={{
+          marginTop: "14px",
+          fontSize: "32px",
+          fontWeight: 800,
+          color: "#17324D",
+          lineHeight: 1.2,
+        }}
+      >
+        Your Dream Home Starts Here
+      </h3>
+
+      <p
+        style={{
+          marginTop: "10px",
+          fontSize: "16px",
+          color: "#64748B",
+          lineHeight: "28px",
+          maxWidth: "620px",
+        }}
+      >
+        From the first inspection to the final handover, our experts manage
+        every stage with precision, premium materials, and professional
+        workmanship.
+      </p>
+
+      {/* Features */}
+      <div
+        className="flex flex-wrap gap-3"
+        style={{
+          marginTop: "20px",
+        }}
+      >
+        {[
+          "Free Site Inspection",
+          "Expert Consultation",
+          "Premium Paints",
+        ].map((item) => (
+          <div
+            key={item}
+            className="flex items-center gap-2 rounded-full"
+            style={{
+              padding: "8px 14px",
+              background: "#F8FAFC",
+              border: "1px solid #E5EDF6",
+            }}
           >
-            <p className="mx-auto max-w-[780px] text-[1rem] font-medium leading-relaxed text-[var(--color-primary)] sm:text-[1.15rem] lg:text-[1.3rem]">
-              AakpaPainter will help renovate your house in <span className="font-extrabold">6 simple steps</span>
-            </p>
-            <p className="mt-2 text-[1rem] font-extrabold text-[var(--color-primary)] sm:text-[1.15rem] lg:text-[1.3rem]">
-              Book your inspection today!
-            </p>
-          </m.div>
+            <div
+              className="flex h-6 w-6 items-center justify-center rounded-full"
+              style={{
+                background: "#17324D",
+                color: "#fff",
+                fontSize: "12px",
+                fontWeight: "bold",
+              }}
+            >
+              ✓
+            </div>
+
+            <span
+              style={{
+                color: "#17324D",
+                fontWeight: 600,
+                fontSize: "14px",
+              }}
+            >
+              {item}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
 
           {/* ── Timeline ── */}
-          <div className="relative mx-auto w-full max-w-[1100px]">
+          <div className="relative mx-auto w-full max-w-[1100px]" style={{ marginLeft: 'clamp(20px, 5vw, 80px)' }}>
             {/* Vertical spine — desktop only */}
             <div
               aria-hidden="true"
@@ -148,14 +287,16 @@ export default function HowItWorksSection() {
                     {/* ── Desktop: alternating layout ── */}
                     <div className="hidden md:grid md:grid-cols-[1fr_60px_1fr] md:items-center">
                       {/* Left column */}
-                      <div className={isEven ? '' : 'order-3'}>
-                        <div className={`${isEven ? 'ml-auto mr-0' : 'ml-0 mr-auto'} max-w-[460px]`}>
-                          <StepCard step={step} alignment={isEven ? 'right' : 'left'} shouldReduceMotion={shouldReduceMotion} />
-                        </div>
+                      <div>
+                        {isEven ? (
+                          <div className="ml-auto mr-0 max-w-[460px]">
+                            <StepCard step={step} alignment="right" shouldReduceMotion={shouldReduceMotion} />
+                          </div>
+                        ) : null}
                       </div>
 
                       {/* Center dot */}
-                      <div className="relative z-10 flex items-center justify-center order-2">
+                      <div className="relative z-10 flex items-center justify-center">
                         <div className="flex h-[52px] w-[52px] items-center justify-center rounded-full border-[3px] border-[var(--color-accent)] bg-white shadow-[0_0_0_8px_rgba(231,104,75,0.08),0_4px_16px_rgba(231,104,75,0.18)]">
                           <span className="text-[0.85rem] font-extrabold leading-none text-[var(--color-accent)]">
                             {step.id}
@@ -164,8 +305,12 @@ export default function HowItWorksSection() {
                       </div>
 
                       {/* Right column */}
-                      <div className={isEven ? 'order-3' : ''}>
-                        {/* Empty space for alternating layout */}
+                      <div>
+                        {!isEven ? (
+                          <div className="ml-0 mr-auto max-w-[460px]">
+                            <StepCard step={step} alignment="left" shouldReduceMotion={shouldReduceMotion} />
+                          </div>
+                        ) : null}
                       </div>
                     </div>
 

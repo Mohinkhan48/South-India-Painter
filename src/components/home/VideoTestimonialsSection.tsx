@@ -112,7 +112,7 @@ export default function VideoTestimonialsSection() {
           </h2>
 
           {/* ── Video Slider ── */}
-          <div className="w-full relative">
+          <div className="w-full relative" style={{ marginTop: 'clamp(16px, 3vw, 32px)' }}>
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex" style={{ marginLeft: '-32px' }}>
                 {videos.map((video) => (

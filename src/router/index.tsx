@@ -57,6 +57,12 @@ const CommercialPaintingPage = lazy(
 const ProjectsPage = lazy(() => import('@/pages/ProjectsPage'));
 const ProjectDetailPage = lazy(() => import('@/pages/ProjectDetailPage'));
 const ColourIdeasPage = lazy(() => import('@/pages/ColourIdeasPage'));
+const ColourIdeasRoomPage = lazy(() => import('@/pages/ColourIdeasRoomPage'));
+const ResourcesPage = lazy(() => import('@/pages/ResourcesPage'));
+const GenericPlaceholderPage = lazy(() => import('@/pages/GenericPlaceholderPage'));
+const CityLocationPage = lazy(() => import('@/pages/CityLocationPage'));
+const BlogListPage = lazy(() => import('@/pages/BlogListPage'));
+const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const ContactPage = lazy(() => import('@/pages/ContactPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
@@ -145,6 +151,14 @@ const router = createBrowserRouter([
               </Suspense>
             ),
           },
+          {
+            path: ':slug',
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <GenericPlaceholderPage />
+              </Suspense>
+            ),
+          },
         ],
       },
       {
@@ -170,9 +184,80 @@ const router = createBrowserRouter([
       },
       {
         path: 'colour-ideas',
+        children: [
+          {
+            index: true,
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <ColourIdeasPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: ':roomSlug',
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <ColourIdeasRoomPage />
+              </Suspense>
+            ),
+          },
+        ],
+      },
+      {
+        path: 'resources',
+        children: [
+          {
+            index: true,
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <ResourcesPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: 'blogs',
+            children: [
+              {
+                index: true,
+                element: (
+                  <Suspense fallback={<PageLoader />}>
+                    <BlogListPage />
+                  </Suspense>
+                ),
+              },
+              {
+                path: ':slug',
+                element: (
+                  <Suspense fallback={<PageLoader />}>
+                    <BlogPostPage />
+                  </Suspense>
+                ),
+              },
+            ]
+          },
+          {
+            path: ':slug',
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <GenericPlaceholderPage />
+              </Suspense>
+            ),
+          },
+        ]
+      },
+      {
+        path: 'locations/:city',
         element: (
           <Suspense fallback={<PageLoader />}>
-            <ColourIdeasPage />
+            <CityLocationPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'products',
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <GenericPlaceholderPage />
           </Suspense>
         ),
       },

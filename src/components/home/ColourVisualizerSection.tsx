@@ -67,7 +67,7 @@ export default function ColourVisualizerSection() {
   };
 
   return (
-    <section className="bg-[var(--color-background)] mt-[80px] md:mt-[100px] lg:mt-[120px] pt-[100px] pb-[100px] flex justify-center w-full overflow-hidden border-t border-[rgba(16,42,67,0.05)]">
+    <section className="bg-[var(--color-background)] pt-[100px] pb-[100px] flex justify-center w-full overflow-hidden border-t border-[rgba(16,42,67,0.05)]">
       <Container className="!w-[calc(100%-40px)] sm:!w-[calc(100%-48px)] md:!w-[calc(100%-64px)] px-0">
         <div className="grid grid-cols-1 md:grid-cols-[42%_58%] lg:grid-cols-[40%_60%] gap-8 md:gap-10 lg:gap-16 items-center">
           

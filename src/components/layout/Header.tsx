@@ -10,6 +10,7 @@ import Container from '@/components/common/Container';
 const desktopNavLinks: Array<{ label: string; to: string }> = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
+  { label: 'Resources', to: '/resources' },
   { label: 'Projects', to: '/projects' },
   { label: 'Colour Ideas', to: '/colour-ideas' },
   { label: 'About', to: '/about' },

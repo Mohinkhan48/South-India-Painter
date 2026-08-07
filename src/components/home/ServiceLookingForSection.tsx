@@ -49,7 +49,7 @@ export default function ServiceLookingForSection() {
           <div className="w-[80px] h-[4px] bg-[#F26A4B] rounded-full mb-[32px]"></div>
 
           {/* ── Heading ── */}
-          <div className="mb-[60px] w-full max-w-[800px] text-center">
+          <div className="w-full max-w-[800px] text-center" style={{ marginBottom: '60px' }}>
             <h2 className="font-medium text-[var(--color-primary)] text-[34px] md:text-[46px] lg:text-[56px] leading-[1.15] tracking-tight">
               What Painting Service<br className="hidden sm:block" /> Are You Looking For?
             </h2>

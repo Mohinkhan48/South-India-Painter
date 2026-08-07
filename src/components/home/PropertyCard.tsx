@@ -1,4 +1,5 @@
 import { m, useReducedMotion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import type { PropertyType } from '@/data/propertyTypes';
 
 interface PropertyCardProps {
@@ -14,11 +15,21 @@ const cardVariants = {
 
 export default function PropertyCard({ propertyType, index, onBook }: PropertyCardProps) {
   const shouldReduceMotion = useReducedMotion();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (propertyType.route) {
+      navigate(propertyType.route);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      onBook(propertyType.bookingValue);
+    }
+  };
 
   return (
     <m.button
       type="button"
-      onClick={() => onBook(propertyType.bookingValue)}
+      onClick={handleClick}
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
@@ -53,3 +64,4 @@ export default function PropertyCard({ propertyType, index, onBook }: PropertyCa
     </m.button>
   );
 }
+

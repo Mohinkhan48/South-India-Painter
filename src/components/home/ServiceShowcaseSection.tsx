@@ -219,7 +219,7 @@ export default function ServiceShowcaseSection() {
         </div>
 
         {/* TRUSTED ACROSS SOUTH INDIA SECTION */}
-        <div className="mx-auto w-full max-w-[1200px] mt-[80px] flex flex-col items-center text-center pb-[90px]">
+        <div className="mx-auto w-full max-w-[1200px] flex flex-col items-center text-center" style={{ marginTop: '100px', paddingBottom: '90px', marginLeft: 'clamp(20px, 5vw, 80px)' }}>
           <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

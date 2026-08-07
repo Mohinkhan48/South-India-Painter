@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { m, AnimatePresence } from 'framer-motion';
 
 export interface LightboxImage {
@@ -21,6 +21,14 @@ export default function Lightbox({
   onClose,
   onNavigate,
 }: LightboxProps) {
+  const handlePrev = useCallback(() => {
+    onNavigate((currentIndex - 1 + images.length) % images.length);
+  }, [currentIndex, images.length, onNavigate]);
+
+  const handleNext = useCallback(() => {
+    onNavigate((currentIndex + 1) % images.length);
+  }, [currentIndex, images.length, onNavigate]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isOpen) return;
@@ -31,7 +39,7 @@ export default function Lightbox({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, currentIndex, images.length]);
+  }, [isOpen, onClose, handlePrev, handleNext]);
 
   useEffect(() => {
     if (isOpen) {
@@ -43,14 +51,6 @@ export default function Lightbox({
       document.body.style.overflow = '';
     };
   }, [isOpen]);
-
-  const handlePrev = () => {
-    onNavigate((currentIndex - 1 + images.length) % images.length);
-  };
-
-  const handleNext = () => {
-    onNavigate((currentIndex + 1) % images.length);
-  };
 
   if (!isOpen) return null;
 

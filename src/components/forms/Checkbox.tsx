@@ -9,8 +9,9 @@ export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElemen
 
 const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   ({ className, label, error, id, ...props }, ref) => {
+    const generatedId = React.useId();
     // Generate a unique ID if one isn't provided so the label clicks work
-    const checkboxId = id || `checkbox-${React.useId()}`;
+    const checkboxId = id || `checkbox-${generatedId}`;
 
     return (
       <div className={cn('flex items-start gap-3', className)}>

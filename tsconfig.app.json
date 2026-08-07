@@ -18,7 +18,7 @@
 
     /* Path aliases — must match vite.config.ts resolve.alias.
        ignoreDeprecations silences the TS 6.0 baseUrl deprecation warning. */
-    "ignoreDeprecations": "6.0",
+    "ignoreDeprecations": "5.0",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

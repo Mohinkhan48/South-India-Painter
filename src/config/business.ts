@@ -55,15 +55,15 @@ const business: BusinessConfig = {
     'Replace this description with real company information before launch.',
 
   // Contact — replace with real details before launch
-  phone: '+91 00000 00000',
-  whatsapp: '+910000000000',
-  email: 'hello@example.com',
+  phone: '+91 9740556799',
+  whatsapp: '919740556799',
+  email: 'hello@southindiapainter.com',
 
   // Address — replace with real address before launch
-  address: '123 Placeholder Street, Area Name',
-  city: 'Chennai',
-  state: 'Tamil Nadu',
-  pincode: '600000',
+  address: 'No. 35, 1st Stage, 2nd Phase, Near Chandra Layout Bus Depot, Vijayanagar',
+  city: 'Bangalore',
+  state: 'Karnataka, India',
+  pincode: '560040',
 
   // Areas served — update with real service locations
   serviceAreas: [
@@ -76,8 +76,8 @@ const business: BusinessConfig = {
   ],
 
   workingHours: {
-    weekdays: '8:00 AM – 7:00 PM',
-    saturday: '9:00 AM – 5:00 PM',
+    weekdays: '9:00 AM – 7:00 PM',
+    saturday: '9:00 AM – 7:00 PM',
     sunday: 'Closed',
   },
 
@@ -90,7 +90,7 @@ const business: BusinessConfig = {
   },
 
   // Google Maps embed URL — replace with real URL before launch
-  googleMapsUrl: 'https://maps.google.com/?q=Chennai,Tamil+Nadu',
+  googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=No.+35,+1st+Stage,+2nd+Phase,+Near+Chandra+Layout+Bus+Depot,+Vijayanagar,+Bangalore+-+560040',
 
   foundedYear: 2010,
   heroEyebrow: 'PROFESSIONAL PAINTING & HOME IMPROVEMENT',

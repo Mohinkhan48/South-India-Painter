@@ -5,6 +5,7 @@ export interface PropertyType {
   imageAlt: string;
   imagePosition?: string;
   bookingValue: string;
+  route?: string;
 }
 
 export const propertyTypes: PropertyType[] = [
@@ -44,4 +45,25 @@ export const propertyTypes: PropertyType[] = [
     imagePosition: 'center center',
     bookingValue: 'Commercial Spaces',
   },
+  {
+    id: 'office-buildings',
+    title: 'OFFICE BUILDINGS',
+    image:
+      'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Modern corporate office building with glass facade and clean lines',
+    imagePosition: 'center center',
+    bookingValue: 'Office Buildings',
+    route: '/services/office-painting',
+  },
+  {
+    id: 'hotels-resorts',
+    title: 'HOTELS & RESORTS',
+    image:
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80',
+    imageAlt: 'Luxury hotel exterior with pool area and tropical landscaping',
+    imagePosition: 'center center',
+    bookingValue: 'Hotels & Resorts',
+    route: '/services/hotel-painting',
+  },
 ];
+

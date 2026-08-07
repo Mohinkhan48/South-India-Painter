@@ -48,7 +48,7 @@ export default function RecentProjectsSection() {
   };
 
   return (
-    <section className="flex w-full justify-center bg-[#FAF8F4] pt-[120px] pb-[120px]">
+    <section className="flex w-full justify-center bg-[#FAF8F4] pt-[120px] pb-[180px]">
       <div className="w-full px-5 flex flex-col items-center" style={{ maxWidth: 1280 }}>
         <m.div
           initial="hidden"
@@ -59,7 +59,7 @@ export default function RecentProjectsSection() {
           className="w-full flex flex-col items-center"
         >
           {/* ── Heading ── */}
-          <div className="mb-[60px] text-center">
+          <div className="text-center" style={{ marginBottom: '60px' }}>
             <h2 className="font-bold text-[#0F2745] text-[34px] md:text-[46px] lg:text-[56px] leading-[1.15] tracking-tight">
               Our Recent Projects
             </h2>
@@ -92,7 +92,7 @@ export default function RecentProjectsSection() {
           </div>
 
           {/* ── View All Projects Button ── */}
-          <div className="mt-[60px]">
+          <div style={{ marginTop: '60px' }}>
             <style>{`
               .btn-premium-blue {
                 background-color: #16324F;
