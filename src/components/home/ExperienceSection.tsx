@@ -61,46 +61,47 @@ export default function ExperienceSection() {
         >
           <div className="pointer-events-none absolute left-1/2 top-10 h-32 w-32 -translate-x-1/2 rounded-full bg-[var(--color-accent)]/10 blur-3xl" />
 
-          <div className="relative mx-auto flex min-h-[500px] max-w-[1200px] items-center justify-center">
-            <div className="pointer-events-none absolute inset-0 z-[1] opacity-45 blur-[1px]">
-              <div className="absolute left-[5%] top-[10%] w-[220px] sm:w-[250px] lg:w-[260px]">
+          <div className="relative mx-auto flex min-h-[380px] lg:min-h-[500px] max-w-[1200px] items-center justify-center">
+            {/* Floating background cards — desktop only to avoid mobile overflow */}
+            <div className="pointer-events-none absolute inset-0 z-[1] opacity-45 blur-[1px] hidden lg:block">
+              <div className="absolute left-[5%] top-[10%] w-[260px]">
                 <div className="float-card-1 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/services/interior-painting.jpg" alt="Interior painting project" className="h-[180px] w-full object-cover sm:h-[200px] lg:h-[220px]" />
+                  <img src="/images/services/interior-painting.jpg" alt="Interior painting project" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>
 
-              <div className="absolute right-[-11.5%] top-[10%] w-[220px] sm:w-[250px] lg:w-[260px]">
+              <div className="absolute right-[-11.5%] top-[10%] w-[260px]">
                 <div className="float-card-2 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/services/exterior-painting.jpg" alt="Exterior painting project" className="h-[180px] w-full object-cover sm:h-[200px] lg:h-[220px]" />
+                  <img src="/images/services/exterior-painting.jpg" alt="Exterior painting project" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>
 
-              <div className="absolute left-[2%] top-[38%] w-[210px] sm:w-[230px] lg:w-[240px]">
+              <div className="absolute left-[2%] top-[38%] w-[240px]">
                 <div className="float-card-3 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/services/wall-textures.jpg" alt="Wall textures project" className="h-[190px] w-full object-cover sm:h-[210px] lg:h-[220px]" />
+                  <img src="/images/services/wall-textures.jpg" alt="Wall textures project" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>
 
-              <div className="absolute right-[-14.5%] top-[38%] w-[210px] sm:w-[230px] lg:w-[240px]">
+              <div className="absolute right-[-14.5%] top-[38%] w-[240px]">
                 <div className="float-card-4 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/services/waterproofing.jpg" alt="Waterproofing project" className="h-[190px] w-full object-cover sm:h-[210px] lg:h-[220px]" />
+                  <img src="/images/services/waterproofing.jpg" alt="Waterproofing project" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>
 
-              <div className="absolute left-[12%] bottom-[8%] w-[230px] sm:w-[250px] lg:w-[270px]">
+              <div className="absolute left-[12%] bottom-[8%] w-[270px]">
                 <div className="float-card-5 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/services/wallpaper.jpg" alt="Wallpaper project" className="h-[180px] w-full object-cover sm:h-[200px] lg:h-[220px]" />
+                  <img src="/images/services/wallpaper.jpg" alt="Wallpaper project" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>
 
-              <div className="absolute right-[-4%] bottom-[8%] w-[230px] sm:w-[250px] lg:w-[270px]">
+              <div className="absolute right-[-4%] bottom-[8%] w-[270px]">
                 <div className="float-card-6 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/services/wood-finishes.jpg" alt="Wood finishes project" className="h-[180px] w-full object-cover sm:h-[200px] lg:h-[220px]" />
+                  <img src="/images/services/wood-finishes.jpg" alt="Wood finishes project" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>
@@ -108,12 +109,12 @@ export default function ExperienceSection() {
 
             <div className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,transparent_70%)]" />
 
-            <div className="relative z-[20] mx-auto flex w-full max-w-[410px] items-center justify-end px-4 lg:px-12">
-              <div className="text-right">
+            <div className="relative z-[20] mx-auto flex w-full max-w-[410px] items-center justify-center lg:justify-end px-4 lg:px-12">
+              <div className="text-center lg:text-right">
                 <m.p
                   variants={revealVariants}
                   transition={{ duration: shouldReduceMotion ? 0 : 0.7, ease: 'easeOut' }}
-                  className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-accent)] -translate-x-17"
+                  className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-accent)]"
                 >
                   OUR EXPERIENCE
                 </m.p>
@@ -121,7 +122,7 @@ export default function ExperienceSection() {
                 <m.div
                   variants={revealVariants}
                   transition={{ duration: shouldReduceMotion ? 0 : 0.7, ease: 'easeOut', delay: 0.1 }}
-                  className="mt-[20px] flex items-end justify-end"
+                  className="mt-[20px] flex items-end justify-center lg:justify-end"
                 >
                   <span className="text-[4.4rem] font-extrabold leading-none tracking-[-0.07em] text-white sm:text-[5.2rem] lg:text-[5.6rem]">
                     {counterValue.toLocaleString()}
@@ -132,26 +133,25 @@ export default function ExperienceSection() {
                 </m.div>
 
                 <m.div
-  variants={revealVariants}
-  transition={{ duration: shouldReduceMotion ? 0 : 0.8, ease: 'easeOut', delay: 0.18 }}
-  className="mt-[10px] space-y-0 text-white translate-x-14"
->
-                  <h3 className="text-[2.1rem] font-extrabold leading-[1.08] tracking-[-0.04em] sm:text-[2.5rem] lg:text-[2.8rem] text-right">
+                  variants={revealVariants}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.8, ease: 'easeOut', delay: 0.18 }}
+                  className="mt-[10px] space-y-0 text-white text-center lg:text-right"
+                >
+                  <h3 className="text-[2.1rem] font-extrabold leading-[1.08] tracking-[-0.04em] sm:text-[2.5rem] lg:text-[2.8rem] text-center lg:text-right">
                     Happy Customers
                   </h3>
-                  <h3 className="text-[2.1rem] font-extrabold leading-[1.08] tracking-[-0.04em] sm:text-[2.5rem] lg:text-[2.8rem] text-right">
+                  <h3 className="text-[2.1rem] font-extrabold leading-[1.08] tracking-[-0.04em] sm:text-[2.5rem] lg:text-[2.8rem] text-center lg:text-right">
                     Across South India
                   </h3>
                 </m.div>
 
                 <m.div
-  variants={revealVariants}
   transition={{
     duration: shouldReduceMotion ? 0 : 0.8,
     ease: 'easeOut',
     delay: 0.26,
   }}
-  className="relative z-[50] mt-[40px] flex justify-center translate-x-14 translate-y-4"
+  className="relative z-[50] mt-[40px] flex justify-center w-full"
 >
   <button
     type="button"

@@ -84,6 +84,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -92,6 +93,7 @@ body {
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -227,10 +229,10 @@ ol {
    ------------------------------------------------------------------------- */
 
 .container {
-  width: calc(100% - 64px);
+  width: 100%;
   max-width: 1400px;
   margin-inline: auto;
-  padding-inline: 0;
+  padding-inline: var(--container-padding);
 }
 
 .section {

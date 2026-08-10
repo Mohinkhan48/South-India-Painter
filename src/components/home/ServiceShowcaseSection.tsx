@@ -207,19 +207,19 @@ export default function ServiceShowcaseSection() {
         </m.div>
 
         <div className="mx-auto w-full max-w-[1200px] grid gap-5 lg:grid-cols-[11fr_9fr] lg:h-[600px]">
-          <ServiceCard item={showcaseItems[0]} transitionDelay={0.12} aspectClass="h-[600px] lg:h-full" supportsHover={supportsHover} />
+          <ServiceCard item={showcaseItems[0]} transitionDelay={0.12} aspectClass="aspect-[4/3] lg:h-full lg:aspect-auto" supportsHover={supportsHover} />
 
           <div className="grid gap-5">
-            <ServiceCard item={showcaseItems[1]} transitionDelay={0.24} aspectClass="h-[360px]" supportsHover={supportsHover} />
-            <div className="grid grid-cols-2 gap-5 h-[220px]">
-              <ServiceCard item={showcaseItems[2]} transitionDelay={0.18} aspectClass="h-full" supportsHover={supportsHover} />
-              <ServiceCard item={showcaseItems[3]} transitionDelay={0.3} aspectClass="h-full" supportsHover={supportsHover} />
+            <ServiceCard item={showcaseItems[1]} transitionDelay={0.24} aspectClass="aspect-[16/9] lg:h-[360px] lg:aspect-auto" supportsHover={supportsHover} />
+            <div className="grid grid-cols-2 gap-3 sm:gap-5">
+              <ServiceCard item={showcaseItems[2]} transitionDelay={0.18} aspectClass="aspect-square" supportsHover={supportsHover} />
+              <ServiceCard item={showcaseItems[3]} transitionDelay={0.3} aspectClass="aspect-square" supportsHover={supportsHover} />
             </div>
           </div>
         </div>
 
         {/* TRUSTED ACROSS SOUTH INDIA SECTION */}
-        <div className="mx-auto w-full max-w-[1200px] flex flex-col items-center text-center" style={{ marginTop: '100px', paddingBottom: '90px', marginLeft: 'clamp(20px, 5vw, 80px)' }}>
+        <div className="mx-auto w-full max-w-[1200px] flex flex-col items-center text-center" style={{ marginTop: '100px', paddingBottom: '90px' }}>
           <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

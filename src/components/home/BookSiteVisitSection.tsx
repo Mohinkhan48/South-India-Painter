@@ -68,7 +68,7 @@ export default function BookSiteVisitSection() {
   const inputPadding = { paddingLeft: '20px', paddingRight: '20px' };
 
   return (
-    <section className="w-full flex justify-center bg-[#FAF8F5] px-4 md:px-8 mt-[120px] mb-[120px]">
+    <section className="w-full flex justify-center bg-[#FAF8F5] px-4 md:px-8 mt-16 mb-16 lg:mt-[120px] lg:mb-[120px]">
       <m.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

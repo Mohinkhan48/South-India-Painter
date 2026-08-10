@@ -170,7 +170,6 @@ export default function HowItWorksSection() {
     mx-auto
     mt-4
     max-w-[780px]
-    translate-x-50
     text-base
     leading-8
     text-[#64748B]
@@ -194,7 +193,6 @@ export default function HowItWorksSection() {
           <div
             className="relative mx-auto w-full max-w-[1100px]"
             style={{
-              marginLeft: 'clamp(20px, 5vw, 80px)',
               marginTop: '30px',
             }}
           >

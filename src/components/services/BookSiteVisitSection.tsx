@@ -33,7 +33,7 @@ export default function BookSiteVisitSection() {
       style={{ background: 'var(--color-surface)', padding: '80px 0 100px' }}
     >
       {/* Centered 1400px container */}
-      <div style={{ width: 'min(1400px, calc(100% - 64px))', margin: '0 auto' }}>
+      <div style={{ width: 'min(1400px, calc(100% - 32px))', margin: '0 auto' }}>
         {/* The split card */}
         <div
           style={{

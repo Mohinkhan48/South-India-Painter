@@ -98,7 +98,7 @@ export default function ServiceCarouselSection() {
       style={{ background: 'var(--color-surface)', padding: '90px 0 30px' }}
     >
       {/* Constrained header — same 1400px grid */}
-      <div style={{ width: 'min(1400px, calc(100% - 64px))', margin: '0 auto' }}>
+      <div style={{ width: 'min(1400px, calc(100% - 32px))', margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 24, marginBottom: 48, flexWrap: 'wrap' }}>
           <div>
             <m.p

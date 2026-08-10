@@ -319,10 +319,7 @@ export default function AboutPage() {
               margin: '-80px'
             }}
             variants={staggerContainer}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
-            style={{
-              gap: '32px'
-            }}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8"
           >
 
             <StatCounter
@@ -379,7 +376,7 @@ export default function AboutPage() {
               margin: '-80px'
             }}
             variants={staggerContainer}
-            className="text-center mb-12 lg:mb-16 flex flex-col items-center -translate-y-[52px]"
+            className="text-center mb-12 lg:mb-16 flex flex-col items-center"
           >
 
             <m.div variants={fadeUpVariant}>
@@ -412,10 +409,7 @@ export default function AboutPage() {
               margin: '-50px'
             }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-            style={{
-              gap: '40px'
-            }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10"
           >
 
             {[
@@ -457,13 +451,7 @@ export default function AboutPage() {
                 <m.div
   key={idx}
   variants={fadeUpVariant}
-  className="bg-[#FAF8F5] border border-[#E8E4DD] rounded-[24px] hover:shadow-lg transition-shadow duration-300 h-full flex flex-col group hover:-translate-y-1"
-  style={{
-    paddingLeft: '32px',
-    paddingRight: '32px',
-    paddingTop: '32px',
-    paddingBottom: '32px'
-  }}
+  className="bg-[#FAF8F5] border border-[#E8E4DD] rounded-[24px] hover:shadow-lg transition-shadow duration-300 h-full flex flex-col group hover:-translate-y-1 p-6 lg:p-8"
 >
 
                   <div className="flex items-center mb-4">
@@ -524,13 +512,7 @@ export default function AboutPage() {
 
             <m.div
   variants={fadeUpVariant}
-  className="group relative min-h-[270px] rounded-[26px] bg-gradient-to-br from-[#102A43] via-[#102A43] to-[#081B2C] text-white overflow-hidden border border-white/10 shadow-[0_24px_60px_rgba(16,42,67,0.18)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_32px_75px_rgba(16,42,67,0.28)]"
-  style={{
-    paddingLeft: '32px',
-    paddingRight: '32px',
-    paddingTop: '28px',
-    paddingBottom: '28px'
-  }}
+  className="group relative min-h-[270px] rounded-[26px] bg-gradient-to-br from-[#102A43] via-[#102A43] to-[#081B2C] text-white overflow-hidden border border-white/10 shadow-[0_24px_60px_rgba(16,42,67,0.18)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_32px_75px_rgba(16,42,67,0.28)] p-6 sm:p-8"
 >
 
               <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#F26A3D]/10 blur-3xl pointer-events-none" />
@@ -593,13 +575,7 @@ export default function AboutPage() {
 
             <m.div
   variants={fadeUpVariant}
-  className="group relative min-h-[270px] rounded-[26px] bg-gradient-to-br from-[#F26A3D] via-[#F26A3D] to-[#D9552A] text-white overflow-hidden border border-white/20 shadow-[0_24px_60px_rgba(242,106,61,0.20)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_32px_75px_rgba(217,85,42,0.30)]"
-  style={{
-    paddingLeft: '32px',
-    paddingRight: '32px',
-    paddingTop: '28px',
-    paddingBottom: '28px'
-  }}
+  className="group relative min-h-[270px] rounded-[26px] bg-gradient-to-br from-[#F26A3D] via-[#F26A3D] to-[#D9552A] text-white overflow-hidden border border-white/20 shadow-[0_24px_60px_rgba(242,106,61,0.20)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_32px_75px_rgba(217,85,42,0.30)] p-6 sm:p-8"
 >
 
               <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-white/10 blur-3xl pointer-events-none" />
@@ -694,7 +670,7 @@ export default function AboutPage() {
               margin: '-80px'
             }}
             variants={staggerContainer}
-            className="text-center mb-14 lg:mb-20 flex flex-col items-center -translate-y-[48px]"
+            className="text-center mb-14 lg:mb-20 flex flex-col items-center"
           >
 
             <m.div variants={fadeUpVariant}>
@@ -1003,10 +979,10 @@ export default function AboutPage() {
 
             <m.div
               variants={fadeUpVariant}
-              className="relative -top-[30px] -translate-x-[40px]"
+              className="mb-4"
             >
               <span
-                className="inline-flex items-center justify-center gap-2 w-[160px] h-[52px] rounded-full text-base font-bold uppercase tracking-widest mb-4 bg-white/10 text-white border border-white/20"
+                className="inline-flex items-center justify-center gap-2 w-[160px] h-[52px] rounded-full text-base font-bold uppercase tracking-widest bg-white/10 text-white border border-white/20"
               >
                 <span className="w-2 h-2 rounded-full bg-white" />
 

@@ -484,7 +484,7 @@ export default function ContactPage() {
 ======================================================== */}
 
       <section
-        className="mt-12 sm:mt-16 bg-[#F5F2EE] pt-32 pb-24"
+        className="mt-0 bg-[#F5F2EE] pt-12 sm:pt-20 pb-16 sm:pb-24"
         aria-label="Contact information"
       >
         <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl">
@@ -497,7 +497,7 @@ export default function ContactPage() {
             />
           </div>
 
-          <AnimatedSection className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 relative top-19">
+          <AnimatedSection className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
 
             {/* ADDRESS */}
             <m.div
@@ -656,10 +656,7 @@ export default function ContactPage() {
 
       <section
         id="contact-form"
-        className="py-16 lg:py-24 bg-white"
-        style={{
-          marginTop: '180px',
-        }}
+        className="py-12 sm:py-16 lg:py-24 bg-white"
         aria-label="Book free site visit"
       >
         <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl">
@@ -760,7 +757,6 @@ export default function ContactPage() {
               <m.div
                 variants={fadeUp}
                 className="relative bg-white rounded-[32px] border border-[#E6E1D9] shadow-[0_24px_70px_rgba(16,42,67,0.12)] p-7 sm:p-9 lg:p-10 overflow-hidden"
-                style={{ marginTop: '120px' }}
               >
                 {/* Premium orange accent */}
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#F26A3D]" />
@@ -1011,18 +1007,28 @@ export default function ContactPage() {
       ======================================================== */}
 
       <section
-  className="relative top-23 mt-12 sm:mt-16 py-16 lg:py-24 bg-[#F5F2EE]"
+  className="block w-full bg-[#F5F2EE]"
   aria-label="Painting services"
 >
-        <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl">
+  <div
+    className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl"
+    style={{
+      paddingTop: "80px",
+      paddingBottom: "96px",
+      position: "static",
+      transform: "none",
+    }}
+  >
 
-          <SectionHeading
-            eyebrow="What We Offer"
-            title="Our Painting Services"
-            subtitle="Comprehensive painting solutions for every type of property."
-          />
+    <div className="relative -top-17">
+  <SectionHeading
+    eyebrow="What We Offer"
+    title="Our Painting Services"
+    subtitle="Comprehensive painting solutions for every type of property."
+  />
+</div>
 
-          <AnimatedSection className="relative top-17 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <AnimatedSection className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
             {services.map((service, index) => (
               <m.div
@@ -1055,218 +1061,276 @@ export default function ContactPage() {
 ======================================================== */}
 
 <section
-  className="relative top-65 mt-12 sm:mt-16 py-16 lg:py-24 bg-white"
+  className="block w-full bg-white"
   aria-label="Our office location"
 >
-  <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl">
+  <div
+    className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl"
+    style={{
+      paddingTop: "64px",
+      paddingBottom: "80px",
+      position: "static",
+      transform: "none",
+    }}
+  >
 
-    <SectionHeading
-      eyebrow="Find Us"
-      title="Visit Our Office"
-      subtitle="Come visit us for a detailed consultation or get directions to our office."
-    />
+    {/* MAP HEADING */}
+    <div className="mb-8">
+      <SectionHeading
+        eyebrow="Find Us"
+        title="Visit Our Office"
+        subtitle="Come visit us for a detailed consultation or get directions to our office."
+      />
+    </div>
 
-    <AnimatedSection className="relative top-5 pb-24">
+    {/* MAP + ADDRESS + BUTTONS */}
+    <AnimatedSection className="mt-2">
       <m.div
         variants={fadeUp}
         className="rounded-[28px] overflow-hidden border border-[#E8E4DD] shadow-[0_20px_60px_rgba(16,42,67,0.10)] bg-white"
       >
 
-              <div className="relative">
-
-                <iframe
-                  title="South India Painter Office Location"
-                  src={MAP_EMBED}
-                  className="w-full h-[420px] sm:h-[480px]"
-                  style={{
-                    border: 0,
-                  }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-
-              </div>
-
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5 px-6 sm:px-8 py-6 bg-white">
-
-                <div className="flex items-start gap-4 relative top-6">
-
-  <div className="w-12 h-12 rounded-full bg-[#102A43] flex items-center justify-center flex-shrink-0 text-white">
-    <MapPin className="w-5 h-5" />
-  </div>
-
-  <div>
-    <h3 className="text-lg font-bold text-[#102A43]">
-      South India Painter
-    </h3>
-
-    <p className="text-sm text-[#6B7280] leading-relaxed">
-      No. 35, 1st Stage, 2nd Phase, Near Chandra Layout Bus
-      Depot, Vijayanagar, Bangalore, Karnataka 560040
-    </p>
-  </div>
-
-</div>
-
-                <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto relative top-6">
-
-                  <a
-                    href={MAPS_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: '#ffffff' }}
-                    className="inline-flex items-center justify-center gap-2 h-11 px-6 bg-[#102A43] hover:bg-[#F26A3D] !text-white rounded-xl font-bold text-sm transition-all duration-300"
-                  >
-                    <MapPin className="w-4 h-4" />
-                    <span>Get Directions</span>
-                    <span>↗</span>
-                  </a>
-
-                  <a
-                    href={`tel:${PHONE_1_RAW}`}
-                    style={{ color: '#ffffff' }}
-                    className="inline-flex items-center justify-center gap-2 h-11 px-6 bg-[#F26A3D] hover:bg-[#E4573C] !text-white rounded-xl font-bold text-sm transition-all duration-300"
-                  >
-                    <Phone className="w-4 h-4" />
-                    <span>Call Now</span>
-                  </a>
-
-                </div>
-
-              </div>
-
-            </m.div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ========================================================
-          6. WHY CHOOSE US
-      ======================================================== */}
-
-      <section
-  className="relative top-100 mt-12 sm:mt-16 py-16 lg:py-24 bg-[#0A1828]"
-  aria-label="Why choose us"
->
-        <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl">
-
-          <SectionHeading
-            eyebrow="Our Promise"
-            title="Why Choose South India Painter?"
-            subtitle="Six core promises that set us apart from the rest."
-            light
+        {/* MAP */}
+        <div className="relative">
+          <iframe
+            title="South India Painter Office Location"
+            src={MAP_EMBED}
+            className="w-full h-[420px] sm:h-[480px]"
+            style={{
+              border: 0,
+            }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           />
-
-          <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-            {whyCards.map((card, index) => (
-              <m.div
-                key={index}
-                variants={fadeUp}
-                className="group bg-white/[0.05] border border-white/10 rounded-[24px] p-6 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#F26A3D]/20 flex items-center justify-center text-xl mb-5 group-hover:bg-[#F26A3D] transition-colors duration-300">
-                  {card.icon}
-                </div>
-
-                <h3 className="font-extrabold text-white text-base sm:text-lg mb-2">
-                  {card.title}
-                </h3>
-
-                <p className="text-sm text-white/65 leading-relaxed">
-                  {card.desc}
-                </p>
-              </m.div>
-            ))}
-
-          </AnimatedSection>
         </div>
-      </section>
 
-      {/* ========================================================
-          7. FAQ
-      ======================================================== */}
+        {/* ADDRESS + BUTTONS */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5 px-6 sm:px-8 py-6 bg-white">
 
-      <section
-  className="relative top-120 mt-12 sm:mt-16 py-16 lg:py-24 bg-white"
-  aria-label="Frequently asked questions"
->
-        <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-4xl">
+          {/* ADDRESS */}
+          <div className="flex items-start gap-4">
 
-          <SectionHeading
-            eyebrow="FAQ"
-            title="Common Questions"
-            subtitle="Everything you need to know before booking."
-          />
-
-          <AnimatedSection className="bg-white rounded-[24px] border border-[#E8E4DD] shadow-[0_8px_32px_rgba(16,42,67,0.05)] px-5 sm:px-8">
-            {faqs.map((faq, index) => (
-              <FaqItem
-                key={index}
-                q={faq.q}
-                a={faq.a}
-              />
-            ))}
-          </AnimatedSection>
-
-        </div>
-      </section>
-
-      {/* ========================================================
-          8. WHATSAPP
-      ======================================================== */}
-
-      <section
-  className="relative top-120 mt-12 sm:mt-16 py-10 sm:py-12 bg-gradient-to-r from-[#25D366] to-[#1DA851]"
-  aria-label="WhatsApp contact"
->
-        <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-5xl">
-
-          <AnimatedSection className="flex flex-col md:flex-row items-center justify-between gap-6">
-
-            <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
-
-              <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
-                <MessageCircle className="w-7 h-7 text-white" />
-              </div>
-
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-black text-white">
-                  Need Instant Assistance?
-                </h2>
-
-                <p className="text-white/90 text-sm sm:text-base">
-                  Chat directly with our painting expert on WhatsApp.
-                </p>
-              </div>
-
+            <div className="w-12 h-12 rounded-full bg-[#102A43] flex items-center justify-center flex-shrink-0 text-white">
+              <MapPin className="w-5 h-5" />
             </div>
 
-            <a
-              href={`https://wa.me/${WHATSAPP_NUM}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: '#25D366' }}
-              className="flex-shrink-0 inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-white !text-[#25D366] font-extrabold text-sm sm:text-base rounded-full shadow-lg hover:scale-105 transition-all duration-300"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>Open WhatsApp</span>
-            </a>
+            <div>
+              <h3 className="text-lg font-bold text-[#102A43]">
+                South India Painter
+              </h3>
 
-          </AnimatedSection>
+              <p className="text-sm text-[#6B7280] leading-relaxed">
+                No. 35, 1st Stage, 2nd Phase, Near Chandra Layout Bus
+                Depot, Vijayanagar, Bangalore, Karnataka 560040
+              </p>
+            </div>
+
+          </div>
+
+          {/* BUTTONS */}
+          <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+
+           <a
+  href={MAPS_LINK}
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ color: "#ffffff" }}
+  className="inline-flex items-center justify-center gap-2 h-14 px-10 min-w-[190px] bg-[#102A43] hover:bg-[#F26A3D] !text-white rounded-full font-bold text-base transition-all duration-300"
+>
+  <MapPin className="w-5 h-5" />
+  <span>Get Directions</span>
+  <span>↗</span>
+</a>
+
+            <a
+  href={`tel:${PHONE_1_RAW}`}
+  style={{ color: "#ffffff" }}
+  className="inline-flex items-center justify-center gap-2 h-14 px-10 min-w-[170px] bg-[#F26A3D] hover:bg-[#E4573C] !text-white rounded-full font-bold text-base transition-all duration-300"
+>
+  <Phone className="w-5 h-5" />
+  <span>Call Now</span>
+</a>
+
+          </div>
 
         </div>
-      </section>
 
+      </m.div>
+    </AnimatedSection>
+
+  </div>
+</section>
+
+      {/* ========================================================
+    6. WHY CHOOSE US
+======================================================== */}
+
+<section
+  className="mt-12 sm:mt-16 py-16 lg:py-24 bg-[#0A1828]"
+  aria-label="Why choose us"
+>
+  <div
+    className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl"
+    style={{
+      paddingTop: "80px",
+      paddingBottom: "80px",
+    }}
+  >
+
+    <div className="mb-8">
+  <SectionHeading
+    eyebrow="Our Promise"
+    title="Why Choose South India Painter?"
+    subtitle="Six core promises that set us apart from the rest."
+    light
+  />
+</div>
+
+<AnimatedSection className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      {whyCards.map((card, index) => (
+        <m.div
+          key={index}
+          variants={fadeUp}
+          className="group bg-white/[0.05] border border-white/10 rounded-[24px] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300"
+        >
+          <div className="w-12 h-12 rounded-xl bg-[#F26A3D]/20 flex items-center justify-center text-xl mb-5 group-hover:bg-[#F26A3D] transition-colors duration-300">
+            {card.icon}
+          </div>
+
+         <div className="mt-4">
+  <h3 className="font-extrabold text-white text-base sm:text-lg mb-2">
+    {card.title}
+  </h3>
+
+  <p className="text-sm text-white/65 leading-relaxed">
+    {card.desc}
+  </p>
+</div>
+        </m.div>
+      ))}
+
+    </AnimatedSection>
+
+  </div>
+</section>
+
+      {/* ========================================================
+    7. FAQ
+======================================================== */}
+
+<section
+  className="py-16 sm:py-24 bg-white"
+  aria-label="Frequently asked questions"
+>
+  <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-4xl">
+
+   <div className="mb-8">
+  <SectionHeading
+    eyebrow="FAQ"
+    title="Common Questions"
+    subtitle="Everything you need to know before booking."
+  />
+</div>
+
+    <AnimatedSection className="bg-white rounded-[24px] border border-[#E8E4DD] shadow-[0_8px_32px_rgba(16,42,67,0.05)] px-5 sm:px-8">
+      {faqs.map((faq, index) => (
+        <FaqItem
+          key={index}
+          q={faq.q}
+          a={faq.a}
+        />
+      ))}
+    </AnimatedSection>
+
+  </div>
+</section>
+
+     {/* ========================================================
+    8. WHATSAPP
+======================================================== */}
+
+<section
+  className="w-full bg-gradient-to-r from-[#25D366] to-[#1DA851] rounded-t-[48px] shadow-[0_-10px_40px_rgba(37,211,102,0.12)]"
+  style={{
+    marginTop: "80px",
+  }}
+  aria-label="WhatsApp contact"
+>
+  <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-5xl">
+
+    <AnimatedSection
+      className="flex flex-col md:flex-row items-center justify-between gap-6 py-10 sm:py-12"
+    >
+
+      {/* LEFT CONTENT */}
+      <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+
+        {/* WhatsApp Icon */}
+        <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
+          <MessageCircle className="w-7 h-7 text-white" />
+        </div>
+
+        {/* Text */}
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-black text-white">
+            Need Instant Assistance?
+          </h2>
+
+          <p className="text-white/90 text-sm sm:text-base mt-1">
+            Chat directly with our painting expert on WhatsApp.
+          </p>
+        </div>
+
+      </div>
+
+      {/* WHATSAPP BUTTON */}
+      <a
+        href={`https://wa.me/${WHATSAPP_NUM}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: "#25D366" }}
+        className="
+          flex-shrink-0
+          inline-flex
+          items-center
+          justify-center
+          gap-3
+          px-8
+          py-4
+          bg-white
+          !text-[#25D366]
+          font-extrabold
+          text-sm
+          sm:text-base
+          rounded-full
+          shadow-[0_8px_25px_rgba(0,0,0,0.15)]
+          hover:scale-105
+          hover:shadow-[0_12px_30px_rgba(0,0,0,0.20)]
+          transition-all
+          duration-300
+        "
+      >
+        <MessageCircle className="w-5 h-5" />
+
+        <span>
+          Open WhatsApp
+        </span>
+      </a>
+
+    </AnimatedSection>
+
+  </div>
+</section>
       {/* ========================================================
           9. FINAL CTA
       ======================================================== */}
 
       <section
-  className="relative top-130 mt-12 sm:mt-16 py-20 lg:py-28 bg-[#0A1828] overflow-hidden"
-  aria-label="Final call to action"
->
+        className="mt-20 sm:mt-28 py-20 lg:py-28 bg-[#0A1828] relative overflow-hidden"
+        aria-label="Final call to action"
+      >
 
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 

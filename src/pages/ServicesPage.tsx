@@ -110,7 +110,7 @@ export default function ServicesPage() {
         </Container>
 
         {/* Bottom Information Strip */}
-        <div className="absolute left-0 right-0 -bottom-[36px] z-20 flex justify-center px-4">
+        <div className="relative mt-8 sm:mt-0 sm:absolute sm:left-0 sm:right-0 sm:-bottom-[36px] z-20 flex justify-center px-4">
           <m.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -136,7 +136,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Spacer to account for the overlapping strip */}
-      <div className="h-[70px] lg:h-[90px]" />
+      <div className="hidden sm:block h-[70px] lg:h-[90px]" />
 
       {/* BOOK SITE VISIT SECTION */}
       <BookSiteVisitSection />
