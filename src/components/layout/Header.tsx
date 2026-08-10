@@ -232,12 +232,12 @@ export default function Header() {
               <Phone className="h-4 w-4" />
             </a>
             <Button
-              size="sm"
-              className="h-[46px] rounded-full bg-[var(--color-accent)] px-5 font-semibold text-white shadow-[0_12px_26px_rgba(231,104,75,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-accent-dark)]"
-              onClick={() => navigate('/contact')}
-            >
-              Get a Free Quote
-            </Button>
+  size="sm"
+  className="!h-[48px] !w-[165px] !whitespace-nowrap !rounded-full !bg-[#F26A3D] !px-6 !text-base !font-semibold !text-white !shadow-[0_12px_26px_rgba(242,106,61,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:!bg-[#D9552A]"
+  onClick={() => navigate('/contact')}
+>
+  Get a Free Quote
+</Button>
           </div>
 
           <button

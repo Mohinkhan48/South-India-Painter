@@ -1,5 +1,5 @@
 import { m, useReducedMotion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from '@/components/common/Container';
@@ -113,7 +113,7 @@ export default function ExperienceSection() {
                 <m.p
                   variants={revealVariants}
                   transition={{ duration: shouldReduceMotion ? 0 : 0.7, ease: 'easeOut' }}
-                  className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-accent)]"
+                  className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-accent)] -translate-x-17"
                 >
                   OUR EXPERIENCE
                 </m.p>
@@ -132,10 +132,10 @@ export default function ExperienceSection() {
                 </m.div>
 
                 <m.div
-                  variants={revealVariants}
-                  transition={{ duration: shouldReduceMotion ? 0 : 0.8, ease: 'easeOut', delay: 0.18 }}
-                  className="mt-[10px] space-y-0 text-white"
-                >
+  variants={revealVariants}
+  transition={{ duration: shouldReduceMotion ? 0 : 0.8, ease: 'easeOut', delay: 0.18 }}
+  className="mt-[10px] space-y-0 text-white translate-x-14"
+>
                   <h3 className="text-[2.1rem] font-extrabold leading-[1.08] tracking-[-0.04em] sm:text-[2.5rem] lg:text-[2.8rem] text-right">
                     Happy Customers
                   </h3>
@@ -145,19 +145,67 @@ export default function ExperienceSection() {
                 </m.div>
 
                 <m.div
-                  variants={revealVariants}
-                  transition={{ duration: shouldReduceMotion ? 0 : 0.8, ease: 'easeOut', delay: 0.26 }}
-                  className="relative z-[21] mt-[28px] flex justify-end"
-                >
-                  <button
-                    type="button"
-                    onClick={() => navigate('/projects')}
-                    className="inline-flex h-[46px] items-center justify-center gap-2 rounded-full bg-[#F26A45] px-[32px] text-[16px] font-semibold text-white shadow-[0_10px_25px_rgba(242,106,69,0.30)] transition-all duration-300 hover:-translate-y-[3px] hover:bg-[#E75E39] hover:shadow-[0_16px_35px_rgba(242,106,69,0.45)]"
-                  >
-                    <span>View Our Projects</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
-                </m.div>
+  variants={revealVariants}
+  transition={{
+    duration: shouldReduceMotion ? 0 : 0.8,
+    ease: 'easeOut',
+    delay: 0.26,
+  }}
+  className="relative z-[50] mt-[40px] flex justify-center translate-x-14 translate-y-4"
+>
+  <button
+    type="button"
+    onClick={() => navigate('/projects')}
+    style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '9px',
+      height: '52px',
+      minWidth: '210px',
+      padding: '0 26px',
+      borderRadius: '9999px',
+      border: '1.5px solid rgba(255,255,255,0.45)',
+      background: 'rgba(255,255,255,0.08)',
+      color: '#FFFFFF',
+      fontSize: '16px',
+      fontWeight: 700,
+      letterSpacing: '0.04em',
+      cursor: 'pointer',
+      position: 'relative',
+      zIndex: 100,
+      boxShadow: '0 8px 25px rgba(0,0,0,0.18)',
+      backdropFilter: 'blur(6px)',
+      WebkitBackdropFilter: 'blur(6px)',
+      transition: 'all 0.3s ease',
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.background = 'rgba(255,255,255,0.15)';
+      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.75)';
+      e.currentTarget.style.transform = 'translateY(-2px)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.45)';
+      e.currentTarget.style.transform = 'translateY(0)';
+    }}
+  >
+    <span
+      style={{
+        width: '8px',
+        height: '8px',
+        minWidth: '8px',
+        borderRadius: '50%',
+        background: '#FFFFFF',
+        display: 'block',
+      }}
+    />
+
+    <span>
+      VIEW OUR PROJECTS
+    </span>
+  </button>
+</m.div>
               </div>
             </div>
           </div>

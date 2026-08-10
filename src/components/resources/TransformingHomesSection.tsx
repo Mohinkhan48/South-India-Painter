@@ -32,9 +32,8 @@ export default function TransformingHomesSection() {
             Transforming Homes Across South India
           </h2>
           <p
-  className="max-w-2xl text-[#64748B] text-[18px] sm:text-[20px] leading-8 mt-5"
-  style={{ marginLeft: "360px" }}
->
+  className="max-w-2xl mx-auto translate-x-90 text-[#64748B] text-[18px] sm:text-[20px] leading-8 mt-5">
+
   Interactive tools and helpful guides to make your painting journey seamless
   and enjoyable.
 </p>

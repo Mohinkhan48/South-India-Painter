@@ -5,68 +5,82 @@ import { ArrowRight } from 'lucide-react';
 
 const cards = [
   {
-    title: 'Paint Cost Calculator',
-    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80',
-    link: '/resources/paint-cost-calculator'
-  },
-  {
-    title: 'Waterproofing Calculator',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
-    link: '/resources/waterproofing-calculator'
-  },
-  {
     title: 'Colour Visualizer',
-    image: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?auto=format&fit=crop&w=800&q=80',
-    link: '/resources/colour-visualizer'
+    image:
+      'https://images.unsplash.com/photo-1562184552-997c461abbe6?auto=format&fit=crop&w=800&q=80',
+    link: '/resources/colour-visualizer',
   },
   {
-    title: 'Community',
-    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80',
-    link: '/resources/community'
-  },
-  {
-    title: 'Reviews',
-    image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=80',
-    link: '/resources/reviews'
+    title: 'Colour Trends & Ideas',
+    image:
+      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
+    link: '/colour-ideas',
   },
   {
     title: 'Painting Tips',
-    image: 'https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=800&q=80',
-    link: '/resources/blogs'
-  }
+    image:
+      'https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=800&q=80',
+    link: '/resources/blogs',
+  },
+  {
+    title: 'Room Colour Ideas',
+    image:
+      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80',
+    link: '/colour-ideas',
+  },
+  {
+    title: 'Paint & Finish Guide',
+    image:
+      'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80',
+    link: '/resources/blogs',
+  },
+  {
+    title: 'Waterproofing Guide',
+    image:
+      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
+    link: '/resources/blogs',
+  },
 ];
 
 export default function ResourcesCardsSection() {
   return (
-    <section className="bg-white">
+    <section className="py-20">
       <Container>
+
+        {/* Section Heading */}
         <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{
+            duration: 0.6,
+            ease: [0.16, 1, 0.3, 1],
+          }}
           className="text-center mb-[50px]"
         >
-          <h2 className="text-[36px] sm:text-[44px] font-[800] text-[#17375E] mb-[24px]">
+          <h2 className="text-[36px] sm:text-[44px] font-[800] text-[#17375E]">
             Explore Resources
           </h2>
-          <p
-  className="max-w-2xl text-[#64748B] text-[18px] sm:text-[20px] leading-8 mt-5"
-  style={{ marginLeft: "360px" }}
->
-  Interactive tools and helpful guides to make your painting journey seamless
-  and enjoyable.
-</p>
+
+          <p className="max-w-2xl mx-auto translate-x-90 text-[#64748B] text-[18px] sm:text-[20px] leading-8 mt-5">
+            Helpful guides, colour inspiration and expert painting tips to
+            make your painting journey seamless and enjoyable.
+          </p>
         </m.div>
 
+        {/* Resource Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-[32px]">
           {cards.map((card, index) => (
             <m.div
               key={card.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{
+                duration: 0.6,
+                ease: [0.16, 1, 0.3, 1],
+                delay: index * 0.1,
+              }}
             >
               <Link
                 to={card.link}
@@ -78,11 +92,11 @@ export default function ResourcesCardsSection() {
                   alt={card.title}
                   className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />
-                
-                {/* Premium Dark Gradient Overlay */}
+
+                {/* Premium Dark Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#17375E] via-[#17375E]/50 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-95" />
-                
-                {/* Orange Hover Glow Accent */}
+
+                {/* Orange Hover Border */}
                 <div className="absolute inset-0 border-[3px] border-transparent group-hover:border-[#F47C20]/50 rounded-[24px] transition-colors duration-500" />
 
                 {/* Content */}
@@ -90,7 +104,7 @@ export default function ResourcesCardsSection() {
                   <h3 className="text-white text-[28px] font-bold mb-4 leading-tight transform transition-transform duration-500 group-hover:-translate-y-2">
                     {card.title}
                   </h3>
-                  
+
                   <div className="flex items-center gap-2 text-[#F47C20] text-[16px] font-bold uppercase tracking-wider opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                     <span>Explore</span>
                     <ArrowRight className="w-5 h-5" />
@@ -100,6 +114,7 @@ export default function ResourcesCardsSection() {
             </m.div>
           ))}
         </div>
+
       </Container>
     </section>
   );
