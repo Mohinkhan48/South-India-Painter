@@ -314,19 +314,35 @@ export default function Header() {
                   if (link.label === 'Services') {
                     return (
                       <div key={link.to} className="flex flex-col">
-                        <button
-                          type="button"
-                          className="flex items-center justify-between rounded-xl px-4 py-3.5 text-left text-[16px] font-semibold !text-white hover:bg-white/10 transition-colors duration-200"
-                          onClick={() => setIsMobileServicesOpen((open) => !open)}
-                        >
-                          <span>{link.label}</span>
-                          <ChevronDown
-                            className={cn(
-                              'h-4 w-4 !text-white/60 transition-transform duration-300',
-                              isMobileServicesOpen && 'rotate-180'
-                            )}
-                          />
-                        </button>
+                        <div className="flex items-center justify-between rounded-xl hover:bg-white/10 transition-colors duration-200">
+                          <NavLink
+                            to={link.to}
+                            className={({ isActive }) =>
+                              cn(
+                                'flex-1 rounded-l-xl px-4 py-3.5 text-[16px] font-semibold transition-colors duration-200',
+                                isActive
+                                  ? '!text-[#F26A3D]'
+                                  : '!text-white'
+                              )
+                            }
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {link.label}
+                          </NavLink>
+                          <button
+                            type="button"
+                            className="flex h-12 w-12 items-center justify-center rounded-r-xl border-l border-white/10 text-white"
+                            onClick={() => setIsMobileServicesOpen((open) => !open)}
+                            aria-label="Toggle services list"
+                          >
+                            <ChevronDown
+                              className={cn(
+                                'h-5 w-5 !text-white/60 transition-transform duration-300',
+                                isMobileServicesOpen && 'rotate-180'
+                              )}
+                            />
+                          </button>
+                        </div>
                         <AnimatePresence initial={false}>
                           {isMobileServicesOpen && (
                             <m.div
