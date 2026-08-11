@@ -56,13 +56,13 @@ export default function ResourcesCardsSection() {
             duration: 0.6,
             ease: [0.16, 1, 0.3, 1],
           }}
-          className="text-center mb-[50px]"
+          className="flex flex-col items-center text-center w-full mb-[50px]"
         >
           <h2 className="text-[36px] sm:text-[44px] font-[800] text-[#17375E]">
             Explore Resources
           </h2>
 
-          <p className="max-w-2xl mx-auto translate-x-90 text-[#64748B] text-[18px] sm:text-[20px] leading-8 mt-5">
+          <p className="max-w-2xl mx-auto text-[#64748B] text-[18px] sm:text-[20px] leading-8 mt-2 text-center">
             Helpful guides, colour inspiration and expert painting tips to
             make your painting journey seamless and enjoyable.
           </p>

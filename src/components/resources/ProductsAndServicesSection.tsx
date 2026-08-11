@@ -39,12 +39,12 @@ export default function ProductsAndServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-[50px]"
+          className="flex flex-col items-center text-center w-full mb-[50px]"
         >
-          <h2 className="text-[36px] sm:text-[44px] font-[800] text-[#17375E] mb-[16px]">
+          <h2 className="text-[36px] sm:text-[44px] font-[800] text-[#17375E]">
             Products & Services
           </h2>
-          <p className="max-w-2xl mx-auto text-[#64748B] text-[18px] sm:text-[20px] leading-8">
+          <p className="max-w-2xl mx-auto text-[#64748B] text-[18px] sm:text-[20px] leading-8 text-center mt-2">
             Discover our comprehensive range of painting solutions and specialized services tailored for your home.
           </p>
         </m.div>

@@ -23,7 +23,7 @@ export default function ProjectsContact() {
             <div className="space-y-10">
 
               {/* Address */}
-              <div className="flex items-start gap-4">
+              <div className="flex flex-col items-center text-center gap-4 w-full">
                 <div className="w-12 h-12 bg-[#F26A4B]/10 rounded-full flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-[#F26A4B]" />
                 </div>
@@ -39,7 +39,7 @@ export default function ProjectsContact() {
               </div>
 
               {/* Phone */}
-              <div className="flex items-start gap-4">
+              <div className="flex flex-col items-center text-center gap-4 w-full">
                 <div className="w-12 h-12 bg-[#F26A4B]/10 rounded-full flex items-center justify-center flex-shrink-0">
                   <Phone className="w-6 h-6 text-[#F26A4B]" />
                 </div>
@@ -52,18 +52,13 @@ export default function ProjectsContact() {
               </div>
 
               {/* WhatsApp */}
-              <div className="flex items-start gap-4">
+              <div className="flex flex-col items-center text-center gap-4 w-full">
                 <div className="w-12 h-12 bg-[#25D366]/10 rounded-full flex items-center justify-center flex-shrink-0">
                   <MessageCircle className="w-6 h-6 text-[#25D366]" />
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-[#0F2745] mb-2">WhatsApp</h4>
-                  <a
-                    href="https://wa.me/919740556799"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#5E6872] hover:text-[#25D366] transition-colors font-medium flex items-center gap-2"
-                  >
+                  <a href="https://wa.me/919740556799" target="_blank" rel="noopener noreferrer" className="text-[#5E6872] hover:text-[#25D366] transition-colors text-lg font-medium flex items-center justify-center gap-2">
                     Chat with our experts
                     <ExternalLink className="w-4 h-4" />
                   </a>

@@ -106,8 +106,9 @@ function StatCounter({
   return (
     <m.div
       variants={fadeUpVariant}
-      className="flex flex-col items-center justify-center p-6 lg:p-8 bg-white rounded-2xl border border-[#E8E4DD] shadow-[0_4px_20px_rgba(16,42,67,0.04)] hover:shadow-[0_12px_32px_rgba(16,42,67,0.08)] hover:-translate-y-1 transition-all duration-300 h-full text-center"
+      className="relative flex flex-col items-center justify-center p-6 lg:p-8 bg-white rounded-[20px] border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(242,106,61,0.08)] hover:-translate-y-2 transition-all duration-500 h-full text-center overflow-hidden group"
     >
+      <div className="absolute inset-0 bg-gradient-to-br from-[#F26A3D]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <span
         ref={ref}
         className="text-4xl md:text-5xl font-black text-[#102A43] tracking-tight"
@@ -451,12 +452,13 @@ export default function AboutPage() {
                 <m.div
   key={idx}
   variants={fadeUpVariant}
-  className="bg-[#FAF8F5] border border-[#E8E4DD] rounded-[24px] hover:shadow-lg transition-shadow duration-300 h-full flex flex-col group hover:-translate-y-1 p-6 lg:p-8"
+  className="bg-white border border-gray-100 rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(242,106,61,0.08)] transition-all duration-500 h-full flex flex-col group hover:-translate-y-2 p-6 lg:p-8 relative overflow-hidden"
 >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#F26A3D]/5 rounded-full blur-2xl -mr-10 -mt-10 transition-all duration-500 group-hover:bg-[#F26A3D]/15" />
 
                   <div className="flex items-center mb-4">
 
-                    <div className="flex-shrink-0 w-12 h-12 bg-[#F26A3D]/10 rounded-xl flex items-center justify-center text-[#F26A3D] group-hover:bg-[#F26A3D]/20 transition-colors">
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-[#F26A3D]/10 to-[#F26A3D]/5 rounded-2xl flex items-center justify-center text-[#F26A3D] group-hover:scale-110 group-hover:bg-[#F26A3D]/20 transition-all duration-500 shadow-sm border border-[#F26A3D]/10">
                       <Icon className="w-6 h-6" />
                     </div>
 
@@ -743,10 +745,11 @@ export default function AboutPage() {
                 <m.div
                   key={i}
                   variants={fadeUpVariant}
-                  className="flex flex-col items-center text-center group"
+                  className="flex flex-col items-center text-center group bg-white p-6 rounded-[24px] border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(242,106,61,0.08)] hover:-translate-y-2 transition-all duration-500 relative overflow-hidden"
                 >
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#FAF8F5] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                  <div className="w-14 h-14 rounded-full bg-[#F26A3D] text-white font-bold text-lg flex items-center justify-center mb-4 shadow-md group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F26A3D] to-[#D9552A] text-white font-bold text-xl flex items-center justify-center mb-5 shadow-[0_8px_20px_rgba(242,106,61,0.3)] group-hover:scale-110 transition-transform duration-500 rotate-3 group-hover:rotate-0 relative z-10">
                     {i + 1}
                   </div>
 

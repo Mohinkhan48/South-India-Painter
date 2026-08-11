@@ -22,12 +22,9 @@ export default function TrustedBrandPartnerSection() {
       }}
     >
       <img
-        src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Asian_Paints_logo.svg/800px-Asian_Paints_logo.svg.png"
+        src="/images/projects/asian-paint-logo.png"
         alt="Asian Paints Logo"
         className="h-[36px] w-auto object-contain mb-[6px]"
-        onError={(e) => {
-          (e.target as HTMLImageElement).src = 'https://companieslogo.com/img/orig/ASIANPAINT.NS-5077227d.png';
-        }}
       />
       <span className="text-[16px] font-bold text-[#0F2745] whitespace-nowrap">
         Asian Paints

@@ -125,7 +125,7 @@ export default function HowItWorksSection() {
               duration: shouldReduceMotion ? 0 : 0.65,
               ease: 'easeOut',
             }}
-            className="mb-16 text-center"
+            className="mb-16 flex flex-col items-center text-center w-full"
           >
 
             {/* MAIN HEADING */}
@@ -173,6 +173,7 @@ export default function HowItWorksSection() {
     text-base
     leading-8
     text-[#64748B]
+    text-center
     sm:text-lg
     lg:text-xl
   "

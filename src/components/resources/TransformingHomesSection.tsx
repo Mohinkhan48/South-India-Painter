@@ -3,18 +3,18 @@ import Container from '@/components/common/Container';
 import { Link } from 'react-router-dom';
 
 const cities = [
-  { name: 'Bangalore', projects: '4,850+', image: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Chennai', projects: '3,200+', image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Hyderabad', projects: '2,950+', image: 'https://images.unsplash.com/photo-1602214486518-e395567b4515?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Mysore', projects: '1,420+', image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Coimbatore', projects: '1,840+', image: 'https://images.unsplash.com/photo-1583417616656-787053e1a067?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Kochi', projects: '2,150+', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Trivandrum', projects: '1,380+', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Mangalore', projects: '980+', image: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Madurai', projects: '890+', image: 'https://images.unsplash.com/photo-1583417616656-787053e1a067?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Vijayawada', projects: '1,250+', image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Visakhapatnam', projects: '1,650+', image: 'https://images.unsplash.com/photo-1602214486518-e395567b4515?auto=format&fit=crop&w=400&q=80' },
-  { name: 'Kozhikode', projects: '730+', image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=400&q=80' }
+  { name: 'Bangalore',     projects: '4,850+', image: 'https://images.pexels.com/photos/739987/pexels-photo-739987.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Chennai',       projects: '3,200+', image: 'https://images.pexels.com/photos/2846814/pexels-photo-2846814.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Hyderabad',     projects: '2,950+', image: 'https://images.pexels.com/photos/3573382/pexels-photo-3573382.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Mysore',        projects: '1,420+', image: 'https://images.pexels.com/photos/3352484/pexels-photo-3352484.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Coimbatore',   projects: '1,840+', image: 'https://images.pexels.com/photos/3264618/pexels-photo-3264618.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Kochi',         projects: '2,150+', image: 'https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Trivandrum',    projects: '1,380+', image: 'https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Mangalore',     projects: '980+',   image: 'https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Madurai',       projects: '890+',   image: 'https://images.pexels.com/photos/1809644/pexels-photo-1809644.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Vijayawada',    projects: '1,250+', image: 'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Visakhapatnam', projects: '1,650+', image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Kozhikode',     projects: '730+',   image: 'https://images.pexels.com/photos/1298684/pexels-photo-1298684.jpeg?auto=compress&cs=tinysrgb&w=400' },
 ];
 
 export default function TransformingHomesSection() {
@@ -26,13 +26,13 @@ export default function TransformingHomesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-[50px]"
+          className="flex flex-col items-center text-center w-full mb-[50px]"
         >
-          <h2 className="text-[36px] sm:text-[44px] font-[800] text-[#17375E] mb-[24px]">
+          <h2 className="text-[36px] sm:text-[44px] font-[800] text-[#17375E]">
             Transforming Homes Across South India
           </h2>
           <p
-  className="max-w-2xl mx-auto translate-x-90 text-[#64748B] text-[18px] sm:text-[20px] leading-8 mt-5">
+  className="max-w-2xl mx-auto text-[#64748B] text-[18px] sm:text-[20px] leading-8 mt-2 text-center">
 
   Interactive tools and helpful guides to make your painting journey seamless
   and enjoyable.

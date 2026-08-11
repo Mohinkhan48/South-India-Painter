@@ -10,7 +10,7 @@ export default function ProjectsCTA() {
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-[#F26A4B]/10 rounded-full blur-3xl" />
       <div className="absolute -bottom-40 -right-40 w-[420px] h-[420px] bg-white/5 rounded-full blur-3xl" />
 
-      <div className="container relative z-10 max-w-5xl mx-auto px-6 md:pl-24 text-center">
+      <div className="container relative z-10 max-w-5xl mx-auto px-6 flex flex-col items-center text-center w-full">
 
         {/* Badge */}
         <m.div
@@ -44,7 +44,7 @@ export default function ProjectsCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-8 max-w-3xl mx-auto text-lg md:text-xl leading-9 text-white/85 md:pl-16"
+          className="mt-8 max-w-3xl mx-auto text-lg md:text-xl leading-9 text-white/85 text-center"
         >
           Book your <strong className="text-white">FREE site inspection</strong> today
           and receive expert colour consultation, transparent pricing, and premium
@@ -57,7 +57,7 @@ export default function ProjectsCTA() {
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
   transition={{ delay: 0.3 }}
-  className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-6"
+  className="mt-12 flex flex-col sm:flex-row justify-start items-center gap-6"
 >
 
   <Button

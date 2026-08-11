@@ -179,12 +179,12 @@ export const projectCategories = [
 ];
 
 export const cityStats = [
-  { name: 'Bangalore', image: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=600&q=80', count: 2150 },
-  { name: 'Chennai', image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80', count: 1240 },
-  { name: 'Hyderabad', image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=600&q=80', count: 980 },
-  { name: 'Kochi', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=600&q=80', count: 450 },
-  { name: 'Mysore', image: 'https://images.unsplash.com/photo-1600021370725-d7d8c6d1d4f2?auto=format&fit=crop&w=600&q=80', count: 320 },
-  { name: 'Coimbatore', image: 'https://images.unsplash.com/photo-1603513361834-f89a9b6c00f1?auto=format&fit=crop&w=600&q=80', count: 280 },
+  { name: 'Bangalore',  image: 'https://images.pexels.com/photos/739987/pexels-photo-739987.jpeg?auto=compress&cs=tinysrgb&w=600', count: 2150 },
+  { name: 'Chennai',    image: 'https://images.pexels.com/photos/2846814/pexels-photo-2846814.jpeg?auto=compress&cs=tinysrgb&w=600', count: 1240 },
+  { name: 'Hyderabad',  image: 'https://images.pexels.com/photos/3573382/pexels-photo-3573382.jpeg?auto=compress&cs=tinysrgb&w=600', count: 980 },
+  { name: 'Kochi',      image: 'https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&cs=tinysrgb&w=600', count: 450 },
+  { name: 'Mysore',     image: 'https://images.pexels.com/photos/3352484/pexels-photo-3352484.jpeg?auto=compress&cs=tinysrgb&w=600', count: 320 },
+  { name: 'Coimbatore', image: 'https://images.pexels.com/photos/3264618/pexels-photo-3264618.jpeg?auto=compress&cs=tinysrgb&w=600', count: 280 },
 ];
 
 
