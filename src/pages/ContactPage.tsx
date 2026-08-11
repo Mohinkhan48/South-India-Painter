@@ -228,44 +228,6 @@ function SectionBadge({
   );
 }
 
-function SectionHeading({
-  eyebrow,
-  title,
-  subtitle,
-  light = false,
-}: {
-  eyebrow: string;
-  title: ReactNode;
-  subtitle?: string;
-  light?: boolean;
-}) {
-  return (
-    <AnimatedSection className="text-center mb-12 lg:mb-16 flex flex-col items-center">
-      <m.div variants={fadeUp}>
-        <SectionBadge text={eyebrow} light={light} />
-      </m.div>
-
-      <m.h2
-        variants={fadeUp}
-        className={`text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.15] tracking-tight mb-4 max-w-3xl ${light ? 'text-white' : 'text-[#102A43]'
-          }`}
-      >
-        {title}
-      </m.h2>
-
-      {subtitle && (
-        <m.p
-          variants={fadeUp}
-          className={`text-base sm:text-lg leading-relaxed max-w-2xl ${light ? 'text-white/75' : 'text-[#5E6872]'
-            }`}
-        >
-          {subtitle}
-        </m.p>
-      )}
-    </AnimatedSection>
-  );
-}
-
 function FaqItem({
   q,
   a,
@@ -406,9 +368,6 @@ export default function ContactPage() {
       setSubmitted(true);
     }, 1200);
   };
-
-  const inputClass =
-    'w-full h-[52px] px-4 bg-[#FAFAF8] border border-[#E8E4DD] rounded-xl text-[#102A43] placeholder:text-[#A9B3BC] text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F26A3D]/20 focus:border-[#F26A3D] transition-all duration-200';
 
   return (
     <div className="font-sans text-[#102A43] bg-[#FAF8F4] overflow-x-hidden">
