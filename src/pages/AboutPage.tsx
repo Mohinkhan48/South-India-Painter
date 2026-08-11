@@ -132,7 +132,7 @@ function SectionBadge({
 }) {
   return (
     <span
-      className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4 ${
+      className={`inline-flex items-center gap-2 px-2 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4 ${
         light
           ? 'bg-white/10 text-white border border-white/20'
           : 'bg-[#F26A3D]/10 text-[#F26A3D] border border-[#F26A3D]/20'

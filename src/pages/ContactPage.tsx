@@ -209,16 +209,21 @@ function SectionBadge({
 }) {
   return (
     <span
-      className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4 ${light
-        ? 'bg-white/10 text-white border border-white/20'
-        : 'bg-[#F26A3D]/10 text-[#F26A3D] border border-[#F26A3D]/20'
-        }`}
+      className={`inline-flex items-center justify-center gap-2 w-[240px] h-8 rounded-full text-xs font-bold uppercase tracking-widest mb-4 ${
+  light
+    ? "bg-white/10 text-white border border-white/20"
+    : "bg-[#F26A3D]/10 text-[#F26A3D] border border-[#F26A3D]/20"
+}`}
     >
       <span
-        className={`w-1.5 h-1.5 rounded-full ${light ? 'bg-white' : 'bg-[#F26A3D]'
-          }`}
+        className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+          light ? "bg-white" : "bg-[#F26A3D]"
+        }`}
       />
-      {text}
+
+      <span className="leading-none">
+        {text}
+      </span>
     </span>
   );
 }
@@ -430,8 +435,11 @@ export default function ContactPage() {
         <div className="relative z-10 container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl text-center pt-20">
           <AnimatedSection className="flex flex-col items-center">
             <m.div variants={fadeUp}>
-              <SectionBadge text="Contact Us" light />
-            </m.div>
+  <span className="inline-flex items-center gap-2 w-[150px] h-8 justify-center rounded-full text-xs font-bold uppercase tracking-widest bg-white/10 text-white border border-white/20">
+    <span className="w-1.5 h-1.5 rounded-full bg-white" />
+    Contact Us
+  </span>
+</m.div>
 
             <m.h1
               variants={fadeUp}
@@ -454,13 +462,13 @@ export default function ContactPage() {
             </m.p>
 
             <m.div
-              variants={fadeUp}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            >
+  variants={fadeUp}
+  className="relative top-4 flex flex-col sm:flex-row items-center justify-center gap-4"
+>
               <a
                 href="#contact-form"
 
-                className="inline-flex items-center justify-center gap-2 h-12 px-7 bg-[#F26A3D] hover:bg-[#E4573C] !text-[#102A43] font-bold rounded-full shadow-[0_10px_28px_rgba(242,106,61,0.35)] transition-all duration-300 hover:-translate-y-1"
+                className="inline-flex items-center justify-center gap-2 h-12 min-w-[220px] px-8 bg-[#F26A3D] hover:bg-[#E4573C] !text-[#102A43] font-bold rounded-full shadow-[0_10px_28px_rgba(242,106,61,0.35)] transition-all duration-300 hover:-translate-y-1"
               >
                 <span>Book Free Site Visit</span>
                 <ArrowRight className="w-4 h-4" />
@@ -469,7 +477,7 @@ export default function ContactPage() {
               <a
                 href={`tel:${PHONE_2_RAW}`}
                 style={{ color: '#ffffff' }}
-                className="inline-flex items-center justify-center gap-2 h-12 px-7 bg-white/5 border border-white/30 hover:bg-white/10 !text-white font-semibold rounded-full transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 h-12 min-w-[220px] px-8 bg-white/5 border border-white/30 hover:bg-white/10 !text-white font-semibold rounded-full transition-all duration-300"
               >
                 <Phone className="w-4 h-4" />
                 <span>Call {PHONE_2}</span>
@@ -490,13 +498,23 @@ export default function ContactPage() {
         <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl">
 
           {/* SECTION HEADING */}
-          <div className="relative top-10">
-            <SectionHeading
-              eyebrow="Get In Touch"
-              title="How to Reach Us"
-              subtitle="Four easy ways to connect with our painting experts."
-            />
-          </div>
+          <div className="relative top-10 flex flex-col items-center">
+
+  {/* GET IN TOUCH - smaller width, same text size */}
+  <div className="inline-flex items-center gap-2 w-[150px] h-8 justify-center rounded-full text-xs font-bold uppercase tracking-widest mb-4 bg-[#F26A3D]/10 text-[#F26A3D] border border-[#F26A3D]/20">
+    <span className="w-1.5 h-1.5 rounded-full bg-[#F26A3D]" />
+    Get In Touch
+  </div>
+
+  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.15] tracking-tight mb-4 max-w-3xl text-center text-[#102A43]">
+    How to Reach Us
+  </h2>
+
+  <p className="text-base sm:text-lg leading-relaxed max-w-2xl text-center text-[#5E6872]">
+    Four easy ways to connect with our painting experts.
+  </p>
+
+</div>
 
           {/* ========================================================
         4 CARDS
@@ -696,383 +714,446 @@ export default function ContactPage() {
     3. CONTACT FORM
 ======================================================== */}
 
-      <div
-        style={{
-          marginTop: "80px",
-          backgroundColor: "#ffffff",
-          position: "relative",
-          zIndex: 1,
-        }}
+<div
+  style={{
+    marginTop: "80px",
+    backgroundColor: "#ffffff",
+    position: "relative",
+    zIndex: 1,
+    minHeight: "710px",
+  }}
+>
+  <section
+  id="contact-form"
+  aria-label="Book free site visit"
+  className="pt-16 sm:pt-20 lg:pt-24 pb-56 sm:pb-64 lg:pb-72"
+>
+    <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl">
+
+      {/* SECTION HEADING */}
+
+<div
+  className="flex flex-col items-center"
+  style={{ transform: "translateY(20px)" }}
+>
+  
+
+  {/* BOOK NOW */}
+  <div className="inline-flex items-center gap-2 w-[120px] h-8 justify-center rounded-full text-xs font-bold uppercase tracking-widest mb-4 bg-[#F26A3D]/10 text-[#F26A3D] border border-[#F26A3D]/20">
+    <span className="w-1.5 h-1.5 rounded-full bg-[#F26A3D]" />
+    Book Now
+  </div>
+
+  {/* TITLE */}
+  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.15] tracking-tight mb-4 max-w-3xl text-center text-[#102A43]">
+    Get a Free Inspection
+  </h2>
+
+  {/* SUBTITLE */}
+  <p className="text-base sm:text-lg leading-relaxed max-w-2xl text-center text-[#5E6872]">
+    Fill in your details and our expert will reach out within 2 hours to confirm your visit.
+  </p>
+
+</div>
+
+      {/* LEFT + RIGHT */}
+      <div className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-1 lg:grid-cols-[0.88fr_1fr] gap-10 lg:gap-14 items-start">
+
+        {/* ==================================================
+            LEFT CONTENT
+        ================================================== */}
+
+        <div style={{ marginTop: "70px" }}>
+          <AnimatedSection className="flex flex-col">
+
+            <m.h3
+              variants={fadeUp}
+              className="text-2xl sm:text-3xl font-extrabold text-[#102A43] leading-snug mb-4"
+            >
+              Why book a free
+              <br />
+              inspection with us?
+            </m.h3>
+
+            <m.p
+              variants={fadeUp}
+              className="text-base sm:text-lg text-[#5E6872] leading-relaxed mb-7 max-w-xl"
+            >
+              Our site visit is completely free, with zero pressure or
+              commitment. We assess your property, evaluate surfaces, and
+              present a detailed itemised quotation before any work begins.
+            </m.p>
+
+            {/* BENEFITS */}
+
+            <m.ul
+              variants={stagger}
+              className="flex flex-col gap-3.5 mb-8"
+            >
+              {[
+                "100% free — no hidden charges",
+                "Expert visits within 24–48 hours",
+                "Personalised colour & finish consultation",
+                "Transparent, itemised quotation",
+                "No obligation — just honest expert advice",
+              ].map((item, idx) => (
+                <m.li
+                  key={idx}
+                  variants={fadeUp}
+                  className="flex items-start gap-3 text-sm sm:text-base text-[#102A43] font-semibold"
+                >
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F26A3D]/10 flex items-center justify-center mt-0.5">
+                    <Check
+                      className="w-4 h-4 text-[#F26A3D]"
+                      strokeWidth={3}
+                    />
+                  </span>
+
+                  <span>{item}</span>
+                </m.li>
+              ))}
+            </m.ul>
+
+            {/* STATS */}
+
+            <div className="flex items-center gap-5 pt-5 border-t border-[#E8E4DD] max-w-lg">
+
+              <div>
+                <p className="text-2xl sm:text-3xl font-black text-[#102A43]">
+                  5000+
+                </p>
+                <p className="text-[11px] text-[#5E6872] font-bold uppercase tracking-wider">
+                  Projects
+                </p>
+              </div>
+
+              <div className="w-px h-9 bg-[#E8E4DD]" />
+
+              <div>
+                <p className="text-2xl sm:text-3xl font-black text-[#102A43]">
+                  4.9★
+                </p>
+                <p className="text-[11px] text-[#5E6872] font-bold uppercase tracking-wider">
+                  Rating
+                </p>
+              </div>
+
+              <div className="w-px h-9 bg-[#E8E4DD]" />
+
+              <div>
+                <p className="text-2xl sm:text-3xl font-black text-[#102A43]">
+                  10+
+                </p>
+                <p className="text-[11px] text-[#5E6872] font-bold uppercase tracking-wider">
+                  Years
+                </p>
+              </div>
+
+            </div>
+
+          </AnimatedSection>
+        </div>
+
+
+        {/* ==================================================
+            RIGHT FORM
+        ================================================== */}
+
+        <AnimatedSection className="relative top-[65px]">
+
+          <m.div
+  variants={fadeUp}
+  style={{
+    paddingLeft: "28px",
+    paddingRight: "28px",
+    paddingTop: "20px",
+    paddingBottom: "20px",
+  }}
+  className="relative bg-white rounded-[24px] border border-[#E6E1D9] shadow-[0_18px_55px_rgba(16,42,67,0.11)] overflow-hidden"
+>
+
+            {/* ORANGE TOP LINE */}
+
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#F26A3D]" />
+
+            {/* DECORATION */}
+
+            <div className="pointer-events-none absolute -top-20 -right-20 w-48 h-48 rounded-full bg-[#F26A3D]/[0.06] blur-3xl" />
+
+            <div className="pointer-events-none absolute top-8 right-8 w-20 h-20 rounded-full border border-[#F26A3D]/10" />
+
+
+            {/* FORM HEADER */}
+
+            <div className="relative z-10 mb-4">
+
+              <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-[#F26A3D] mb-1">
+                Free Consultation
+              </p>
+
+              <h3 className="text-xl sm:text-2xl font-extrabold text-[#102A43] leading-tight">
+                Tell us about your project
+              </h3>
+
+              <div className="h-[20px]" />
+
+            </div>
+
+
+            {/* FORM */}
+
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="relative z-10 flex flex-col gap-3.5"
+            >
+
+             {/* NAME + PHONE */}
+
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+
+  <div>
+
+    <label className="block text-[10px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-1.5">
+      Full Name *
+    </label>
+
+    <input
+      type="text"
+      name="name"
+      placeholder="e.g. Rajesh Kumar"
+      value={formData.name}
+      onChange={handleChange}
+      style={{ textIndent: "8px" }}
+      className="w-full h-[46px] px-3.5 bg-[#FAFAF8] border border-[#E8E4DD] rounded-xl text-[#102A43] placeholder:text-[#A9B3BC] text-sm focus:outline-none focus:ring-2 focus:ring-[#F26A3D]/20 focus:border-[#F26A3D] transition-all"
+    />
+
+    {errors.name && (
+      <p className="mt-1 text-[10px] text-red-500">
+        {errors.name}
+      </p>
+    )}
+
+  </div>
+
+
+  <div>
+
+    <label className="block text-[10px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-1.5">
+      Phone Number *
+    </label>
+
+    <input
+      type="tel"
+      name="phone"
+      placeholder="+91 98765 43210"
+      value={formData.phone}
+      onChange={handleChange}
+      style={{ textIndent: "8px" }}
+      className="w-full h-[46px] px-3.5 bg-[#FAFAF8] border border-[#E8E4DD] rounded-xl text-[#102A43] placeholder:text-[#A9B3BC] text-sm focus:outline-none focus:ring-2 focus:ring-[#F26A3D]/20 focus:border-[#F26A3D] transition-all"
+    />
+
+    {errors.phone && (
+      <p className="mt-1 text-[10px] text-red-500">
+        {errors.phone}
+      </p>
+    )}
+
+  </div>
+
+</div>
+
+
+{/* EMAIL + CITY */}
+
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+
+  <div>
+
+    <label className="block text-[10px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-1.5">
+      Email Address
+    </label>
+
+    <input
+      type="email"
+      name="email"
+      placeholder="you@email.com"
+      value={formData.email}
+      onChange={handleChange}
+      style={{ textIndent: "8px" }}
+      className="w-full h-[46px] px-3.5 bg-[#FAFAF8] border border-[#E8E4DD] rounded-xl text-[#102A43] placeholder:text-[#A9B3BC] text-sm focus:outline-none focus:ring-2 focus:ring-[#F26A3D]/20 focus:border-[#F26A3D] transition-all"
+    />
+
+  </div>
+
+
+  <div>
+
+    <label className="block text-[10px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-1.5">
+      City *
+    </label>
+
+    <input
+      type="text"
+      name="city"
+      placeholder="e.g. Bangalore"
+      value={formData.city}
+      onChange={handleChange}
+      style={{ textIndent: "8px" }}
+      className="w-full h-[46px] px-3.5 bg-[#FAFAF8] border border-[#E8E4DD] rounded-xl text-[#102A43] placeholder:text-[#A9B3BC] text-sm focus:outline-none focus:ring-2 focus:ring-[#F26A3D]/20 focus:border-[#F26A3D] transition-all"
+    />
+
+    {errors.city && (
+      <p className="mt-1 text-[10px] text-red-500">
+        {errors.city}
+      </p>
+    )}
+
+  </div>
+
+</div>
+
+
+              {/* PROPERTY + SERVICE */}
+
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+
+  <div>
+
+    <label className="block text-[10px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-1.5">
+      Property Type
+    </label>
+
+    <div className="relative">
+
+      <select
+        name="propertyType"
+        value={formData.propertyType}
+        onChange={handleChange}
+        style={{ textIndent: "8px" }}
+        className="w-full h-[46px] px-3.5 pr-9 bg-[#FAFAF8] border border-[#E8E4DD] rounded-xl text-[#102A43] text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#F26A3D]/20 focus:border-[#F26A3D] transition-all"
       >
-        <section
-          id="contact-form"
-          aria-label="Book free site visit"
-          className="py-16 sm:py-20 lg:py-24"
-        >
-          <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl">
-
-            <div className="relative top-10">
-              <SectionHeading
-                eyebrow="Book Now"
-                title="Get a Free Inspection"
-                subtitle="Fill in your details and our expert will reach out within 2 hours to confirm your visit."
-              />
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-start">
-
-              <AnimatedSection className="relative top-10 flex flex-col">
-
-
-                <m.h3
-                  variants={fadeUp}
-                  className="text-2xl sm:text-3xl font-extrabold text-[#102A43] leading-snug mb-4"
-                >
-                  Why book a free
-                  <br />
-                  inspection with us?
-                </m.h3>
-
-                <m.p
-                  variants={fadeUp}
-                  className="text-base sm:text-lg text-[#5E6872] leading-relaxed mb-8"
-                >
-                  Our site visit is completely free, with zero pressure or
-                  commitment. We assess your property, evaluate surfaces, and
-                  present a detailed itemised quotation before any work begins.
-                </m.p>
-
-                <m.ul
-                  variants={stagger}
-                  className="flex flex-col gap-4 mb-10"
-                >
-                  {[
-                    "100% free — no hidden charges",
-                    "Expert visits within 24–48 hours",
-                    "Personalised colour & finish consultation",
-                    "Transparent, itemised quotation",
-                    "No obligation — just honest expert advice",
-                  ].map((item, idx) => (
-                    <m.li
-                      key={idx}
-                      variants={fadeUp}
-                      className="flex items-start gap-3 text-base text-[#102A43] font-semibold"
-                    >
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#F26A3D]/10 flex items-center justify-center mt-0.5">
-                        <Check
-                          className="w-4 h-4 text-[#F26A3D]"
-                          strokeWidth={3}
-                        />
-                      </span>
-
-                      {item}
-                    </m.li>
-                  ))}
-                </m.ul>
-
-                {/* STATS */}
-                <div className="flex items-center gap-6 pt-6 border-t border-[#E8E4DD]">
-
-                  <div>
-                    <p className="text-2xl sm:text-3xl font-black text-[#102A43]">
-                      5000+
-                    </p>
-                    <p className="text-xs text-[#5E6872] font-bold uppercase tracking-wider">
-                      Projects
-                    </p>
-                  </div>
-
-                  <div className="w-px h-10 bg-[#E8E4DD]" />
-
-                  <div>
-                    <p className="text-2xl sm:text-3xl font-black text-[#102A43]">
-                      4.9★
-                    </p>
-                    <p className="text-xs text-[#5E6872] font-bold uppercase tracking-wider">
-                      Rating
-                    </p>
-                  </div>
-
-                  <div className="w-px h-10 bg-[#E8E4DD]" />
-
-                  <div>
-                    <p className="text-2xl sm:text-3xl font-black text-[#102A43]">
-                      10+
-                    </p>
-                    <p className="text-xs text-[#5E6872] font-bold uppercase tracking-wider">
-                      Years
-                    </p>
-                  </div>
-
-                </div>
-
-              </AnimatedSection>
-
-
-              {/* RIGHT FORM */}
-              <AnimatedSection>
-
-                <m.div
-                  variants={fadeUp}
-                  className="relative bg-white rounded-[32px] border border-[#E6E1D9] shadow-[0_24px_70px_rgba(16,42,67,0.12)] p-7 sm:p-9 lg:p-10 overflow-hidden"
-                >
-
-                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#F26A3D]" />
-
-                  <div className="pointer-events-none absolute -top-24 -right-24 w-56 h-56 rounded-full bg-[#F26A3D]/[0.07] blur-3xl" />
-
-                  <div className="pointer-events-none absolute top-8 right-8 w-24 h-24 rounded-full border border-[#F26A3D]/10" />
-
-                  <form
-                    onSubmit={handleSubmit}
-                    noValidate
-                    className="relative z-10 flex flex-col gap-5"
-                  >
-
-                    {/* NAME + PHONE */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-
-                      <div>
-                        <label className="block text-[11px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-2">
-                          Full Name *
-                        </label>
-
-                        <input
-                          type="text"
-                          name="name"
-                          placeholder="e.g. Rajesh Kumar"
-                          value={formData.name}
-                          onChange={handleChange}
-                          className={inputClass}
-                        />
-
-                        {errors.name && (
-                          <p className="mt-1 text-xs text-red-500">
-                            {errors.name}
-                          </p>
-                        )}
-                      </div>
-
-                      <div>
-                        <label className="block text-[11px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-2">
-                          Phone Number *
-                        </label>
-
-                        <input
-                          type="tel"
-                          name="phone"
-                          placeholder="+91 98765 43210"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          className={inputClass}
-                        />
-
-                        {errors.phone && (
-                          <p className="mt-1 text-xs text-red-500">
-                            {errors.phone}
-                          </p>
-                        )}
-                      </div>
-
-                    </div>
-
-
-                    {/* EMAIL + CITY */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-
-                      <div>
-                        <label className="block text-[11px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-2">
-                          Email Address
-                        </label>
-
-                        <input
-                          type="email"
-                          name="email"
-                          placeholder="you@email.com"
-                          value={formData.email}
-                          onChange={handleChange}
-                          className={inputClass}
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-[11px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-2">
-                          City *
-                        </label>
-
-                        <input
-                          type="text"
-                          name="city"
-                          placeholder="e.g. Bangalore"
-                          value={formData.city}
-                          onChange={handleChange}
-                          className={inputClass}
-                        />
-
-                        {errors.city && (
-                          <p className="mt-1 text-xs text-red-500">
-                            {errors.city}
-                          </p>
-                        )}
-                      </div>
-
-                    </div>
-
-
-                    {/* PROPERTY + SERVICE */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-
-                      <div>
-                        <label className="block text-[11px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-2">
-                          Property Type
-                        </label>
-
-                        <div className="relative">
-
-                          <select
-                            name="propertyType"
-                            value={formData.propertyType}
-                            onChange={handleChange}
-                            className={`${inputClass} appearance-none pr-10`}
-                          >
-                            <option value="">Select type</option>
-                            <option value="Apartment">Apartment</option>
-                            <option value="Villa">Villa</option>
-                            <option value="Independent House">
-                              Independent House
-                            </option>
-                            <option value="Commercial">Commercial</option>
-                            <option value="Office">Office</option>
-                          </select>
-
-                          <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280] pointer-events-none" />
-
-                        </div>
-                      </div>
-
-
-                      <div>
-                        <label className="block text-[11px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-2">
-                          Service Required *
-                        </label>
-
-                        <div className="relative">
-
-                          <select
-                            name="service"
-                            value={formData.service}
-                            onChange={handleChange}
-                            className={`${inputClass} appearance-none pr-10`}
-                          >
-                            <option value="">Select service</option>
-                            <option value="Interior Painting">
-                              Interior Painting
-                            </option>
-                            <option value="Exterior Painting">
-                              Exterior Painting
-                            </option>
-                            <option value="Texture Painting">
-                              Texture Painting
-                            </option>
-                            <option value="Waterproofing">
-                              Waterproofing
-                            </option>
-                            <option value="Wood Coating">
-                              Wood Coating
-                            </option>
-                            <option value="Commercial Painting">
-                              Commercial Painting
-                            </option>
-                          </select>
-
-                          <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280] pointer-events-none" />
-
-                        </div>
-
-                        {errors.service && (
-                          <p className="mt-1 text-xs text-red-500">
-                            {errors.service}
-                          </p>
-                        )}
-
-                      </div>
-
-                    </div>
-
-
-                    {/* MESSAGE */}
-                    <div>
-
-                      <label className="block text-[11px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-2">
-                        Message / Requirements
-                      </label>
-
-                      <textarea
-                        name="message"
-                        placeholder="Tell us about your project..."
-                        value={formData.message}
-                        onChange={handleChange}
-                        rows={4}
-                        className="w-full px-4 py-3.5 bg-[#FAFAF8] border border-[#E8E4DD] rounded-xl text-[#102A43] placeholder:text-[#A9B3BC] text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F26A3D]/20 focus:border-[#F26A3D] transition-all duration-200 resize-none"
-                      />
-
-                    </div>
-
-
-                    {/* TERMS */}
-                    <p className="text-xs text-[#9CA3AF] leading-relaxed">
-                      By booking a consultation, you agree to our{" "}
-                      <span className="text-[#F26A3D]">
-                        Terms & Conditions.
-                      </span>
-                    </p>
-
-
-                    {/* SUBMIT */}
-                    <m.button
-                      type="submit"
-                      disabled={submitted || submitting}
-                      whileHover={
-                        submitted || submitting
-                          ? undefined
-                          : { y: -2 }
-                      }
-                      className="w-full h-[58px] rounded-[16px] bg-[#F26A3D] hover:bg-[#E4573C] !text-white font-bold text-base flex items-center justify-center gap-2 shadow-[0_12px_30px_rgba(242,106,61,0.28)] transition-all duration-300"
-                    >
-
-                      {submitted ? (
-                        <>
-                          <Check className="w-5 h-5" />
-                          <span>Booking Confirmed!</span>
-                        </>
-                      ) : submitting ? (
-                        <span>Submitting...</span>
-                      ) : (
-                        <>
-                          <span>BOOK SITE INSPECTION</span>
-                          <ArrowRight className="w-5 h-5" />
-                        </>
-                      )}
-
-                    </m.button>
-
-
-                    {/* SECURITY */}
-                    <p className="text-center text-xs text-[#9CA3AF]">
-                      🔒 Your details are kept 100% private and secure.
-                    </p>
-
-                  </form>
-
-                </m.div>
-
-              </AnimatedSection>
-
-            </div>
-
-          </div>
-        </section>
+        <option value="">Select type</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Villa">Villa</option>
+        <option value="Independent House">
+          Independent House
+        </option>
+        <option value="Commercial">Commercial</option>
+        <option value="Office">Office</option>
+      </select>
+
+      <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280] pointer-events-none" />
+
+    </div>
+
+  </div>
+
+
+  <div>
+
+    <label className="block text-[10px] font-bold text-[#102A43] tracking-[0.12em] uppercase mb-1.5">
+      Service Required *
+    </label>
+
+    <div className="relative">
+
+      <select
+        name="service"
+        value={formData.service}
+        onChange={handleChange}
+        style={{ textIndent: "8px" }}
+        className="w-full h-[46px] px-3.5 pr-9 bg-[#FAFAF8] border border-[#E8E4DD] rounded-xl text-[#102A43] text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#F26A3D]/20 focus:border-[#F26A3D] transition-all"
+      >
+        <option value="">Select service</option>
+        <option value="Interior Painting">
+          Interior Painting
+        </option>
+        <option value="Exterior Painting">
+          Exterior Painting
+        </option>
+        <option value="Texture Painting">
+          Texture Painting
+        </option>
+        <option value="Waterproofing">
+          Waterproofing
+        </option>
+        <option value="Wood Coating">
+          Wood Coating
+        </option>
+        <option value="Commercial Painting">
+          Commercial Painting
+        </option>
+      </select>
+
+      <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280] pointer-events-none" />
+
+    </div>
+
+    {errors.service && (
+      <p className="mt-1 text-[10px] text-red-500">
+        {errors.service}
+      </p>
+    )}
+
+  </div>
+
+</div>
+  
+              {/* TERMS */}
+
+<p className="text-[10px] sm:text-[11px] text-[#9CA3AF] leading-relaxed">
+  By booking a consultation, you agree to our{" "}
+  <span className="text-[#F26A3D]">
+    Terms & Conditions.
+  </span>
+</p>
+
+{/* SUBMIT BUTTON */}
+
+<m.button
+  type="submit"
+  disabled={submitted || submitting}
+  whileHover={
+    submitted || submitting
+      ? undefined
+      : { y: -2 }
+  }
+  style={{
+    backgroundColor: "#F26A3D",
+    color: "#FFFFFF",
+  }}
+  className="w-full h-[48px] !rounded-xl !bg-[#F26A3D] hover:!bg-[#E4573C] !text-white font-bold text-sm flex items-center justify-center gap-2 shadow-[0_10px_24px_rgba(242,106,61,0.25)] transition-all duration-300"
+>
+  {submitted ? (
+    <>
+      <Check className="w-4 h-4" />
+      <span>Submitted</span>
+    </>
+  ) : submitting ? (
+    <span>Submitting...</span>
+  ) : (
+    <span>Submit</span>
+  )}
+</m.button>
+
+{/* SECURITY */}
+
+<p className="text-center text-[10px] text-[#9CA3AF]">
+  🔒 Your details are kept 100% private and secure.
+</p>
+
+            </form>
+
+          </m.div>
+
+        </AnimatedSection>
+
       </div>
+
+    </div>
+  </section>
+</div>
 
       {/* ========================================================
           4. SERVICES
@@ -1092,36 +1173,59 @@ export default function ContactPage() {
           }}
         >
 
-          <div className="relative -top-17">
-            <SectionHeading
-              eyebrow="What We Offer"
-              title="Our Painting Services"
-              subtitle="Comprehensive painting solutions for every type of property."
-            />
-          </div>
+          <div className="relative top-[-40px] flex flex-col items-center">
+
+  {/* WHAT WE OFFER */}
+  <div className="inline-flex items-center gap-2 w-[150px] h-8 justify-center rounded-full text-xs font-bold uppercase tracking-widest mb-4 bg-[#F26A3D]/10 text-[#F26A3D] border border-[#F26A3D]/20">
+    <span className="w-1.5 h-1.5 rounded-full bg-[#F26A3D]" />
+    What We Offer
+  </div>
+
+  {/* TITLE */}
+  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.15] tracking-tight mb-4 max-w-3xl text-center text-[#102A43]">
+    Our Painting Services
+  </h2>
+
+  {/* SUBTITLE */}
+  <p className="text-base sm:text-lg leading-relaxed max-w-2xl text-center text-[#5E6872]">
+    Comprehensive painting solutions for every type of property.
+  </p>
+
+</div>
 
           <AnimatedSection className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
             {services.map((service, index) => (
               <m.div
-                key={index}
-                variants={fadeUp}
-                className="group bg-white rounded-[22px] p-6 border border-[#E8E4DD] shadow-[0_8px_25px_rgba(16,42,67,0.04)] hover:shadow-[0_18px_40px_rgba(16,42,67,0.10)] hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="text-3xl mb-4">
-                  {service.icon}
-                </div>
+  key={index}
+  variants={fadeUp}
+  className="group bg-white rounded-[22px] p-6 border border-[#E8E4DD] shadow-[0_8px_25px_rgba(16,42,67,0.04)] hover:shadow-[0_18px_40px_rgba(16,42,67,0.10)] hover:-translate-y-1 transition-all duration-300"
+>
+  {/* ICON */}
+<div
+  className="text-3xl mb-4"
+  style={{ transform: "translateX(8px)" }}
+>
+  {service.icon}
+</div>
 
-                <h3 className="text-base sm:text-lg font-bold text-[#102A43] mb-2">
-                  {service.title}
-                </h3>
+{/* TEXT */}
+<div
+  style={{
+    transform: "translateX(12px)",
+  }}
+>
+  <h3 className="text-base sm:text-lg font-bold text-[#102A43] mb-2">
+    {service.title}
+  </h3>
 
-                <p className="text-sm text-[#6B7280] leading-relaxed">
-                  {service.desc}
-                </p>
+  <p className="text-sm text-[#6B7280] leading-relaxed">
+    {service.desc}
+  </p>
 
-                <div className="mt-5 h-1 w-8 rounded-full bg-[#F26A3D] group-hover:w-14 transition-all duration-300" />
-              </m.div>
+  <div className="mt-5 h-1 w-8 rounded-full bg-[#F26A3D] group-hover:w-14 transition-all duration-300" />
+</div>
+</m.div>
             ))}
 
           </AnimatedSection>
@@ -1147,13 +1251,25 @@ export default function ContactPage() {
         >
 
           {/* MAP HEADING */}
-          <div className="mb-8">
-            <SectionHeading
-              eyebrow="Find Us"
-              title="Visit Our Office"
-              subtitle="Come visit us for a detailed consultation or get directions to our office."
-            />
-          </div>
+          <div className="relative top-[-30px] mb-8 flex flex-col items-center">
+
+  {/* FIND US */}
+  <div className="inline-flex items-center gap-2 w-[100px] h-8 justify-center rounded-full text-xs font-bold uppercase tracking-widest mb-4 bg-[#F26A3D]/10 text-[#F26A3D] border border-[#F26A3D]/20">
+    <span className="w-1.5 h-1.5 rounded-full bg-[#F26A3D]" />
+    Find Us
+  </div>
+
+  {/* TITLE */}
+  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.15] tracking-tight mb-4 max-w-3xl text-center text-[#102A43]">
+    Visit Our Office
+  </h2>
+
+  {/* SUBTITLE */}
+  <p className="text-base sm:text-lg leading-relaxed max-w-2xl text-center text-[#5E6872]">
+    Come visit us for a detailed consultation or get directions to our office.
+  </p>
+
+</div>
 
           {/* MAP + ADDRESS + BUTTONS */}
           <AnimatedSection className="mt-2">
@@ -1250,74 +1366,109 @@ export default function ContactPage() {
           }}
         >
 
-          <div className="mb-8">
-            <SectionHeading
-              eyebrow="Our Promise"
-              title="Why Choose South India Painter?"
-              subtitle="Six core promises that set us apart from the rest."
-              light
-            />
-          </div>
+          <div className="relative top-[-40px] mb-8 flex flex-col items-center">
+
+  {/* OUR PROMISE */}
+  <div className="inline-flex items-center gap-2 w-[130px] h-8 justify-center rounded-full text-xs font-bold uppercase tracking-widest mb-4 bg-white/10 text-white border border-white/20">
+    <span className="w-1.5 h-1.5 rounded-full bg-white" />
+    Our Promise
+  </div>
+
+  {/* TITLE */}
+  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.15] tracking-tight mb-4 max-w-3xl text-center text-white">
+    Why Choose South India Painter?
+  </h2>
+
+  {/* SUBTITLE */}
+  <p className="text-base sm:text-lg leading-relaxed max-w-2xl text-center text-white/75">
+    Six core promises that set us apart from the rest.
+  </p>
+
+</div>
 
           <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
-            {whyCards.map((card, index) => (
-              <m.div
-                key={index}
-                variants={fadeUp}
-                className="group bg-white/[0.05] border border-white/10 rounded-[24px] p-8 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#F26A3D]/20 flex items-center justify-center text-xl mb-5 group-hover:bg-[#F26A3D] transition-colors duration-300">
-                  {card.icon}
-                </div>
+           {whyCards.map((card, index) => (
+  <m.div
+    key={index}
+    variants={fadeUp}
+    className="group bg-[#162536] rounded-[22px] p-6 border border-white/10 shadow-[0_8px_25px_rgba(0,0,0,0.12)] hover:shadow-[0_18px_40px_rgba(0,0,0,0.20)] hover:-translate-y-1 transition-all duration-300"
+  >
+    {/* MOVE ONLY THE CONTENT */}
+    <div
+      style={{
+        transform: "translateX(10px)",
+      }}
+    >
+      {/* ICON */}
+      <div
+  className="text-3xl mb-4"
+  style={{ transform: "translateX(-3px)" }}
+>
+  {card.icon}
+</div>
 
-                <div className="mt-4">
-                  <h3 className="font-extrabold text-white text-base sm:text-lg mb-2">
-                    {card.title}
-                  </h3>
+      {/* TITLE */}
+      <h3 className="text-base sm:text-lg font-bold text-white mb-2">
+        {card.title}
+      </h3>
 
-                  <p className="text-sm text-white/65 leading-relaxed">
-                    {card.desc}
-                  </p>
-                </div>
-              </m.div>
-            ))}
+      {/* DESCRIPTION */}
+      <p className="text-sm text-white/70 leading-relaxed">
+        {card.desc}
+      </p>
+    </div>
+  </m.div>
+))}
 
           </AnimatedSection>
 
         </div>
       </section>
-
-      {/* ========================================================
-    7. FAQ
-======================================================== */}
 
       <section
-        className="py-16 sm:py-24 bg-white"
-        aria-label="Frequently asked questions"
-      >
-        <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-4xl">
+  className="py-16 sm:py-24 bg-white"
+  aria-label="Frequently asked questions"
+>
+  <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-4xl">
 
-          <div className="mb-8">
-            <SectionHeading
-              eyebrow="FAQ"
-              title="Common Questions"
-              subtitle="Everything you need to know before booking."
-            />
-          </div>
+    {/* FAQ HEADING */}
+    {/* FAQ HEADING */}
+<div className="relative top-[30px] mb-8 flex flex-col items-center">
 
-          <AnimatedSection className="bg-white rounded-[24px] border border-[#E8E4DD] shadow-[0_8px_32px_rgba(16,42,67,0.05)] px-5 sm:px-8">
-            {faqs.map((faq, index) => (
-              <FaqItem
-                key={index}
-                q={faq.q}
-                a={faq.a}
-              />
-            ))}
-          </AnimatedSection>
+  {/* FAQ */}
+  <div className="inline-flex items-center gap-2 w-[90px] h-8 justify-center rounded-full text-xs font-bold uppercase tracking-widest mb-4 bg-[#F26A3D]/10 text-[#F26A3D] border border-[#F26A3D]/20">
+    <span className="w-1.5 h-1.5 rounded-full bg-[#F26A3D]" />
+    FAQ
+  </div>
 
-        </div>
-      </section>
+  {/* TITLE */}
+  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.15] tracking-tight mb-4 max-w-3xl text-center text-[#102A43]">
+    Common Questions
+  </h2>
+
+  {/* SUBTITLE */}
+  <p className="text-base sm:text-lg leading-relaxed max-w-2xl text-center text-[#5E6872]">
+    Everything you need to know before booking.
+  </p>
+
+</div>
+
+    {/* FAQ QUESTIONS */}
+    <AnimatedSection
+      className="relative top-[50px] bg-white rounded-[24px] border border-[#E8E4DD] shadow-[0_8px_32px_rgba(16,42,67,0.05)] px-5 sm:px-8"
+    >
+      {faqs.map((faq, index) => (
+        <FaqItem
+          key={index}
+          q={faq.q}
+          a={faq.a}
+        />
+      ))}
+    </AnimatedSection>
+
+  </div>
+</section>
 
       {/* ========================================================
     8. WHATSAPP
@@ -1326,7 +1477,7 @@ export default function ContactPage() {
       <section
         className="w-full bg-gradient-to-r from-[#25D366] to-[#1DA851] rounded-t-[48px] shadow-[0_-10px_40px_rgba(37,211,102,0.12)]"
         style={{
-          marginTop: "80px",
+          marginTop: "120px",
         }}
         aria-label="WhatsApp contact"
       >
@@ -1396,97 +1547,133 @@ export default function ContactPage() {
         </div>
       </section>
       {/* ========================================================
-          9. FINAL CTA
-      ======================================================== */}
+    9. FINAL CTA
+======================================================== */}
 
-      <section
-        className="mt-20 sm:mt-28 py-20 lg:py-28 bg-[#0A1828] relative overflow-hidden"
-        aria-label="Final call to action"
+<section
+  aria-label="Final call to action"
+  style={{
+    marginTop: "0px",
+    height: "420px",
+    paddingTop: "50px",
+    paddingBottom: "0px",
+    backgroundColor: "#0A1828",
+    position: "relative",
+    overflow: "hidden",
+  }}
+>
+  {/* TOP LINE */}
+  <div
+    className="absolute top-0 left-1/2 -translate-x-1/2"
+    style={{
+      width: "600px",
+      height: "1px",
+      background:
+        "linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent)",
+    }}
+  />
+
+  {/* GLOW */}
+  <div className="absolute -top-40 right-0 w-[500px] h-[500px] rounded-full bg-[#F26A3D]/5 blur-[100px] pointer-events-none" />
+
+  <div className="absolute -bottom-40 left-0 w-[500px] h-[500px] rounded-full bg-[#F26A3D]/5 blur-[100px] pointer-events-none" />
+
+  <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-3xl relative z-10 text-center">
+
+    <AnimatedSection>
+
+      {/* BADGE */}
+      <m.div
+  variants={fadeUp}
+  className="relative -top-4 -left-3"
+>
+  <SectionBadge
+    text="Start Your Transformation"
+    light
+  />
+</m.div>
+
+      {/* TITLE */}
+      <m.h2
+        variants={fadeUp}
+        className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6"
       >
+        Ready to Transform
+        <br />
+        <span className="text-[#F26A3D]">
+          Your Space?
+        </span>
+      </m.h2>
 
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+      {/* DESCRIPTION */}
+      <m.p
+  variants={fadeUp}
+  className="relative left-90 top-2 text-white/75 text-base sm:text-lg leading-relaxed mb-10 max-w-xl mx-auto"
+>
+  Book your free inspection today — zero cost, zero commitment.
+</m.p>
 
-        <div className="absolute -top-40 right-0 w-[500px] h-[500px] rounded-full bg-[#F26A3D]/5 blur-[100px] pointer-events-none" />
+      {/* BUTTONS */}
+      <m.div
+  variants={fadeUp}
+  className="relative top-7 flex flex-col sm:flex-row gap-4 justify-center items-center"
+>
 
-        <div className="absolute -bottom-40 left-0 w-[500px] h-[500px] rounded-full bg-[#F26A3D]/5 blur-[100px] pointer-events-none" />
+        <a
+          href="#contact-form"
+          style={{
+            color: "#102A43",
+          }}
+          className="w-full sm:w-auto min-w-[250px] h-[58px] inline-flex items-center justify-center gap-2.5 bg-[#F26A3D] hover:bg-[#E4573C] !text-[#102A43] font-bold text-base md:text-lg rounded-full shadow-[0_8px_24px_rgba(242,106,61,0.4)] hover:scale-105 transition-all duration-300"
+        >
+          <span>Book Free Inspection</span>
+          <ArrowRight className="w-5 h-5" />
+        </a>
 
-        <div className="container mx-auto px-5 sm:px-8 lg:px-12 max-w-3xl relative z-10 text-center">
+        <a
+          href={`tel:${PHONE_2_RAW}`}
+          style={{
+            color: "#ffffff",
+          }}
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 bg-transparent border border-white/30 hover:bg-white/10 !text-white font-bold text-base md:text-lg rounded-full transition-all duration-300"
+        >
+          <Phone className="w-5 h-5" />
+          <span>Call {PHONE_2}</span>
+        </a>
 
-          <AnimatedSection>
+      </m.div>
 
-            <m.div variants={fadeUp}>
-              <SectionBadge
-                text="Start Your Transformation"
-                light
-              />
-            </m.div>
+      {/* STATS */}
+      <m.div
+  variants={fadeUp}
+  className="relative top-12 mt-10 flex flex-wrap justify-center gap-5 text-xs sm:text-sm font-medium text-white/40"
+>
 
-            <m.h2
-              variants={fadeUp}
-              className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6"
-            >
-              Ready to Transform
-              <br />
-              <span className="text-[#F26A3D]">
-                Your Space?
-              </span>
-            </m.h2>
+        <span className="flex items-center gap-1.5">
+          <span className="text-[#F26A3D]">
+            ★
+          </span>
+          4.9/5 Rating
+        </span>
 
-            <m.p
-              variants={fadeUp}
-              className="text-white/75 text-base sm:text-lg leading-relaxed mb-10 max-w-xl mx-auto"
-            >
-              Book your free inspection today — zero cost, zero commitment.
-            </m.p>
+        <span>•</span>
 
-            <m.div
-              variants={fadeUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
+        <span>
+          5000+ Projects
+        </span>
 
-              <a
-                href="#contact-form"
-                style={{ color: '#102A43' }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 bg-[#F26A3D] hover:bg-[#E4573C] !text-[#102A43] font-bold text-base md:text-lg rounded-full shadow-[0_8px_24px_rgba(242,106,61,0.4)] hover:scale-105 transition-all duration-300"
-              >
-                <span>Book Free Inspection</span>
-                <ArrowRight className="w-5 h-5" />
-              </a>
+        <span>•</span>
 
-              <a
-                href={`tel:${PHONE_2_RAW}`}
-                style={{ color: '#ffffff' }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 bg-transparent border border-white/30 hover:bg-white/10 !text-white font-bold text-base md:text-lg rounded-full transition-all duration-300"
-              >
-                <Phone className="w-5 h-5" />
-                <span>Call {PHONE_2}</span>
-              </a>
+        <span>
+          10+ Years
+        </span>
 
-            </m.div>
+      </m.div>
 
-            <m.div
-              variants={fadeUp}
-              className="mt-10 flex flex-wrap justify-center gap-5 text-xs sm:text-sm font-medium text-white/40"
-            >
-              <span className="flex items-center gap-1.5">
-                <span className="text-[#F26A3D]">★</span>
-                4.9/5 Rating
-              </span>
+    </AnimatedSection>
 
-              <span>•</span>
-
-              <span>5000+ Projects</span>
-
-              <span>•</span>
-
-              <span>10+ Years</span>
-            </m.div>
-
-          </AnimatedSection>
-
-        </div>
-      </section>
-
-    </div>
-  );
+  </div>
+</section>
+</div>
+);
 }
