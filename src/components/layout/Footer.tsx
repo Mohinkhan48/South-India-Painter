@@ -26,7 +26,6 @@ const serviceLinks = [
 ];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-[var(--color-primary)] text-[var(--color-white)] mt-24 md:mt-36 pt-20 md:pt-28 pb-8">
