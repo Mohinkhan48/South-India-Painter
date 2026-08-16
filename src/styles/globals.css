@@ -85,6 +85,8 @@ html {
   scroll-padding-top: var(--header-height);
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
+  background-color: var(--color-background);
+  overscroll-behavior-y: none;
 }
 
 body {
@@ -94,6 +96,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 ::selection {

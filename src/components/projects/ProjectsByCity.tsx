@@ -10,11 +10,13 @@ export default function ProjectsByCity() {
   return (
     <section className="section bg-white overflow-hidden">
       <div className="container">
-        <SectionHeading 
-          title="Projects By City"
-          description="Explore our extensive portfolio of completed painting projects across major cities in South India."
-          align="center"
-        />
+        <div className="relative -top-10">
+          <SectionHeading 
+            title="Projects By City"
+            description="Explore our extensive portfolio of completed painting projects across major cities in South India."
+            align="center"
+          />
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {cityStats.map((city, index) => (

@@ -219,7 +219,7 @@ export default function ServiceShowcaseSection() {
         </div>
 
         {/* TRUSTED ACROSS SOUTH INDIA SECTION */}
-        <div className="mx-auto w-full max-w-[1200px] flex flex-col items-center text-center" style={{ marginTop: '100px', paddingBottom: '90px' }}>
+        <div className="relative left-15 mx-auto w-full max-w-[1200px] flex flex-col items-center text-center" style={{ marginTop: '100px', paddingBottom: '90px' }}>
           <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -266,7 +266,7 @@ export default function ServiceShowcaseSection() {
             }}
           >
             <div 
-              className="flex items-center min-w-fit h-full gap-[16px] pr-[16px]"
+              className="ml-6 flex items-center min-w-fit h-full gap-[16px] pr-[16px]"
               style={{
                 animation: 'marquee-slide 32s linear infinite',
                 animationPlayState: shouldReduceMotion ? 'paused' : 'running',

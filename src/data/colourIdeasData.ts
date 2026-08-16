@@ -81,6 +81,7 @@ export interface Inspiration {
 export interface ColourCombination {
   id: string;
   name: string;
+  category?: 'Interior' | 'Exterior';
   colours: { name: string; hex: string }[];
   description: string;
 }
@@ -379,67 +380,157 @@ export const BEFORE_AFTER_PAIRS: Record<string, BeforeAfterPair> = {
 // Popular Colour Combinations
 // ---------------------------------------------------------------------------
 export const COLOUR_COMBINATIONS: ColourCombination[] = [
+  // INTERIOR COMBINATIONS
   {
-    id: 'white-wood',
-    name: 'White + Wood',
+    id: 'cream-dark-almond',
+    name: 'Cream + Dark Almond',
+    category: 'Interior',
     colours: [
-      { name: 'Pure White', hex: '#FFFFFF' },
-      { name: 'Natural Oak', hex: '#C4A86A' },
+      { name: 'Cream', hex: '#F3E5C8' },
+      { name: 'Dark Almond', hex: '#6E4D3B' },
     ],
-    description: 'Timeless elegance with natural warmth',
+    description: 'Soft warm cream paired with rich dark almond depth',
   },
   {
-    id: 'cream-gold',
-    name: 'Cream + Gold',
+    id: 'absolute-white-oak-leaf',
+    name: 'Absolute White + Oak Leaf',
+    category: 'Interior',
     colours: [
-      { name: 'Rich Cream', hex: '#FFFDD0' },
-      { name: 'Brushed Gold', hex: '#D4AF37' },
+      { name: 'Absolute White', hex: '#F5F6F8' },
+      { name: 'Oak Leaf', hex: '#B88B58' },
     ],
-    description: 'Opulent luxury meets soft sophistication',
+    description: 'Pristine white elegance with natural oak wood warmth',
   },
   {
-    id: 'grey-blue',
-    name: 'Grey + Blue',
+    id: 'grey-matter-brown-tan',
+    name: 'Grey Matter + Brown Tan',
+    category: 'Interior',
     colours: [
-      { name: 'Soft Grey', hex: '#B8B8B8' },
-      { name: 'Ocean Blue', hex: '#4A90D9' },
+      { name: 'Grey Matter', hex: '#9EA3A8' },
+      { name: 'Brown Tan', hex: '#946E56' },
     ],
-    description: 'Cool contemporary refinement',
+    description: 'Modern slate grey balanced with warm brown tan accents',
   },
   {
-    id: 'olive-white',
-    name: 'Olive + White',
+    id: 'emerald-accent-almond-white',
+    name: 'Emerald Accent + Almond White',
+    category: 'Interior',
     colours: [
-      { name: 'Sage Olive', hex: '#808000' },
-      { name: 'Bright White', hex: '#FAFAFA' },
+      { name: 'Emerald Accent', hex: '#1E4D3B' },
+      { name: 'Almond White', hex: '#F2EAD9' },
     ],
-    description: 'Nature-inspired freshness',
+    description: 'Deep opulent green contrasting with soft almond white',
+  },
+
+  // INTERIOR SINGLE COLOURS
+  {
+    id: 'mystic-lake',
+    name: 'Mystic Lake',
+    category: 'Interior',
+    colours: [
+      { name: 'Mystic Lake', hex: '#5B7B88' },
+    ],
+    description: 'Tranquil and soothing lake blue-grey hue',
   },
   {
-    id: 'terracotta-beige',
-    name: 'Terracotta + Beige',
+    id: 'subtle-cream',
+    name: 'Subtle Cream',
+    category: 'Interior',
     colours: [
-      { name: 'Warm Terracotta', hex: '#CC6B49' },
-      { name: 'Sandy Beige', hex: '#D4B896' },
+      { name: 'Subtle Cream', hex: '#F5EDDA' },
     ],
-    description: 'Earthy Mediterranean warmth',
+    description: 'Soft, delicate cream tone for warm inviting spaces',
   },
   {
-    id: 'black-walnut',
-    name: 'Black + Walnut',
+    id: 'gulmarg-winter',
+    name: 'Gulmarg Winter',
+    category: 'Interior',
     colours: [
-      { name: 'Jet Black', hex: '#2C2C2C' },
-      { name: 'Rich Walnut', hex: '#5C3D2E' },
+      { name: 'Gulmarg Winter', hex: '#DCE3EA' },
     ],
-    description: 'Bold drama with rich wood tones',
+    description: 'Cool, crisp and serene winter ice blue',
   },
   {
-    id: 'ivory-brown',
-    name: 'Ivory + Brown',
+    id: 'swiss-coffee',
+    name: 'Swiss Coffee',
+    category: 'Interior',
     colours: [
-      { name: 'Soft Ivory', hex: '#FFFFF0' },
-      { name: 'Chocolate Brown', hex: '#7B5B3A' },
+      { name: 'Swiss Coffee', hex: '#EAE3D2' },
     ],
-    description: 'Classic warmth and understated charm',
+    description: 'Smooth, cozy coffee cream finish',
+  },
+  {
+    id: 'taupe-tone',
+    name: 'Taupe Tone',
+    category: 'Interior',
+    colours: [
+      { name: 'Taupe Tone', hex: '#A89A8B' },
+    ],
+    description: 'Sophisticated neutral taupe with earthy warmth',
+  },
+  {
+    id: 'rave-raisin',
+    name: 'Rave Raisin',
+    category: 'Interior',
+    colours: [
+      { name: 'Rave Raisin', hex: '#583743' },
+    ],
+    description: 'Bold, luxurious deep raisin plum accent',
+  },
+  {
+    id: 'bamboo-grove',
+    name: 'Bamboo Grove',
+    category: 'Interior',
+    colours: [
+      { name: 'Bamboo Grove', hex: '#8A9A65' },
+    ],
+    description: 'Fresh, organic earthy bamboo green',
+  },
+
+  // EXTERIOR COLOURS
+  {
+    id: 'tropical-tan',
+    name: 'Tropical Tan',
+    category: 'Exterior',
+    colours: [
+      { name: 'Tropical Tan', hex: '#D6A374' },
+    ],
+    description: 'Warm golden sand exterior finish',
+  },
+  {
+    id: 'tiara',
+    name: 'Tiara',
+    category: 'Exterior',
+    colours: [
+      { name: 'Tiara', hex: '#EFE6D5' },
+    ],
+    description: 'Soft, graceful off-white exterior shade',
+  },
+  {
+    id: 'white-delight',
+    name: 'White Delight',
+    category: 'Exterior',
+    colours: [
+      { name: 'White Delight', hex: '#F4F0E8' },
+    ],
+    description: 'Luminous, pure white exterior coating',
+  },
+  {
+    id: 'chapel-grey',
+    name: 'Chapel Grey',
+    category: 'Exterior',
+    colours: [
+      { name: 'Chapel Grey', hex: '#9B9891' },
+    ],
+    description: 'Timeless, elegant medium grey exterior',
+  },
+  {
+    id: 'gentle-blue',
+    name: 'Gentle Blue',
+    category: 'Exterior',
+    colours: [
+      { name: 'Gentle Blue', hex: '#8EAAC9' },
+    ],
+    description: 'Refreshing and calm gentle blue exterior',
   },
 ];

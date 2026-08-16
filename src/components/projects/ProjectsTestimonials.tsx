@@ -2,21 +2,80 @@ import { m } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { projectsData } from '@/data/projectsData';
 import SectionHeading from '@/components/common/SectionHeading';
 import { useCallback } from 'react';
 
-// Extract testimonials from projects data
-const testimonials = projectsData
-  .filter(p => p.testimonial)
-  .map(p => ({
-    id: p.id,
-    name: p.testimonial!.name,
-    city: p.city,
-    text: p.testimonial!.text,
-    rating: p.testimonial!.rating,
-    image: `https://i.pravatar.cc/150?u=${p.id}` // Placeholder avatar
-  }));
+// Static testimonials by city
+const testimonials = [
+  // Bangalore — 5 reviews
+  {
+    id: 'b1',
+    name: 'Ravi Kumar',
+    city: 'Bangalore',
+    text: 'The team was incredibly professional. The finish is flawless and they completed the project right on time. Highly recommend South India Painters!',
+    rating: 5,
+    image: 'https://i.pravatar.cc/150?u=b1',
+  },
+  {
+    id: 'b2',
+    name: 'Ananya Sharma',
+    city: 'Bangalore',
+    text: 'Outstanding work on our 3BHK apartment. The colour consultation was very helpful and the painters were neat, punctual and detail-oriented.',
+    rating: 5,
+    image: 'https://i.pravatar.cc/150?u=b2',
+  },
+  {
+    id: 'b3',
+    name: 'Karthik Reddy',
+    city: 'Bangalore',
+    text: 'Used them for exterior painting of our villa. The Apex Ultima finish looks stunning and the waterproofing is top-notch. Will definitely call them again.',
+    rating: 5,
+    image: 'https://i.pravatar.cc/150?u=b3',
+  },
+  {
+    id: 'b4',
+    name: 'Meena Iyer',
+    city: 'Bangalore',
+    text: 'Very satisfied with the texture painting work. They brought creative designs and executed them perfectly within the quoted budget.',
+    rating: 5,
+    image: 'https://i.pravatar.cc/150?u=b4',
+  },
+  {
+    id: 'b5',
+    name: 'Suresh Babu',
+    city: 'Bangalore',
+    text: 'Excellent service from start to finish. The free site visit was very professional and the final result exceeded our expectations.',
+    rating: 5,
+    image: 'https://i.pravatar.cc/150?u=b5',
+  },
+  // Hyderabad — 1 review
+  {
+    id: 'h1',
+    name: 'Suresh Reddy',
+    city: 'Hyderabad',
+    text: 'Finally survived a monsoon without a single drop of leakage. The terrace waterproofing they did is fantastic. Great job!',
+    rating: 5,
+    image: 'https://i.pravatar.cc/150?u=h1',
+  },
+  // Chennai — 1 review
+  {
+    id: 'c1',
+    name: 'Priya Desai',
+    city: 'Chennai',
+    text: 'South India Painters handled the scale of our commercial project effortlessly. Highly recommended for offices and retail spaces.',
+    rating: 5,
+    image: 'https://i.pravatar.cc/150?u=c1',
+  },
+  // Kochi — 1 review
+  {
+    id: 'k1',
+    name: 'Thomas Mathew',
+    city: 'Kochi',
+    text: 'They restored the wooden panels of our heritage home beautifully. The PU coating is smooth, durable and looks just as good as new.',
+    rating: 5,
+    image: 'https://i.pravatar.cc/150?u=k1',
+  },
+];
 
 export default function ProjectsTestimonials() {
   const [emblaRef, emblaApi] = useEmblaCarousel(

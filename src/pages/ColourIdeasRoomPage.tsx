@@ -46,9 +46,9 @@ export default function ColourIdeasRoomPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white pb-32">
       {/* ─── Hero ─── */}
-      <section className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
+      <section className="relative w-full h-[420px] md:h-[520px] overflow-hidden mb-12">
         <img
           src={room.image}
           alt={room.name}
@@ -81,29 +81,35 @@ export default function ColourIdeasRoomPage() {
           <ArrowLeft className="w-4 h-4" />
           All Rooms
         </Link>
-      </section>
+            </section>
+
+      {/* ─── Space between hero and room controls ─── */}
+      <div className="h-8 bg-white" />
 
       {/* ─── Style filter bar ─── */}
-      <section className="py-8 bg-gray-50 border-b border-gray-100">
-        <div className="container mx-auto px-4 flex flex-wrap justify-center gap-3">
-          {STYLE_FILTERS.map(style => (
-            <button
-              key={style.slug}
-              onClick={() => setActiveStyle(style)}
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
-                activeStyle.slug === style.slug
-                  ? 'bg-[var(--color-accent)] text-white shadow-[0_4px_14px_rgba(244,124,32,0.35)]'
-                  : 'bg-white text-gray-600 border border-gray-200 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]'
-              }`}
-            >
-              {style.name}
-            </button>
-          ))}
-        </div>
-      </section>
+<section className="relative z-50 my-12 py-8 bg-gray-50 border-b border-gray-100">
+  <div className="container mx-auto px-4">
+    <div className="w-full flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
+      {STYLE_FILTERS.map(style => (
+        <button
+  key={style.slug}
+  onClick={() => setActiveStyle(style)}
+  type="button"
+  className={`relative z-50 inline-flex shrink-0 whitespace-nowrap items-center justify-center px-7 py-3 rounded-full text-sm font-semibold leading-none transition-all duration-200 ${
+    activeStyle.slug === style.slug
+      ? '!bg-[#17375E] !text-white !px-6 !py-3.5 shadow-[0_4px_14px_rgba(23,55,94,0.3)]'
+      : 'bg-white text-gray-600 border border-gray-200 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]'
+  }`}
+>
+  {style.name}
+</button>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ─── Colour Swatch bar ─── */}
-      <section className="py-8 bg-white border-b border-gray-100">
+      <section className="my-12 py-8 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
           <p className="text-center text-sm text-gray-400 font-medium uppercase tracking-wider mb-4">
             Select a colour
@@ -133,20 +139,20 @@ export default function ColourIdeasRoomPage() {
       </section>
 
       {/* ─── Inspirations Grid ─── */}
-      <section className="py-16 sm:py-24">
+      <section className="mt-16 mb-28 pt-12 pb-16">
         <div className="container mx-auto px-4">
           <h2 className="text-[1.8rem] sm:text-[2.2rem] font-[800] text-[var(--color-primary)] text-center mb-12">
-            {room.name} Inspirations
-          </h2>
+  {room.name} Inspirations
+</h2>
 
-          {filteredInspirations.length === 0 && (
-            <p className="text-center text-gray-400 text-lg py-12">
-              No inspirations found for this style. Try "All Styles".
-            </p>
-          )}
+{filteredInspirations.length === 0 && (
+  <p className="text-center text-gray-400 text-lg py-12">
+    No inspirations found for this style. Try "All Styles".
+  </p>
+)}
 
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            {filteredInspirations.map((insp, idx) => (
+<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 translate-y-10">
+  {filteredInspirations.map((insp, idx) => (
               <m.article
                 key={insp.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -169,65 +175,75 @@ export default function ColourIdeasRoomPage() {
                     style={{ backgroundColor: activeColour.overlay }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 text-xs font-bold text-[var(--color-primary)] uppercase tracking-wider shadow">
-                    {insp.style}
-                  </span>
+                  <span
+  className="absolute top-4 left-4 flex items-center justify-center rounded-full bg-white/90 text-xs font-bold text-[var(--color-primary)] uppercase tracking-wider shadow"
+  style={{
+    minWidth: '68px',
+    height: '26px',
+    padding: '0 10px',
+  }}
+>
+  {insp.style}
+</span>
                 </div>
 
                 {/* Metadata */}
-                <div className="p-6">
-                  <h3 className="text-[1.15rem] font-[700] text-[var(--color-primary)] mb-4">
+                <div
+  className="p-7 sm:p-8"
+  style={{ paddingLeft: '20px', paddingRight: '32px' }}
+>
+                  <h3 className="text-[1.2rem] font-[700] text-[var(--color-primary)] mb-3">
                     {insp.title}
                   </h3>
 
                   {/* Colour palette dots */}
-                  <div className="flex gap-1.5 mb-4">
+                  <div className="flex gap-2 mb-6">
                     {insp.palette.map((c, i) => (
                       <span
                         key={i}
-                        className="w-5 h-5 rounded-full border border-gray-200"
+                        className="w-5 h-5 rounded-full border border-gray-200 shadow-sm"
                         style={{ backgroundColor: c }}
                       />
                     ))}
                   </div>
 
                   {/* Details grid */}
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-[0.85rem]">
+                  <div className="grid grid-cols-2 gap-x-6 gap-y-4 text-[0.875rem] pt-3 border-t border-gray-100">
                     <div>
-                      <span className="text-gray-400">Wall</span>
-                      <p className="font-medium" style={{ color: insp.wallColourHex }}>
+                      <span className="text-gray-400 text-xs uppercase tracking-wider block mb-0.5">Wall</span>
+                      <p className="font-semibold" style={{ color: insp.wallColourHex }}>
                         {insp.wallColour}
                       </p>
                     </div>
                     <div>
-                      <span className="text-gray-400">Accent</span>
-                      <p className="font-medium" style={{ color: insp.accentWallColourHex }}>
+                      <span className="text-gray-400 text-xs uppercase tracking-wider block mb-0.5">Accent</span>
+                      <p className="font-semibold" style={{ color: insp.accentWallColourHex }}>
                         {insp.accentWallColour}
                       </p>
                     </div>
                     <div>
-                      <span className="text-gray-400">Ceiling</span>
-                      <p className="font-medium" style={{ color: insp.ceilingColourHex }}>
+                      <span className="text-gray-400 text-xs uppercase tracking-wider block mb-0.5">Ceiling</span>
+                      <p className="font-semibold" style={{ color: insp.ceilingColourHex }}>
                         {insp.ceilingColour}
                       </p>
                     </div>
                     <div>
-                      <span className="text-gray-400">Door</span>
-                      <p className="font-medium" style={{ color: insp.doorColourHex }}>
+                      <span className="text-gray-400 text-xs uppercase tracking-wider block mb-0.5">Door</span>
+                      <p className="font-semibold" style={{ color: insp.doorColourHex }}>
                         {insp.doorColour}
                       </p>
                     </div>
                     <div>
-                      <span className="text-gray-400">Furniture</span>
-                      <p className="font-medium text-gray-700">{insp.furnitureSuggestion}</p>
+                      <span className="text-gray-400 text-xs uppercase tracking-wider block mb-0.5">Furniture</span>
+                      <p className="font-semibold text-gray-700">{insp.furnitureSuggestion}</p>
                     </div>
                     <div>
-                      <span className="text-gray-400">Flooring</span>
-                      <p className="font-medium text-gray-700">{insp.flooringSuggestion}</p>
+                      <span className="text-gray-400 text-xs uppercase tracking-wider block mb-0.5">Flooring</span>
+                      <p className="font-semibold text-gray-700">{insp.flooringSuggestion}</p>
                     </div>
                     <div className="col-span-2">
-                      <span className="text-gray-400">Lighting</span>
-                      <p className="font-medium text-gray-700">{insp.lightingRecommendation}</p>
+                      <span className="text-gray-400 text-xs uppercase tracking-wider block mb-0.5">Lighting</span>
+                      <p className="font-semibold text-gray-700">{insp.lightingRecommendation}</p>
                     </div>
                   </div>
                 </div>
@@ -239,23 +255,30 @@ export default function ColourIdeasRoomPage() {
 
       {/* ─── Before & After ─── */}
       {beforeAfter && (
-        <section className="py-16 sm:py-24 bg-[#FAF8F4]">
-          <div className="container mx-auto px-4">
+        <section className="mt-24 mb-32 pt-20 pb-32 md:pb-40 bg-[#FAF8F4]">
+          <div className="container mx-auto px-4 relative top-[80px]">
             <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-10"
+              className="text-left max-w-4xl mx-auto mb-6"
             >
-              <span className="inline-block rounded-full bg-[rgba(231,104,75,0.12)] px-5 py-2 text-[13px] font-bold uppercase tracking-[0.2em] text-[var(--color-accent)] mb-4">
-                Transformation
-              </span>
+              <span
+  className="inline-flex items-center justify-center rounded-full bg-[rgba(231,104,75,0.12)] text-[13px] font-bold uppercase tracking-[0.2em] text-[var(--color-accent)] mb-4"
+  style={{
+    minWidth: '155px',
+    height: '32px',
+    padding: '0 16px',
+  }}
+>
+  Transformation
+</span>
               <h2 className="text-[1.8rem] sm:text-[2.2rem] font-[800] text-[var(--color-primary)]">
                 Before & After
               </h2>
             </m.div>
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto mt-16 pb-12">
               <BeforeAfterSlider
                 beforeImage={beforeAfter.before}
                 afterImage={beforeAfter.after}
@@ -267,36 +290,8 @@ export default function ColourIdeasRoomPage() {
         </section>
       )}
 
-      {/* ─── CTA ─── */}
-      <section className="relative w-full py-20 sm:py-28 overflow-hidden mb-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0F2745] via-[#17375E] to-[#0F2745]" />
-        <div className="absolute top-[-60px] right-[-40px] w-[300px] h-[300px] rounded-full bg-[#F47C20]/10 blur-[100px] pointer-events-none" />
-        <div className="relative container mx-auto px-4 text-center">
-          <m.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-[2rem] sm:text-[2.6rem] font-[800] text-white mb-10"
-          >
-            Ready to Transform Your {room.name}?
-          </m.h2>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#F47C20] to-[#E7684B] text-white font-[600] shadow-[0_8px_24px_rgba(244,124,32,0.35)] hover:shadow-[0_12px_32px_rgba(244,124,32,0.5)] hover:scale-[1.04] transition-all"
-            >
-              Book Free Site Visit
-            </a>
-            <a
-              href="tel:+919876543210"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 font-[600] hover:bg-white/20 hover:scale-[1.04] transition-all"
-            >
-              Talk to Colour Expert
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* ─── Extra spacing before footer ─── */}
+      <div className="h-24 md:h-36 bg-white" />
     </main>
   );
 }

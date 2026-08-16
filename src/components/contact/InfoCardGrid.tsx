@@ -39,7 +39,9 @@ export default function InfoCardGrid() {
         <h3 className="text-[11px] font-bold text-[#102A43]/60 uppercase tracking-[0.16em] mb-3">Phone Numbers</h3>
         <div className="flex flex-col gap-2 flex-grow">
           <a href={`tel:${PHONE_1_RAW}`} className="text-sm sm:text-base font-bold text-[#102A43] hover:text-[#F26A3D] transition-colors">{PHONE_1}</a>
-          <a href={`tel:${PHONE_2_RAW}`} className="text-sm sm:text-base font-bold text-[#102A43] hover:text-[#F26A3D] transition-colors">{PHONE_2}</a>
+          {PHONE_2 && PHONE_2 !== PHONE_1 && (
+            <a href={`tel:${PHONE_2_RAW}`} className="text-sm sm:text-base font-bold text-[#102A43] hover:text-[#F26A3D] transition-colors">{PHONE_2}</a>
+          )}
         </div>
         <p className="text-xs text-[#5E6872] mt-4">Mon – Sat, 9 AM – 7 PM</p>
       </div>

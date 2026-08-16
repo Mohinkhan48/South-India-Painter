@@ -29,15 +29,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--color-primary)] text-[var(--color-white)] mt-auto pt-20 md:pt-28 pb-8">
+    <footer className="bg-[var(--color-primary)] text-[var(--color-white)] mt-24 md:mt-36 pt-20 md:pt-28 pb-8">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           
           {/* Column 1: Brand & About */}
           <div className="flex flex-col gap-6">
             <Link
-              to="/"
-              className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] rounded-sm"
+  to="/"
+  className="inline-block relative top-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] rounded-sm"
               aria-label={`${business.companyName} — Home`}
             >
               <span className="font-sans text-2xl font-extrabold tracking-tight text-white">
@@ -78,7 +78,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="flex flex-col gap-6">
-            <h3 className="text-[17px] font-bold tracking-wide">Quick Links</h3>
+            <h3 className="relative top-3 text-[17px] font-bold tracking-wide">Quick Links</h3>
             <ul className="flex flex-col gap-3">
               {quickLinks.map((link) => (
                 <li key={link.to}>
@@ -95,7 +95,7 @@ export default function Footer() {
 
           {/* Column 3: Our Services */}
           <div className="flex flex-col gap-6">
-            <h3 className="text-[17px] font-bold tracking-wide">Our Services</h3>
+            <h3 className="relative top-3 text-[17px] font-bold tracking-wide">Our Services</h3>
             <ul className="flex flex-col gap-3">
               {serviceLinks.map((link) => (
                 <li key={link.to}>
@@ -112,7 +112,7 @@ export default function Footer() {
 
           {/* Column 4: Contact Us */}
           <div className="flex flex-col gap-6">
-            <h3 className="text-[17px] font-bold tracking-wide">Contact Us</h3>
+            <h3 className="relative top-3 text-[17px] font-bold tracking-wide">Contact Us</h3>
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-[var(--color-accent)] shrink-0 mt-0.5" />
@@ -155,9 +155,9 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[14px] text-white/50 text-center md:text-left">
-            © {currentYear} <span className="font-semibold text-white/70">{business.companyName}</span>. All rights reserved.
-          </p>
-          <div className="flex items-center gap-6">
+    <span className="font-semibold text-white/70">{business.companyName}</span>
+  </p>
+          <div className="flex items-center gap-6 mr-8 md:mr-28 -translate-x-17.5">
             <Link to="/privacy-policy" className="text-[13px] text-white/50 hover:text-white transition-colors">
               Privacy Policy
             </Link>

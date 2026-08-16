@@ -2,15 +2,12 @@ import { m } from 'framer-motion';
 
 const brands = [
   { shortName: 'ASIAN PAINTS' },
-  { shortName: 'BERGER' },
-  { shortName: 'DULUX' },
-  { shortName: 'NEROLAC' },
-  { shortName: 'INDIGO PAINTS' },
-  { shortName: 'NIPPON PAINT' },
+  { shortName: 'BIRLA OPUS' },
+  { shortName: 'JSW' },
 ];
 
-const row1 = [...brands, ...brands, ...brands];
-const row2 = [...brands, ...brands, ...brands].reverse();
+const row1 = Array(8).fill(brands).flat();
+const row2 = Array(8).fill(brands).flat().reverse();
 
 function BrandPill({ name }: { name: string }) {
   return (

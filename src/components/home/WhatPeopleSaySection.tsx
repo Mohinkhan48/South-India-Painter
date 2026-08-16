@@ -64,25 +64,35 @@ const testimonials = [
   },
 ];
 
-function GoogleRatingMark() {
+function GoogleLogo({ className = 'h-7 w-7 shrink-0' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className="h-7 w-7 shrink-0" aria-hidden="true">
-      <g fill="none" fillRule="evenodd">
-        <path d="M21.784 12.075c.03-.242.046-.486.046-.733A10.735 10.735 0 0 0 11.1 1.487 10.73 10.73 0 0 0 1.42 11.42a10.721 10.721 0 0 0 18.364 7.06 10.72 10.72 0 0 1-4.12-6.405Z" fill="#34A853" />
-        <path d="M3.665 12.105a8.6 8.6 0 0 1 0-1.8L6.59 9.3a5.088 5.088 0 0 0-.359 1.802 5.106 5.106 0 0 0 5.11 5.105c1.42 0 2.715-.573 3.643-1.51l2.89 2.204a8.64 8.64 0 0 1-6.533 3.2A8.745 8.745 0 0 1 3.665 12.105Z" fill="#FBBC05" />
-        <path d="M11.05 15.35a5.052 5.052 0 0 1-5.01-4.157l-2.93 2.264A8.601 8.601 0 0 0 11.05 20.13a8.5 8.5 0 0 0 5.86-2.13L14.05 15.8a5.08 5.08 0 0 1-3 1.35Z" fill="#EA4335" />
-        <path d="M11.05 3.865A8.64 8.64 0 0 1 18.7 7.92l-2.92 2.27a5.086 5.086 0 0 0-5.78-2.512L11.05 3.865Z" fill="#4285F4" />
-      </g>
+    <svg viewBox="0 0 24 24" className={className} aria-label="Google" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill="#4285F4"
+        d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
+      />
+      <path
+        fill="#34A853"
+        d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.27 21.43 7.35 24 12 24z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M5.28 14.27a7.18 7.18 0 0 1 0-4.54V6.58H1.25a11.98 11.98 0 0 0 0 10.84l4.03-3.15z"
+      />
+      <path
+        fill="#EA4335"
+        d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.57 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
+      />
     </svg>
   );
 }
 
-function StarRating({ className = 'h-5 w-5' }: { className?: string }) {
+function StarRating({ className = 'h-4 w-4' }: { className?: string }) {
   return (
-    <div className="flex items-center gap-0.5 text-[#F5A623]" aria-label="5 out of 5 rating">
+    <div className="flex items-center gap-1 text-[#FFB800]" aria-label="5 out of 5 rating">
       {Array.from({ length: 5 }).map((_, index) => (
-        <svg key={index} viewBox="0 0 20 20" className={className} fill="currentColor" aria-hidden="true">
-          <path d="M10 1.6l2.45 5.05 5.55.81-4.02 3.92 1 5.53L10 0 5.02 17.91l1-5.53L2 7.46l5.55-.81L10 1.6Z" />
+        <svg key={index} viewBox="0 0 24 24" className={className} fill="#FFB800" stroke="#FFB800" strokeWidth="0.5" aria-hidden="true">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
     </div>
@@ -241,12 +251,12 @@ export default function WhatPeopleSaySection() {
             </h2>
 
             <div className="flex items-center gap-3">
-              <GoogleRatingMark />
+              <GoogleLogo className="h-8 w-8 shrink-0" />
               <div className="flex flex-col leading-tight">
                 <span className="text-lg font-bold text-[var(--color-primary)] sm:text-xl">
                   4.8 / 5 Rating
                 </span>
-                <StarRating className="h-4 w-4 sm:h-5 sm:w-5" />
+                <StarRating className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
               </div>
             </div>
           </div>
@@ -335,7 +345,7 @@ export default function WhatPeopleSaySection() {
                       className="flex items-center gap-2 border-t border-[rgba(16,42,67,0.08)] text-sm font-medium text-[var(--color-primary)]"
                       style={{ marginTop: 'auto', paddingTop: 14 }}
                     >
-                      <GoogleRatingMark />
+                      <GoogleLogo className="h-5 w-5 shrink-0" />
                       Google Review
                     </div>
                   </m.article>

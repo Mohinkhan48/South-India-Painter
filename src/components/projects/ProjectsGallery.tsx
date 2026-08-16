@@ -109,7 +109,7 @@ export default function ProjectsGallery() {
 
         {/* Load More */}
         {hasMore && (
-          <div className="flex justify-center mt-[60px]">
+          <div className="relative top-6 flex justify-center mt-[80px]">
             <button
               onClick={handleLoadMore}
               className="flex items-center justify-center w-[200px] h-[56px] border-2 border-[#F26A4B] text-[#F26A4B] font-bold text-[16px] rounded-full transition-all duration-300 hover:bg-[#F26A4B] hover:text-white hover:scale-105 shadow-sm"

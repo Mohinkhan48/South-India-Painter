@@ -23,9 +23,9 @@ export default function ContactHero() {
               <span>Book Free Site Visit</span>
               <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="tel:+918023391256" className="inline-flex items-center justify-center gap-2 h-12 px-7 bg-white/5 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-full transition-all duration-300">
+            <a href="tel:08023391256" className="inline-flex items-center justify-center gap-2 h-12 px-7 bg-white/5 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-full transition-all duration-300">
               <Phone className="w-4 h-4" />
-              <span>Call +91 8023391256</span>
+              <span>Call 080 23391256</span>
             </a>
           </div>
         </m.div>

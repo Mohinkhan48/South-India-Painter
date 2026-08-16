@@ -155,7 +155,7 @@ export default function AboutPage() {
 
   const testimonials = [
     {
-      text: 'South India Painter transformed our villa completely. The attention to detail and the premium finish using Asian Paints Royale was beyond our expectations. Highly professional team!',
+      text: 'South India Painters transformed our villa completely. The attention to detail and the premium finish using Asian Paints Royale was beyond our expectations. Highly professional team!',
     },
     {
       text: 'I always recommend them to my clients. Their execution is flawless, they stick to timelines, and the work site is always left spotless after completion.',
@@ -240,7 +240,7 @@ export default function AboutPage() {
                 className="text-base sm:text-lg text-[#5E6872] leading-relaxed mb-6"
               >
                 Founded with a passion for transforming living spaces,
-                South India Painter has grown from a small dedicated team
+                South India Painters has grown from a small dedicated team
                 into one of the most trusted premium painting services
                 across South India.
               </m.p>
@@ -324,12 +324,13 @@ export default function AboutPage() {
           >
 
             <StatCounter
-              target={5000}
+              target={1981}
+              suffix=""
               label="Projects Completed"
             />
 
             <StatCounter
-              target={10}
+              target={25}
               label="Years Experience"
             />
 
@@ -370,15 +371,15 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
 
           <m.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{
-              once: true,
-              margin: '-80px'
-            }}
-            variants={staggerContainer}
-            className="text-center mb-12 lg:mb-16 flex flex-col items-center"
-          >
+  initial="hidden"
+  whileInView="visible"
+  viewport={{
+    once: true,
+    margin: '-80px'
+  }}
+  variants={staggerContainer}
+  className="text-center mb-12 lg:mb-16 flex flex-col items-center -translate-y-10"
+>
 
             <m.div variants={fadeUpVariant}>
               <SectionBadge text="Our Advantages" />
@@ -466,13 +467,19 @@ export default function AboutPage() {
 
                   </div>
 
-                  <h3 className="text-2xl font-semibold text-[#102A43] mb-2">
-                    {feature.title}
-                  </h3>
+                  <h3
+  className="text-2xl font-semibold text-[#102A43] mb-2"
+  style={{ position: 'relative', left: '15px' }}
+>
+  {feature.title}
+</h3>
 
-                  <p className="text-[#5E6872] text-base leading-relaxed flex-grow">
-                    {feature.desc}
-                  </p>
+                  <p
+  className="text-[#5E6872] text-base leading-relaxed flex-grow"
+  style={{ position: 'relative', left: '15px' }}
+>
+  {feature.desc}
+</p>
 
                 </m.div>
               );
@@ -551,20 +558,20 @@ export default function AboutPage() {
 
                 </div>
 
-                <div className="max-w-xl">
+                <div className="max-w-xl relative left-[12px]">
 
-                  <h3 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">
-                    Our Mission
-                  </h3>
+  <h3 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">
+    Our Mission
+  </h3>
 
-                  <p className="text-base sm:text-lg text-white/80 leading-[1.65] max-w-[620px]">
-                    To transform every home and space with flawless paint
-                    finishes, leveraging eco-certified premium materials
-                    and an unwavering commitment to craftsmanship that
-                    inspires trust and delight in every customer.
-                  </p>
+  <p className="text-base sm:text-lg text-white/80 leading-[1.65] max-w-[620px]">
+    To transform every home and space with flawless paint
+    finishes, leveraging eco-certified premium materials and
+    an unwavering commitment to craftsmanship that inspires
+    trust and delight in every customer.
+  </p>
 
-                </div>
+</div>
 
                 <div className="mt-auto pt-8">
                   <div className="h-px w-full bg-white/10" />
@@ -620,20 +627,20 @@ export default function AboutPage() {
 
                 </div>
 
-                <div className="max-w-xl">
+                <div className="max-w-xl relative left-[12px]">
 
-                  <h3 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">
-                    Our Vision
-                  </h3>
+  <h3 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">
+    Our Vision
+  </h3>
 
-                  <p className="text-base sm:text-lg text-white/90 leading-[1.65] max-w-[620px]">
-                    To be South India's most preferred and recommended
-                    painting service, celebrated for innovative surface
-                    technologies, absolute reliability, and unmatched
-                    client care.
-                  </p>
+  <p className="text-base sm:text-lg text-white/90 leading-[1.65] max-w-[620px]">
+    To be South India's most preferred and recommended
+    painting service, celebrated for innovative surface
+    technologies, absolute reliability, and unmatched
+    client care.
+  </p>
 
-                </div>
+</div>
 
                 <div className="mt-auto pt-8">
                   <div className="h-px w-full bg-white/20" />
@@ -665,15 +672,15 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
 
           <m.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{
-              once: true,
-              margin: '-80px'
-            }}
-            variants={staggerContainer}
-            className="text-center mb-14 lg:mb-20 flex flex-col items-center"
-          >
+  initial="hidden"
+  whileInView="visible"
+  viewport={{
+    once: true,
+    margin: '-80px'
+  }}
+  variants={staggerContainer}
+  className="text-center mb-14 lg:mb-20 flex flex-col items-center -translate-y-10"
+>
 
             <m.div variants={fadeUpVariant}>
               <SectionBadge text="How We Work" />
@@ -981,9 +988,9 @@ export default function AboutPage() {
             ===================================================== */}
 
             <m.div
-              variants={fadeUpVariant}
-              className="mb-4"
-            >
+  variants={fadeUpVariant}
+  className="mb-4 -translate-y-5 -translate-x-2"
+>
               <span
                 className="inline-flex items-center justify-center gap-2 w-[160px] h-[52px] rounded-full text-base font-bold uppercase tracking-widest bg-white/10 text-white border border-white/20"
               >
@@ -1003,13 +1010,13 @@ export default function AboutPage() {
 
 
             <m.p
-              variants={fadeUpVariant}
-              className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed text-center"
-            >
-              Ready to give your space a premium makeover?
-              Get in touch with our experts today for a free
-              site visit and itemised quotation.
-            </m.p>
+  variants={fadeUpVariant}
+  className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed text-center translate-x-2"
+>
+  Ready to give your space a premium makeover?
+  Get in touch with our experts today for a free
+  site visit and itemised quotation.
+</m.p>
 
 
             {/* =====================================================
@@ -1017,9 +1024,9 @@ export default function AboutPage() {
             ===================================================== */}
 
             <m.div
-              variants={fadeUpVariant}
-              className="relative top-[30px] flex flex-col sm:flex-row justify-center items-center gap-5 w-full mt-8"
-            >
+  variants={fadeUpVariant}
+  className="relative top-[30px] -translate-x-7 flex flex-col sm:flex-row justify-center items-center gap-5 w-full mt-8"
+>
 
               <a
                 href="/contact"
@@ -1030,11 +1037,13 @@ export default function AboutPage() {
 
 
               <a
-                href="/contact"
-                className="w-full sm:w-auto min-w-[180px] inline-flex justify-center items-center px-9 py-4 bg-transparent border-2 border-white/40 hover:border-white text-white font-bold text-base md:text-lg rounded-full transition-all duration-300 hover:bg-white/10"
-              >
-                Contact Us
-              </a>
+  href="/contact"
+  className="w-full sm:w-auto min-w-[180px] inline-flex justify-center items-center px-9 py-4 bg-transparent border-2 border-white/40 hover:border-white text-white font-bold text-base md:text-lg rounded-full transition-all duration-300 hover:bg-white/10"
+>
+  <span className="text-white">
+    Contact Us
+  </span>
+</a>
 
             </m.div>
 

@@ -17,6 +17,7 @@ export const propertyTypes: PropertyType[] = [
     imageAlt: 'Bright residential living room interior with sofa, coffee table, and large windows',
     imagePosition: 'center center',
     bookingValue: 'Home Interiors',
+    route: '/services/interior-spaces',
   },
   {
     id: 'villas-independent-homes',
@@ -26,6 +27,7 @@ export const propertyTypes: PropertyType[] = [
     imageAlt: 'Bright daytime exterior of a premium villa with landscaping and modern architectural details',
     imagePosition: 'center center',
     bookingValue: 'Villas & Independent Homes',
+    route: '/services/villas-bungalows',
   },
   {
     id: 'apartments-residential-buildings',
@@ -35,6 +37,7 @@ export const propertyTypes: PropertyType[] = [
     imageAlt: 'Bright apartment building exterior with balconies, windows, and blue sky',
     imagePosition: 'center center',
     bookingValue: 'Apartments & Residential Buildings',
+    route: '/services/high-rise-apartments',
   },
   {
     id: 'commercial-spaces',
@@ -44,26 +47,26 @@ export const propertyTypes: PropertyType[] = [
     imageAlt: 'Bright modern office interior with desks, chairs, and large windows',
     imagePosition: 'center center',
     bookingValue: 'Commercial Spaces',
+    route: '/services/commercial-spaces',
   },
   {
-    id: 'office-buildings',
-    title: 'OFFICE BUILDINGS',
+    id: 'residential-buildings',
+    title: 'RESIDENTIAL BUILDINGS',
     image:
       'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80',
-    imageAlt: 'Modern corporate office building with glass facade and clean lines',
+    imageAlt: 'Modern residential building with clean lines and professional finish',
     imagePosition: 'center center',
-    bookingValue: 'Office Buildings',
-    route: '/services/office-painting',
+    bookingValue: 'Residential Buildings',
+    route: '/services/residential-buildings',
   },
   {
-    id: 'hotels-resorts',
-    title: 'HOTELS & RESORTS',
+    id: 'industries',
+    title: 'INDUSTRIES',
     image:
       'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80',
     imageAlt: 'Luxury hotel exterior with pool area and tropical landscaping',
     imagePosition: 'center center',
-    bookingValue: 'Hotels & Resorts',
-    route: '/services/hotel-painting',
+    bookingValue: 'Industries',
+    route: '/services/industries',
   },
 ];
-

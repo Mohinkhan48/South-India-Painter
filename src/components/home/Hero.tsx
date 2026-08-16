@@ -50,7 +50,9 @@ export default function Hero() {
                 </h1>
 
                 <p className="max-w-[620px] text-[17px] leading-[1.85] text-white/88 sm:text-[18px]">
-                  Professional painting, waterproofing and surface finishing delivered with skilled workmanship, quality materials and careful attention to every detail.
+                27+ Years of Trusted Painting Services 234+ skilled professionals. 27+ years of experience. Zero outsourcing. We provide professional fresh painting and repainting for residential, commercial, apartment, villa, bungalow and industrial projects, using trusted Asian Paints products for a quality finish.
+
+
                 </p>
               </m.div>
             </AnimatePresence>

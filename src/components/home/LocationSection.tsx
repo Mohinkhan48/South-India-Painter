@@ -14,7 +14,7 @@ export default function LocationSection() {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.163353457007!2d77.53127811482187!3d12.961395890862757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3dd84e20b329%3A0xc48c1ea99fb0a241!2sChandra%20Layout%20Bus%20Stand!5e0!3m2!1sen!2sin!4v1689255018612!5m2!1sen!2sin";
 
   const mapsLink =
-    "https://www.google.com/maps/search/?api=1&query=No.+35,+1st+Stage,+2nd+Phase,+Near+Chandra+Layout+Bus+Depot,+Vijayanagar,+Bangalore+-+560040";
+    "https://www.google.com/maps/dir/?api=1&destination=No.+35,+1st+Stage,+2nd+Phase,+Near+Chandra+Layout+Bus+Depot,+Vijayanagar,+Bangalore+-+560040";
 
   return (
     <section className="flex w-full justify-center bg-[#FAF8F4] pt-20 pb-28" aria-label="Our Location">
@@ -86,11 +86,11 @@ export default function LocationSection() {
               </div>
 
               {/* Get Directions */}
-              <a
+<a
   href={mapsLink}
   target="_blank"
   rel="noopener noreferrer"
-  className="inline-flex w-full sm:w-[190px] h-14 items-center justify-center gap-2 rounded-full bg-[#F26A4B] text-white font-semibold hover:bg-[#E0593B] transition-all duration-300 shadow-lg shadow-[#F26A4B]/30 hover:-translate-y-1 text-center"
+  className="relative left-15 top-4 inline-flex w-full sm:w-[190px] h-14 items-center justify-center gap-2 rounded-full bg-[#F26A4B] text-white font-semibold hover:bg-[#E0593B] transition-all duration-300 shadow-lg shadow-[#F26A4B]/30 hover:-translate-y-1 text-center"
 >
   <MapPin className="w-5 h-5" />
   Get Directions

@@ -26,7 +26,7 @@ export default function RoomGrid({ searchQuery }: RoomGridProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center text-[2.5rem] font-[800] text-[var(--color-primary)] mb-[60px] -mt-[20px]"
+          className="relative -top-8 text-center text-[2.5rem] font-[800] text-[var(--color-primary)] mb-[60px]"
         >
           Choose Your Room
         </m.h2>

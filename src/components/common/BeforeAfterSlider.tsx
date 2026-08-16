@@ -70,9 +70,9 @@ export default function BeforeAfterSlider({
           className="w-full h-full object-cover"
           draggable={false}
         />
-        <div className="absolute top-4 right-4 bg-black/60 text-white px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-md">
-          {afterLabel}
-        </div>
+        <div className="absolute top-4 right-4 w-[120px] h-[34px] flex items-center justify-center bg-black/60 text-white rounded-full text-sm font-semibold backdrop-blur-md">
+  {afterLabel}
+</div>
       </div>
 
       {/* Before Image (Foreground, clipped) */}
@@ -86,9 +86,9 @@ export default function BeforeAfterSlider({
           className="w-full h-full object-cover"
           draggable={false}
         />
-        <div className="absolute top-4 left-4 bg-black/60 text-white px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-md">
-          {beforeLabel}
-        </div>
+        <div className="absolute top-4 left-4 w-[120px] h-[34px] flex items-center justify-center bg-black/60 text-white rounded-full text-sm font-semibold backdrop-blur-md">
+  {beforeLabel}
+</div>
       </div>
 
       {/* Slider Handle */}

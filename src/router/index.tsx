@@ -54,6 +54,26 @@ const WoodFinishesPage = lazy(
 const CommercialPaintingPage = lazy(
   () => import('@/pages/services/CommercialPaintingPage')
 );
+
+// Property-type detail pages (Book Our Service cards)
+const InteriorSpacesPage = lazy(
+  () => import('@/pages/services/InteriorSpacesPage')
+);
+const VillasBungalowsPage = lazy(
+  () => import('@/pages/services/VillasBungalowsPage')
+);
+const HighRiseApartmentsPage = lazy(
+  () => import('@/pages/services/HighRiseApartmentsPage')
+);
+const CommercialSpacesPage = lazy(
+  () => import('@/pages/services/CommercialSpacesPage')
+);
+const ResidentialBuildingsPage = lazy(
+  () => import('@/pages/services/ResidentialBuildingsPage')
+);
+const IndustriesPage = lazy(
+  () => import('@/pages/services/IndustriesPage')
+);
 const ProjectsPage = lazy(() => import('@/pages/ProjectsPage'));
 const ProjectDetailPage = lazy(() => import('@/pages/ProjectDetailPage'));
 const ColourIdeasPage = lazy(() => import('@/pages/ColourIdeasPage'));
@@ -148,6 +168,55 @@ const router = createBrowserRouter([
             element: (
               <Suspense fallback={<PageLoader />}>
                 <CommercialPaintingPage />
+              </Suspense>
+            ),
+          },
+          // Property-type detail pages (Book Our Service cards)
+          {
+            path: 'interior-spaces',
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <InteriorSpacesPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: 'villas-bungalows',
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <VillasBungalowsPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: 'high-rise-apartments',
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <HighRiseApartmentsPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: 'commercial-spaces',
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <CommercialSpacesPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: 'residential-buildings',
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <ResidentialBuildingsPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: 'industries',
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <IndustriesPage />
               </Suspense>
             ),
           },

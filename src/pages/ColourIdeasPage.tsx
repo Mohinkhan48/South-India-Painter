@@ -21,7 +21,7 @@ export default function ColourIdeasPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-white flex flex-col gap-[120px] pb-[200px]">
+    <main className="min-h-screen bg-white flex flex-col gap-[100px] pb-16 sm:pb-20">
       {/* Hero section with search */}
       <ColourIdeasHero onSearchChange={setSearchQuery} />
 

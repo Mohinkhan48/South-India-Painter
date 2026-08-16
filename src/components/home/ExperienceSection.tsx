@@ -44,7 +44,7 @@ function useAnimatedCounter(target: number) {
 export default function ExperienceSection() {
   const navigate = useNavigate();
   const shouldReduceMotion = useReducedMotion();
-  const counterValue = useAnimatedCounter(5000);
+  const counterValue = useAnimatedCounter(1981);
 
   return (
     <section className="bg-[var(--color-background)] py-16 sm:py-20 lg:py-28">
@@ -126,9 +126,6 @@ export default function ExperienceSection() {
                 >
                   <span className="text-[4.4rem] font-extrabold leading-none tracking-[-0.07em] text-white sm:text-[5.2rem] lg:text-[5.6rem]">
                     {counterValue.toLocaleString()}
-                  </span>
-                  <span className="pb-2 text-[2.1rem] font-semibold leading-none text-[var(--color-accent)] sm:text-[2.5rem] lg:text-[2.8rem]">
-                    +
                   </span>
                 </m.div>
 

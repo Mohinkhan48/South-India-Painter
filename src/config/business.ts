@@ -48,16 +48,16 @@ export interface BusinessConfig {
 }
 
 const business: BusinessConfig = {
-  companyName: 'SOUTH INDIA PAINTER',
+  companyName: 'SOUTH INDIA PAINTERS',
   tagline: 'Your Tagline Goes Here',
   description:
     'A professional painting and home improvement company serving South India. ' +
     'Replace this description with real company information before launch.',
 
   // Contact — replace with real details before launch
-  phone: '+91 9740556799',
+  phone: '080 23391256',
   whatsapp: '919740556799',
-  email: 'hello@southindiapainter.com',
+  email: 'care@southindiapainters.com',
 
   // Address — replace with real address before launch
   address: 'No. 35, 1st Stage, 2nd Phase, Near Chandra Layout Bus Depot, Vijayanagar',
@@ -90,13 +90,13 @@ const business: BusinessConfig = {
   },
 
   // Google Maps embed URL — replace with real URL before launch
-  googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=No.+35,+1st+Stage,+2nd+Phase,+Near+Chandra+Layout+Bus+Depot,+Vijayanagar,+Bangalore+-+560040',
+  googleMapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=No.+35,+1st+Stage,+2nd+Phase,+Near+Chandra+Layout+Bus+Depot,+Vijayanagar,+Bangalore+-+560040',
 
   foundedYear: 2010,
   heroEyebrow: 'PROFESSIONAL PAINTING & HOME IMPROVEMENT',
   heroStats: [
     { value: '4.9/5', label: 'Average Rating' },
-    { value: '10+ Years', label: 'Of Excellence' },
+    { value: '25+', label: 'Of Excellence' },
   ],
 };
 

@@ -10,13 +10,13 @@ import { Calendar, Phone, FileText } from 'lucide-react';
 
 const actions = [
   { label: 'Book Free Site Visit', icon: Calendar, href: '/contact' },
-  { label: 'Talk to Colour Expert', icon: Phone, href: 'tel:+919876543210' },
+  { label: 'Talk to Colour Expert', icon: Phone, href: 'tel:08023391256' },
   { label: 'Get Free Quote', icon: FileText, href: '/contact' },
 ];
 
 export default function ColourIdeasCta() {
   return (
-    <section className="w-full pb-[120px]">
+    <section className="relative -top-8 w-full -mt-20 sm:-mt-28 pb-8">
       <div className="container mx-auto px-4">
         <div className="relative w-full py-[80px] sm:py-[100px] rounded-[32px] overflow-hidden shadow-2xl">
           {/* Background */}
@@ -47,7 +47,7 @@ export default function ColourIdeasCta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-[2rem] sm:text-[2.8rem] md:text-[3.2rem] font-[800] text-white leading-tight mb-14"
+          className="text-[2rem] sm:text-[2.8rem] md:text-[3.2rem] font-[800] text-white leading-tight mb-10"
         >
           Need Help Choosing Colours?
         </m.h2>
