@@ -50,7 +50,7 @@ export default function LocationSection() {
           <div className="w-full overflow-hidden rounded-[28px] bg-[#F5F2EE] border border-[#102A43]/10 shadow-[0_24px_60px_rgba(16,42,67,0.12)] flex flex-col lg:flex-row">
 
             {/* Left - Office Details */}
-            <div className="lg:w-[40%] p-8 sm:p-10 lg:p-12 pl-10 sm:pl-12 lg:pl-16 flex flex-col justify-center relative">
+            <div className="lg:w-[40%] p-6 sm:p-10 lg:p-12 pl-6 sm:pl-12 lg:pl-16 flex flex-col justify-center relative">
 
               {/* Orange accent */}
               <div className="absolute left-0 top-8 bottom-8 w-1.5 rounded-r-full bg-[#F26A3D]" />
@@ -90,7 +90,7 @@ export default function LocationSection() {
   href={mapsLink}
   target="_blank"
   rel="noopener noreferrer"
-  className="relative left-15 top-4 inline-flex w-full sm:w-[190px] h-14 items-center justify-center gap-2 rounded-full bg-[#F26A4B] text-white font-semibold hover:bg-[#E0593B] transition-all duration-300 shadow-lg shadow-[#F26A4B]/30 hover:-translate-y-1 text-center"
+  className="relative sm:left-15 top-4 inline-flex w-full sm:w-[190px] h-14 items-center justify-center gap-2 rounded-full bg-[#F26A4B] text-white font-semibold hover:bg-[#E0593B] transition-all duration-300 shadow-lg shadow-[#F26A4B]/30 hover:-translate-y-1 text-center"
 >
   <MapPin className="w-5 h-5" />
   Get Directions

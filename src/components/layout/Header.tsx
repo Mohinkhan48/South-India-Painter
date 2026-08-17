@@ -166,33 +166,33 @@ export default function Header() {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -8, scale: 0.97 }}
                             transition={{ duration: shouldReduceMotion ? 0 : 0.22, ease: [0.16, 1, 0.3, 1] }}
-                            className="absolute left-1/2 top-full mt-4 w-[300px] -translate-x-1/2 rounded-[22px] border border-white/60 bg-white p-2.5 shadow-[0_24px_60px_rgba(16,42,67,0.18)]"
+                            className="absolute left-1/2 top-full mt-3 w-[335px] -translate-x-1/2 rounded-[24px] border border-[#102A43]/10 bg-white p-3 shadow-[0_24px_50px_rgba(15,39,69,0.16)] backdrop-blur-xl"
                             onMouseEnter={openServicesDropdown}
                             onMouseLeave={closeServicesDropdown}
                           >
                             {/* Header strip */}
-                            <div className="mb-2 rounded-[14px] bg-gradient-to-r from-[#0F2745] to-[#1B3D6B] px-4 py-3">
-                              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/60">Our Services</p>
-                              <p className="text-[13px] font-semibold text-white">Premium Painting Solutions</p>
+                            <div className="mb-2.5 rounded-[16px] bg-gradient-to-r from-[#0F2745] via-[#16375E] to-[#0F2745] px-8 py-3.5 border border-white/10 shadow-sm">
+                              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#F26A3D] mb-1">Our Services</p>
+                              <p className="text-[14px] font-bold text-white tracking-wide">Premium Painting Solutions</p>
                             </div>
-                            <div className="grid gap-0.5">
+                            <div className="grid gap-1">
                               {serviceLinks.map((item) => {
                                 const Icon = item.icon;
                                 return (
                                   <Link
                                     key={item.to}
                                     to={item.to}
-                                    className="group flex items-center gap-3 rounded-[12px] px-3 py-2.5 transition-all duration-200 hover:bg-[#F26A3D]/8"
+                                    className="group flex items-center gap-3.5 rounded-[14px] px-3.5 py-2.5 transition-all duration-200 hover:bg-[#FCE9E2]/50"
                                     onClick={() => setIsServicesOpen(false)}
                                   >
-                                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] bg-[#F26A3D]/10 text-[#F26A3D] transition-colors duration-200 group-hover:bg-[#F26A3D] group-hover:text-white">
-                                      <Icon className="h-4 w-4" />
+                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-[#FCE9E2] text-[#F26A3D] transition-all duration-200 group-hover:bg-[#F26A3D] group-hover:text-white shadow-sm">
+                                      <Icon className="h-4.5 w-4.5" />
                                     </div>
                                     <div className="min-w-0">
-                                      <p className="text-[13px] font-semibold text-[#0F2745] group-hover:text-[#F26A3D] transition-colors duration-200">{item.label}</p>
-                                      <p className="text-[11px] text-[#64748B]">{item.desc}</p>
+                                      <p className="text-[13.5px] font-bold text-[#102A43] group-hover:text-[#F26A3D] transition-colors duration-200">{item.label}</p>
+                                      <p className="text-[11.5px] text-[#64748B] font-medium">{item.desc}</p>
                                     </div>
-                                    <ChevronRight className="ml-auto h-3.5 w-3.5 shrink-0 text-[#CBD5E1] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-[#F26A3D]" />
+                                    <ChevronRight className="ml-auto h-4 w-4 shrink-0 text-[#CBD5E1] transition-transform duration-200 group-hover:translate-x-1 group-hover:text-[#F26A3D]" />
                                   </Link>
                                 );
                               })}
@@ -309,17 +309,21 @@ export default function Header() {
               </div>
 
               {/* Nav links */}
-              <nav className="flex flex-col gap-1 px-4 pt-4 flex-1">
+              <nav className="flex flex-col gap-2 px-5 pt-5 flex-1">
                 {desktopNavLinks.map((link) => {
                   if (link.label === 'Services') {
                     return (
-                      <div key={link.to} className="flex flex-col">
+                      <m.div 
+                        key={link.to} 
+                        whileTap={{ scale: 0.95 }}
+                        className="flex flex-col"
+                      >
                         <div className="flex items-center justify-between rounded-xl hover:bg-white/10 transition-colors duration-200">
                           <NavLink
                             to={link.to}
                             className={({ isActive }) =>
                               cn(
-                                'flex-1 rounded-l-xl px-4 py-3.5 text-[16px] font-semibold transition-colors duration-200',
+                                'flex-1 flex items-center gap-3.5 rounded-l-xl px-4 py-3.5 text-[16px] font-semibold transition-all duration-200',
                                 isActive
                                   ? '!text-[#F26A3D]'
                                   : '!text-white'
@@ -327,7 +331,12 @@ export default function Header() {
                             }
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
-                            {link.label}
+                            {({ isActive }) => (
+                              <>
+                                <span className={cn('w-2 h-2 rounded-full flex-shrink-0 transition-colors duration-200', isActive ? 'bg-[#F26A3D]' : 'bg-white')} />
+                                <span>{link.label}</span>
+                              </>
+                            )}
                           </NavLink>
                           <button
                             type="button"
@@ -356,47 +365,54 @@ export default function Header() {
                                 {serviceLinks.map((item) => {
                                   const Icon = item.icon;
                                   return (
-                                    <Link
-                                      key={item.to}
-                                      to={item.to}
-                                      className="group flex items-center gap-3 rounded-[10px] px-3 py-2.5 transition-all duration-200 hover:bg-[#F26A3D]/20"
-                                      onClick={() => setIsMobileMenuOpen(false)}
-                                    >
-                                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-[8px] bg-[#F26A3D]/20 text-[#F26A3D]">
-                                        <Icon className="h-3.5 w-3.5" />
-                                      </div>
-                                      <div>
-                                        <p className="text-[13px] font-semibold !text-white">{item.label}</p>
-                                        <p className="text-[11px] !text-white/50">{item.desc}</p>
-                                      </div>
-                                    </Link>
+                                    <m.div key={item.to} whileTap={{ scale: 0.95 }}>
+                                      <Link
+                                        to={item.to}
+                                        className="group flex items-center gap-3 rounded-[10px] px-3 py-2.5 transition-all duration-200 hover:bg-[#F26A3D]/20"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                      >
+                                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-[8px] bg-[#F26A3D]/20 text-[#F26A3D]">
+                                          <Icon className="h-3.5 w-3.5" />
+                                        </div>
+                                        <div>
+                                          <p className="text-[13px] font-semibold !text-white">{item.label}</p>
+                                          <p className="text-[11px] !text-white/50">{item.desc}</p>
+                                        </div>
+                                      </Link>
+                                    </m.div>
                                   );
                                 })}
                               </div>
                             </m.div>
                           )}
                         </AnimatePresence>
-                      </div>
+                      </m.div>
                     );
                   }
 
                   return (
-                    <NavLink
-                      key={link.to}
-                      to={link.to}
-                      end={link.to === '/'}
-                      className={({ isActive }) =>
-                        cn(
-                          'rounded-xl px-4 py-3.5 text-[16px] font-semibold transition-colors duration-200',
-                          isActive
-                            ? 'bg-[#F26A3D]/20 !text-[#F26A3D]'
-                            : '!text-white hover:bg-white/10'
-                        )
-                      }
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {link.label}
-                    </NavLink>
+                    <m.div key={link.to} whileTap={{ scale: 0.95 }}>
+                      <NavLink
+                        to={link.to}
+                        end={link.to === '/'}
+                        className={({ isActive }) =>
+                          cn(
+                            'flex items-center gap-3.5 rounded-xl px-4 py-3.5 text-[16px] font-semibold transition-all duration-200',
+                            isActive
+                              ? 'bg-[#F26A3D]/20 !text-[#F26A3D]'
+                              : '!text-white hover:bg-white/10'
+                          )
+                        }
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {({ isActive }) => (
+                          <>
+                            <span className={cn('w-2 h-2 rounded-full flex-shrink-0 transition-colors duration-200', isActive ? 'bg-[#F26A3D]' : 'bg-white')} />
+                            <span>{link.label}</span>
+                          </>
+                        )}
+                      </NavLink>
+                    </m.div>
                   );
                 })}
               </nav>

@@ -831,7 +831,14 @@ export default function AboutPage() {
             className="flex items-start justify-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 flex-wrap"
           >
 
-            {Array.from({ length: 6 }).map((_, index) => (
+            {[
+              { name: 'Asian Paints', logo: '/images/projects/asian-paint-logo.png' },
+              { name: 'JSW', logo: '/images/projects/jsw logo.png' },
+              { name: 'Birla Opus', logo: '/images/projects/opus logo.png' },
+              { name: 'Asian Paints', logo: '/images/projects/asian-paint-logo.png' },
+              { name: 'JSW', logo: '/images/projects/jsw logo.png' },
+              { name: 'Birla Opus', logo: '/images/projects/opus logo.png' },
+            ].map((brand, index) => (
 
               <m.div
                 key={index}
@@ -842,15 +849,18 @@ export default function AboutPage() {
                 <div className="w-[130px] h-[70px] flex items-center justify-center">
 
                   <img
-                    src="/images/projects/asian-paint-logo.png"
-                    alt="Asian Paints"
+                    src={brand.logo}
+                    alt={brand.name}
                     className="max-w-[125px] max-h-[65px] w-auto h-auto object-contain transition-transform duration-500 ease-out group-hover:scale-110"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
                   />
 
                 </div>
 
                 <p className="mt-2 text-base sm:text-lg font-bold text-[#102A43] tracking-tight text-center">
-                  Asian Paints
+                  {brand.name}
                 </p>
 
               </m.div>

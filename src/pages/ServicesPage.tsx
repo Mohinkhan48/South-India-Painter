@@ -79,33 +79,6 @@ export default function ServicesPage() {
                 </Link>
               </m.div>
             </div>
-
-            {/* Right Side Cards */}
-            <div className="w-full lg:w-[320px] flex flex-col gap-3">
-              {[
-                { num: '01', title: 'INTERIOR & EXTERIOR', desc: 'Complete painting solutions' },
-                { num: '02', title: 'SURFACE FINISHES', desc: 'Textures, wallpaper & wood finishes' },
-                { num: '03', title: 'PROTECTION', desc: 'Professional waterproofing solutions' }
-              ].map((card, i) => (
-                <m.div
-                  key={card.num}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.4 + i * 0.1 }}
-                  className="flex items-start gap-4 p-5 rounded-[16px] bg-[rgba(16,42,67,0.35)] backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:bg-[rgba(16,42,67,0.5)] transition-colors duration-300 cursor-default"
-                >
-                  <span className="text-[13px] font-bold text-[var(--color-accent)] mt-[2px]">{card.num}</span>
-                  <div>
-                    <h4 className="text-[14px] font-semibold text-white tracking-[0.5px] uppercase mb-1">
-                      {card.title}
-                    </h4>
-                    <p className="text-[13px] text-[#b4c4d3] leading-snug">
-                      {card.desc}
-                    </p>
-                  </div>
-                </m.div>
-              ))}
-            </div>
           </div>
         </Container>
 
