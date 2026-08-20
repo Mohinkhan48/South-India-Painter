@@ -5,8 +5,7 @@ const steps = [
     id: '01',
     title: 'Site Inspection',
     subtitle: '& Quotation',
-    image:
-      'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80',
+    image: '/images/projects/site inspection and quotation.png',
     imageAlt:
       'Engineer or inspector checking a house and reviewing a survey sheet',
   },
@@ -14,8 +13,7 @@ const steps = [
     id: '02',
     title: 'Accept',
     subtitle: 'Quotation',
-    image:
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80',
+    image: '/images/projects/accept quotation.png',
     imageAlt:
       'Customer reviewing a quotation with a consultant',
   },
@@ -23,8 +21,7 @@ const steps = [
     id: '03',
     title: 'Free Colour',
     subtitle: 'Consultation',
-    image:
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
+    image: '/images/projects/free colour consultation image.png',
     imageAlt:
       'Interior designer helping a client select paint colours and swatches',
   },
@@ -32,8 +29,7 @@ const steps = [
     id: '04',
     title: 'Painting',
     subtitle: 'Process Begins',
-    image:
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80',
+    image: '/images/projects/painting process begins image.png',
     imageAlt:
       'Professional painter applying paint to a wall with roller and safety gear',
   },
@@ -41,8 +37,7 @@ const steps = [
     id: '05',
     title: 'Dedicated Project',
     subtitle: 'Manager',
-    image:
-      'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=80',
+    image: '/images/projects/dedicated project manager image.png',
     imageAlt:
       'Project manager holding a tablet while discussing work with clients',
   },
@@ -50,8 +45,7 @@ const steps = [
     id: '06',
     title: 'Finishing And',
     subtitle: 'Handover',
-    image:
-      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80',
+    image: '/images/projects/finish and handover.png',
     imageAlt:
       'Happy client receiving completed project and admiring the finished home',
   },
@@ -97,12 +91,12 @@ export default function HowItWorksSection() {
 
   return (
     <section
-      className="flex w-full justify-center bg-[var(--color-background)]"
-      style={{
-        paddingTop: '100px',
-        paddingBottom: '100px',
-      }}
-    >
+  className="flex w-full justify-center bg-[var(--color-background)]"
+  style={{
+    paddingTop: '20px',
+    paddingBottom: '100px',
+  }}
+>
       <div className="w-full max-w-[1200px] px-5 sm:px-8 lg:px-10">
 
         <m.div

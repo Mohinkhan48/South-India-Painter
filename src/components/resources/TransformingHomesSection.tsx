@@ -3,18 +3,18 @@ import Container from '@/components/common/Container';
 import { Link } from 'react-router-dom';
 
 const cities = [
-  { name: 'Bangalore',     projects: '4,850+', image: 'https://images.pexels.com/photos/739987/pexels-photo-739987.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Chennai',       projects: '3,200+', image: 'https://images.pexels.com/photos/2846814/pexels-photo-2846814.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Hyderabad',     projects: '2,950+', image: 'https://images.pexels.com/photos/3573382/pexels-photo-3573382.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Mysore',        projects: '1,420+', image: 'https://images.pexels.com/photos/3352484/pexels-photo-3352484.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Coimbatore',   projects: '1,840+', image: 'https://images.pexels.com/photos/3264618/pexels-photo-3264618.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Kochi',         projects: '2,150+', image: 'https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Trivandrum',    projects: '1,380+', image: 'https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Mangalore',     projects: '980+',   image: 'https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Madurai',       projects: '890+',   image: 'https://images.pexels.com/photos/1809644/pexels-photo-1809644.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Vijayawada',    projects: '1,250+', image: 'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Visakhapatnam', projects: '1,650+', image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Kozhikode',     projects: '730+',   image: 'https://images.pexels.com/photos/1298684/pexels-photo-1298684.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Bangalore',     projects: '4,850+', image: '/images/projects/banglore.png' },
+  { name: 'Chennai',       projects: '3,200+', image: '/images/projects/chennai.png' },
+  { name: 'Hyderabad',     projects: '2,950+', image: '/images/projects/hyderabad.png' },
+  { name: 'Mysore',        projects: '1,420+', image: '/images/projects/mysore.png' },
+  { name: 'Coimbatore',   projects: '1,840+', image: '/images/projects/coimbatur.png' },
+  { name: 'Kochi',         projects: '2,150+', image: '/images/projects/kochi.png' },
+  { name: 'Trivandrum',    projects: '1,380+', image: '/images/projects/trivandrum.png' },
+  { name: 'Mangalore',     projects: '980+',   image: '/images/projects/manglore.png' },
+  { name: 'Madurai',       projects: '890+',   image: '/images/projects/madurai.png' },
+  { name: 'Vijayawada',    projects: '1,250+', image: '/images/projects/vijyawada.png' },
+  { name: 'Visakhapatnam', projects: '1,650+', image: '/images/projects/vishakapatnam.png' },
+  { name: 'Kozhikode',     projects: '730+',   image: '/images/projects/Kkozhikode.png' },
 ];
 
 export default function TransformingHomesSection() {

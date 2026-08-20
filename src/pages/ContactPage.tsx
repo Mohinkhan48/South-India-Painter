@@ -10,6 +10,7 @@ import {
   ChevronDown,
   MessageCircle,
 } from 'lucide-react';
+import { submitLead } from '@/utils/leadApi';
 
 // ============================================================
 // ANIMATION
@@ -305,6 +306,8 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [honeypot, setHoneypot] = useState('');
 
   const validate = () => {
     const errs: Record<string, string> = {};
@@ -315,8 +318,12 @@ export default function ContactPage() {
 
     if (!formData.phone.trim()) {
       errs.phone = 'Required';
-    } else if (!/^\+?[\d\s-]{8,15}$/.test(formData.phone)) {
+    } else if (!/^[0-9+\-\s()]{10,}$/.test(formData.phone.trim())) {
       errs.phone = 'Invalid phone';
+    }
+
+    if (formData.email.trim() && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email.trim())) {
+      errs.email = 'Invalid email';
     }
 
     if (!formData.city.trim()) {
@@ -346,10 +353,14 @@ export default function ContactPage() {
         [name]: '',
       }));
     }
+
+    if (submitError) setSubmitError('');
+    if (submitted) setSubmitted(false);
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (submitting) return;
 
     const errs = validate();
 
@@ -360,11 +371,36 @@ export default function ContactPage() {
 
     setErrors({});
     setSubmitting(true);
+    setSubmitError('');
 
-    setTimeout(() => {
-      setSubmitting(false);
+    const result = await submitLead({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      city: formData.city,
+      propertyType: formData.propertyType,
+      service: formData.service,
+      sourcePage: 'Contact Page - Tell Us About Your Project Form',
+      website_url: honeypot
+    });
+
+    setSubmitting(false);
+
+    if (result.success) {
       setSubmitted(true);
-    }, 1200);
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        city: '',
+        propertyType: '',
+        service: '',
+        message: '',
+      });
+      setErrors({});
+    } else {
+      setSubmitError(result.message);
+    }
   };
 
   return (
@@ -1040,6 +1076,17 @@ export default function ContactPage() {
                       </span>
                     </p>
 
+                    {/* Honeypot field (hidden from users) */}
+                    <input
+                      type="text"
+                      name="website_url"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      style={{ display: 'none' }}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+
                     {/* SUBMIT BUTTON */}
 
                     <m.button
@@ -1067,6 +1114,18 @@ export default function ContactPage() {
                         <span>Submit</span>
                       )}
                     </m.button>
+
+                    {/* Success / Error Messages */}
+                    {submitted && (
+                      <p className="text-green-600 text-xs font-semibold text-center mt-1">
+                        Thank you! Your request has been received. Our team will contact you shortly.
+                      </p>
+                    )}
+                    {submitError && (
+                      <p className="text-red-500 text-xs font-semibold text-center mt-1">
+                        {submitError}
+                      </p>
+                    )}
 
                     {/* SECURITY */}
 

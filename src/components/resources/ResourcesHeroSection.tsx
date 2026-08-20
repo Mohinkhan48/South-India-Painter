@@ -3,6 +3,7 @@ import { m, AnimatePresence } from 'framer-motion';
 import Container from '@/components/common/Container';
 import { Calculator, Palette, BookOpen, ArrowRight, CheckCircle2, Loader2, Sparkles } from 'lucide-react';
 import { useForm } from 'react-hook-form';
+import { submitLead } from '@/utils/leadApi';
 
 type FormData = {
   name: string;
@@ -10,20 +11,38 @@ type FormData = {
   email: string;
   city: string;
   service: string;
+  website_url?: string;
 };
 
 export default function ResourcesHeroSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setSubmitError('');
+
+    const result = await submitLead({
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      city: data.city,
+      service: data.service,
+      sourcePage: 'Resources Page - Book Free Inspection Form',
+      website_url: data.website_url
+    });
+
     setIsSubmitting(false);
-    setIsSuccess(true);
-    console.log('Form submitted:', data);
+
+    if (result.success) {
+      setIsSuccess(true);
+      reset();
+    } else {
+      setSubmitError(result.message);
+    }
   };
 
   const inputClass =
@@ -225,6 +244,15 @@ export default function ResourcesHeroSection() {
                           </div>
                         </div>
 
+                        {/* Honeypot field (hidden from users) */}
+                        <input
+                          type="text"
+                          {...register('website_url')}
+                          style={{ display: 'none' }}
+                          tabIndex={-1}
+                          autoComplete="off"
+                        />
+
                         <button
                           type="submit"
                           disabled={isSubmitting}
@@ -251,6 +279,12 @@ export default function ResourcesHeroSection() {
                             </>
                           )}
                         </button>
+
+                        {submitError && (
+                          <p className="text-red-500 text-sm font-semibold text-center mt-2">
+                            {submitError}
+                          </p>
+                        )}
                       </form>
                     </div>
                   </m.div>

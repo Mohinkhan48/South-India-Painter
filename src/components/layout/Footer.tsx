@@ -35,10 +35,15 @@ export default function Footer() {
           {/* Column 1: Brand & About */}
           <div className="flex flex-col gap-6">
             <Link
-  to="/"
-  className="inline-block relative top-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] rounded-sm"
+              to="/"
+              className="inline-flex items-center gap-3 relative top-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] rounded-sm"
               aria-label={`${business.companyName} — Home`}
             >
+              <img
+                src="/images/logo.png"
+                alt="South India Painters Logo"
+                className="h-11 w-auto object-contain"
+              />
               <span className="font-sans text-2xl font-extrabold tracking-tight text-white">
                 {business.companyName}
               </span>

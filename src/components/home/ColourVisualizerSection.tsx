@@ -177,13 +177,13 @@ export default function ColourVisualizerSection() {
               className="mt-2"
             >
               <Button
-                variant="primary"
-                size="lg"
-                rightIcon={<ArrowRight className="h-4 w-4" />}
-                className="rounded-full shadow-lg hover:shadow-xl transition-all"
-              >
-                TRY COLOUR VISUALIZER
-              </Button>
+  variant="primary"
+  size="lg"
+  rightIcon={<ArrowRight className="h-4 w-4 text-white" />}
+  className="!w-[260px] !h-[58px] !rounded-full !bg-[#F26A4B] !text-white !flex !items-center !justify-center !gap-2 shadow-lg hover:shadow-xl transition-all hover:!bg-[#D95536] font-extrabold tracking-wide !opacity-100 !border-none !p-0"
+>
+  TRY COLOUR VISUALIZER
+</Button>
             </m.div>
           </m.div>
 

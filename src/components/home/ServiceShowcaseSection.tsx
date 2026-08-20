@@ -5,8 +5,7 @@ import Container from '@/components/common/Container';
 const showcaseItems = [
   {
     title: 'WALLPAPERS',
-    image:
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/projects/wallpaper.png',
     imageAlt: 'Luxury wallpaper feature wall in a modern living room',
   },
   {
@@ -179,7 +178,7 @@ export default function ServiceShowcaseSection() {
   }, []);
 
   return (
-    <section className="bg-[var(--color-surface)] pt-20 sm:pt-24 lg:pt-28">
+    <section className="bg-[var(--color-surface)] pt-4 sm:pt-6 lg:pt-8">
       <Container>
         <m.div
           initial="hidden"
@@ -219,7 +218,7 @@ export default function ServiceShowcaseSection() {
         </div>
 
         {/* TRUSTED ACROSS SOUTH INDIA SECTION */}
-        <div className="relative lg:left-15 mx-auto w-full max-w-[1200px] flex flex-col items-center text-center" style={{ marginTop: '100px', paddingBottom: '90px' }}>
+        <div className="relative lg:left-15 mx-auto w-full max-w-[1200px] flex flex-col items-center text-center" style={{ marginTop: '130px', paddingBottom: '90px' }}>
           <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { m, useReducedMotion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { submitLead } from '@/utils/leadApi';
 
 const serviceTypes = [
   'Interior Painting',
@@ -14,7 +14,6 @@ const serviceTypes = [
 
 export default function BookSiteVisitSection() {
   const shouldReduceMotion = useReducedMotion();
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -25,12 +24,30 @@ export default function BookSiteVisitSection() {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [honeypot, setHoneypot] = useState('');
 
   const validate = () => {
     const errs: Record<string, string> = {};
-    if (!formData.name.trim()) errs.name = 'Required';
-    if (!formData.phone.trim()) errs.phone = 'Required';
-    if (!formData.city.trim()) errs.city = 'Required';
+    if (!formData.name.trim()) {
+      errs.name = 'Required';
+    }
+    
+    if (!formData.phone.trim()) {
+      errs.phone = 'Required';
+    } else if (!/^[0-9+\-\s()]{10,}$/.test(formData.phone.trim())) {
+      errs.phone = 'Invalid phone number';
+    }
+    
+    if (formData.email.trim() && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email.trim())) {
+      errs.email = 'Invalid email address';
+    }
+    
+    if (!formData.city.trim()) {
+      errs.city = 'Required';
+    }
+    
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -39,24 +56,50 @@ export default function BookSiteVisitSection() {
     const { name, value } = e.target;
     setFormData((p) => ({ ...p, [name]: value }));
     if (errors[name]) setErrors((p) => ({ ...p, [name]: '' }));
+    if (submitError) setSubmitError('');
+    if (submitted) setSubmitted(false);
   };
 
   const toggleService = (service: string) => {
     setSelectedServices((prev) =>
       prev.includes(service) ? prev.filter((s) => s !== service) : [...prev, service]
     );
+    if (submitted) setSubmitted(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     if (validate()) {
-      setSubmitted(true);
-      setTimeout(() => {
-        navigate('/contact', {
-          state: { fromBooking: true, ...formData, services: selectedServices },
+      setIsSubmitting(true);
+      setSubmitError('');
+      
+      const result = await submitLead({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        city: formData.city,
+        services: selectedServices,
+        sourcePage: 'Home Page - Book Site Visit Form',
+        website_url: honeypot
+      });
+
+      setIsSubmitting(false);
+
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          city: '',
         });
-        window.scrollTo(0, 0);
-      }, 900);
+        setSelectedServices([]);
+        setErrors({});
+      } else {
+        setSubmitError(result.message);
+      }
     }
   };
 
@@ -246,22 +289,48 @@ export default function BookSiteVisitSection() {
               <span className="text-[#F26A45] cursor-pointer hover:underline">Terms & Conditions.</span>
             </p>
 
+            {/* Honeypot field (hidden from users) */}
+            <input
+              type="text"
+              name="website_url"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              style={{ display: 'none' }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+
             {/* Submit Button */}
             <m.button
               type="submit"
-              disabled={submitted}
+              disabled={submitted || isSubmitting}
               style={{ backgroundColor: submitted ? '#22c55e' : '#F26A4B' }}
-              whileHover={shouldReduceMotion ? undefined : { y: -2, boxShadow: '0 20px 40px rgba(242,106,75,0.38)', backgroundColor: submitted ? '#22c55e' : '#E4573C' }}
+              whileHover={shouldReduceMotion || submitted || isSubmitting ? undefined : { y: -2, boxShadow: '0 20px 40px rgba(242,106,75,0.38)', backgroundColor: '#E4573C' }}
               transition={{ duration: 0.2 }}
               className={`w-full h-[60px] rounded-[16px] font-bold text-[16px] text-white flex items-center justify-center gap-2 shadow-[0_10px_28px_rgba(242,106,75,0.3)] transition-all duration-300 ${
-                submitted ? 'cursor-not-allowed' : ''
+                submitted || isSubmitting ? 'cursor-not-allowed opacity-80' : ''
               }`}
             >
-              {submitted
-                ? '✓ Booking Confirmed!'
-                : <><span>BOOK SITE INSPECTION</span><ArrowRight className="w-5 h-5" /></>
-              }
+              {isSubmitting ? (
+                <span>Sending...</span>
+              ) : submitted ? (
+                '✓ Booking Confirmed!'
+              ) : (
+                <><span>BOOK SITE INSPECTION</span><ArrowRight className="w-5 h-5" /></>
+              )}
             </m.button>
+
+            {/* Success / Error Messages */}
+            {submitted && (
+              <p className="text-green-600 text-sm font-semibold text-center mt-2">
+                Thank you! Your request has been received. Our team will contact you shortly.
+              </p>
+            )}
+            {submitError && (
+              <p className="text-red-500 text-sm font-semibold text-center mt-2">
+                {submitError}
+              </p>
+            )}
           </form>
         </m.div>
 

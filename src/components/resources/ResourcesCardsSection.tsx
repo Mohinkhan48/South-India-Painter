@@ -1,6 +1,6 @@
 import { m } from 'framer-motion';
 import Container from '@/components/common/Container';
-import { Link } from 'react-router-dom';
+
 import { ArrowRight } from 'lucide-react';
 
 const cards = [
@@ -82,8 +82,7 @@ export default function ResourcesCardsSection() {
                 delay: index * 0.1,
               }}
             >
-              <Link
-                to={card.link}
+              <div
                 className="group relative block w-full h-[340px] rounded-[24px] overflow-hidden shadow-[0_12px_40px_rgba(23,55,94,0.08)] hover:shadow-[0_20px_60px_rgba(244,124,32,0.2)] transform transition-all duration-500 hover:-translate-y-2"
               >
                 {/* Background Image */}
@@ -110,7 +109,7 @@ export default function ResourcesCardsSection() {
                     <ArrowRight className="w-5 h-5" />
                   </div>
                 </div>
-              </Link>
+              </div>
             </m.div>
           ))}
         </div>

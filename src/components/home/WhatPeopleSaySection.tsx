@@ -225,12 +225,13 @@ export default function WhatPeopleSaySection() {
 
   return (
     <section
-      className="flex w-full justify-center bg-[var(--color-background)]"
-      style={{
-        paddingTop: 'clamp(20px, 3vw, 40px)',
-        paddingBottom: 'clamp(70px, 9vw, 120px)',
-      }}
-    >
+  className="flex w-full justify-center bg-[var(--color-background)]"
+  style={{
+    paddingTop: '0px',
+    paddingBottom: 'clamp(70px, 9vw, 120px)',
+    transform: 'translateY(-65px)',
+  }}
+>
       <div className="w-full px-5 sm:px-8" style={{ maxWidth: 1320 }}>
         <m.div
           initial="hidden"

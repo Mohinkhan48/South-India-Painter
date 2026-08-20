@@ -1,4 +1,5 @@
 import Hero from '@/components/home/Hero';
+import WelcomeIntroSection from '@/components/home/WelcomeIntroSection';
 import BookOurService from '@/components/home/BookOurService';
 import ServiceShowcaseSection from '@/components/home/ServiceShowcaseSection';
 import ExperienceSection from '@/components/home/ExperienceSection';
@@ -16,12 +17,27 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Hero />
-      <BookOurService />
-      <ServiceShowcaseSection />
-      <ExperienceSection />
-      <HowItWorksSection />
-      <WhatPeopleSaySection />
-      <ColourVisualizerSection />
+      <div style={{ marginTop: '80px' }}>
+        <WelcomeIntroSection />
+      </div>
+      <div style={{ marginTop: '80px' }}>
+        <ColourVisualizerSection />
+      </div>
+      <div style={{ marginTop: '80px' }}>
+        <BookOurService />
+      </div>
+      <div style={{ marginTop: '0px' }}>
+        <ServiceShowcaseSection />
+      </div>
+      <div style={{ marginTop: '80px' }}>
+        <ExperienceSection />
+      </div>
+      <div style={{ marginTop: '80px' }}>
+        <HowItWorksSection />
+      </div>
+      <div style={{ marginTop: '80px' }}>
+        <WhatPeopleSaySection />
+      </div>
       <div style={{ marginTop: '80px' }}>
         <ServiceLookingForSection />
       </div>

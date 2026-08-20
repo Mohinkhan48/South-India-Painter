@@ -6,13 +6,13 @@ const services = [
     id: 'fresh',
     name: 'FRESH PAINTING',
     description: 'Add the perfect finishing touch to your newly built home with our premium painting expertise.',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
+    image: '/images/projects/fresh painting image.png',
   },
   {
     id: 'repaint',
     name: 'RE-PAINTING',
     description: 'Refresh your existing home with premium repainting solutions, flawless finishes and expert craftsmanship.',
-    image: 'https://images.unsplash.com/photo-1589834390005-5d4fb9bf3d32?auto=format&fit=crop&w=800&q=80',
+    image: '/images/projects/repainting image.png',
   }
 ];
 
@@ -32,7 +32,10 @@ export default function ServiceLookingForSection() {
   };
 
   return (
-    <section className="flex w-full justify-center bg-[var(--color-background)] pt-[100px] pb-[120px]">
+    <section
+  className="flex w-full justify-center bg-[var(--color-background)] pt-[100px] pb-[120px]"
+  style={{ transform: 'translateY(-140px)' }}
+>
       <div className="w-full px-5 flex flex-col items-center" style={{ maxWidth: 1320 }}>
         
         {/* ── Premium Container Block ── */}

@@ -93,7 +93,10 @@ export default function VideoTestimonialsSection() {
   };
 
   return (
-    <section className="flex w-full justify-center bg-[#FAF8F4] pt-[120px] pb-[120px]">
+    <section
+  className="flex w-full justify-center bg-[#FAF8F4] pt-0 pb-[80px]"
+  style={{ marginTop: '-100px' }}
+>
       <div className="w-full px-5 flex flex-col items-center" style={{ maxWidth: 1280 }}>
         <m.div
           initial="hidden"

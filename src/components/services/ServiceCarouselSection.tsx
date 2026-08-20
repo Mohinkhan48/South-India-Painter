@@ -1,16 +1,16 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { m, useReducedMotion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+
 import { ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react';
 
 const services = [
-  { id: '01', title: 'Interior Painting', path: '/services/interior-painting', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', imageAlt: 'Premium interior painting in a modern living room' },
-  { id: '02', title: 'Exterior Painting', path: '/services/exterior-painting', image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80', imageAlt: 'Freshly painted residential exterior facade' },
-  { id: '03', title: 'Waterproofing', path: '/services/waterproofing', image: 'https://images.unsplash.com/photo-1585128719715-46776b56a0d1?auto=format&fit=crop&w=800&q=80', imageAlt: 'Professional waterproofing application on a terrace' },
+  { id: '01', title: 'Interior Painting', path: '/services/interior-painting', image: '/images/projects/interior painting.png', imageAlt: 'Premium interior painting in a modern living room' },
+  { id: '02', title: 'Exterior Painting', path: '/services/exterior-painting', image: '/images/projects/exterior painting.png', imageAlt: 'Freshly painted residential exterior facade' },
+  { id: '03', title: 'Waterproofing', path: '/services/waterproofing', image: '/images/projects/waterproofing.png', imageAlt: 'Professional waterproofing application on a terrace' },
   { id: '04', title: 'Wall Textures', path: '/services/wall-textures', image: 'https://images.unsplash.com/photo-1602364557801-8908351b0c7e?auto=format&fit=crop&w=800&q=80', imageAlt: 'Decorative wall texture finish in a premium interior' },
-  { id: '05', title: 'Wallpaper', path: '/services/wallpaper', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', imageAlt: 'Luxury wallpaper installation in a contemporary room' },
-  { id: '06', title: 'Wood & Metal Finishes', path: '/services/wood-finishes', image: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80', imageAlt: 'Custom wood panel finish with premium lacquer' },
-  { id: '07', title: 'Commercial Painting', path: '/services/commercial-painting', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80', imageAlt: 'Large-scale commercial interior painting project' },
+  { id: '05', title: 'Wallpaper', path: '/services/wallpaper', image: '/images/projects/wallapaper painting.png', imageAlt: 'Luxury wallpaper installation in a contemporary room' },
+  { id: '06', title: 'Wood & Metal Finishes', path: '/services/wood-finishes', image: '/images/projects/wood and metal finish.png', imageAlt: 'Custom wood panel finish with premium lacquer' },
+  { id: '07', title: 'Commercial Painting', path: '/services/commercial-painting', image: '/images/projects/comercial painting.png', imageAlt: 'Large-scale commercial interior painting project' },
 ];
 
 const CARD_W = 300;
@@ -184,10 +184,8 @@ export default function ServiceCarouselSection() {
               style={{ scrollSnapAlign: 'start', flex: `0 0 ${CARD_W}px` }}
               className="carousel-card-wrapper"
             >
-              <Link
-                to={service.path}
+              <div
                 draggable={false}
-                onClick={e => { if (isDragging) e.preventDefault(); }}
                 className="group"
                 style={{ display: 'block', width: CARD_W, borderRadius: 22, overflow: 'hidden', background: '#fff', border: '1px solid rgba(16,42,67,0.07)', boxShadow: '0 4px 18px rgba(16,42,67,0.06)', textDecoration: 'none', transition: 'transform 0.35s ease, box-shadow 0.35s ease', userSelect: 'none' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-8px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 16px 40px rgba(16,42,67,0.12)'; }}
@@ -213,7 +211,7 @@ export default function ServiceCarouselSection() {
                     <ArrowUpRight style={{ width: 18, height: 18, color: 'var(--color-primary-dark)' }} />
                   </div>
                 </div>
-              </Link>
+              </div>
             </m.div>
           ))}
           {/* trailing spacer so last card isn't flush with viewport edge */}

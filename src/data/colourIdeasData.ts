@@ -28,6 +28,32 @@ import ceilingBefore from '@/assets/colour-ideas/rooms/ceiling-before.png';
 import ceilingAfter from '@/assets/colour-ideas/rooms/ceiling-after.png';
 
 // ---------------------------------------------------------------------------
+// All Room Before/After Assets (Ensures Vite includes all room images in build)
+// ---------------------------------------------------------------------------
+export const ALL_ROOM_BEFORE_AFTER_ASSETS = [
+  livingRoomBefore,
+  livingRoomAfter,
+  bedroomBefore,
+  bedroomAfter,
+  kidsBedroomBefore,
+  kidsBedroomAfter,
+  kitchenBefore,
+  kitchenAfter,
+  diningRoomBefore,
+  diningRoomAfter,
+  bathroomBefore,
+  bathroomAfter,
+  homeOfficeBefore,
+  homeOfficeAfter,
+  balconyBefore,
+  balconyAfter,
+  exteriorBefore,
+  exteriorAfter,
+  ceilingBefore,
+  ceilingAfter,
+];
+
+// ---------------------------------------------------------------------------
 // Room card images (high-quality originals for display)
 // ---------------------------------------------------------------------------
 import heroImg from '@/assets/colour-ideas/hero_bg.png';
@@ -306,36 +332,36 @@ export interface BeforeAfterPair {
 export const BEFORE_AFTER_PAIRS: Record<string, BeforeAfterPair> = {
   'living-room': {
     roomSlug: 'living-room',
-    before: livingRoomBefore,
+    before: '/images/projects/living room.png',
     after: livingRoomAfter,
     beforeLabel: 'Before Painting',
     afterLabel: 'After Painting',
   },
   'bedroom': {
     roomSlug: 'bedroom',
-    before: bedroomBefore,
+    before: '/images/projects/bedroom.png',
     after: bedroomAfter,
     beforeLabel: 'Before Painting',
     afterLabel: 'After Painting',
   },
   'kids-bedroom': {
     roomSlug: 'kids-bedroom',
-    before: kidsBedroomBefore,
-    after: kidsBedroomAfter,
+    before: '/images/projects/kidsroom.png',
+    after: kidsBedroomImg,
     beforeLabel: 'Before Painting',
     afterLabel: 'After Painting',
   },
   'kitchen': {
     roomSlug: 'kitchen',
-    before: kitchenBefore,
-    after: kitchenAfter,
+    before: '/images/projects/kitchen.png',
+    after: kitchenImg,
     beforeLabel: 'Before Painting',
     afterLabel: 'After Painting',
   },
   'dining-room': {
     roomSlug: 'dining-room',
-    before: diningRoomBefore,
-    after: diningRoomAfter,
+    before: '/images/projects/dining room.png',
+    after: diningRoomImg,
     beforeLabel: 'Before Painting',
     afterLabel: 'After Painting',
   },
@@ -380,10 +406,10 @@ export const BEFORE_AFTER_PAIRS: Record<string, BeforeAfterPair> = {
 // Popular Colour Combinations
 // ---------------------------------------------------------------------------
 export const COLOUR_COMBINATIONS: ColourCombination[] = [
-  // INTERIOR COMBINATIONS
+  // INTERIOR COMBINATIONS (2-Colour Split Cards)
   {
-    id: 'cream-dark-almond',
-    name: 'Cream + Dark Almond',
+    id: 'cream-and-brown',
+    name: 'Cream and Brown',
     category: 'Interior',
     colours: [
       { name: 'Cream', hex: '#F3E5C8' },
@@ -392,8 +418,8 @@ export const COLOUR_COMBINATIONS: ColourCombination[] = [
     description: 'Soft warm cream paired with rich dark almond depth',
   },
   {
-    id: 'absolute-white-oak-leaf',
-    name: 'Absolute White + Oak Leaf',
+    id: 'pure-white-and-wooden-shades',
+    name: 'Pure White and Wooden Shades',
     category: 'Interior',
     colours: [
       { name: 'Absolute White', hex: '#F5F6F8' },
@@ -402,8 +428,8 @@ export const COLOUR_COMBINATIONS: ColourCombination[] = [
     description: 'Pristine white elegance with natural oak wood warmth',
   },
   {
-    id: 'grey-matter-brown-tan',
-    name: 'Grey Matter + Brown Tan',
+    id: 'shades-of-grey-and-brown',
+    name: 'Shades of Grey & Brown',
     category: 'Interior',
     colours: [
       { name: 'Grey Matter', hex: '#9EA3A8' },
@@ -412,8 +438,8 @@ export const COLOUR_COMBINATIONS: ColourCombination[] = [
     description: 'Modern slate grey balanced with warm brown tan accents',
   },
   {
-    id: 'emerald-accent-almond-white',
-    name: 'Emerald Accent + Almond White',
+    id: 'dark-green-and-white',
+    name: 'Dark Green and White',
     category: 'Interior',
     colours: [
       { name: 'Emerald Accent', hex: '#1E4D3B' },
@@ -421,73 +447,38 @@ export const COLOUR_COMBINATIONS: ColourCombination[] = [
     ],
     description: 'Deep opulent green contrasting with soft almond white',
   },
-
-  // INTERIOR SINGLE COLOURS
   {
-    id: 'mystic-lake',
-    name: 'Mystic Lake',
+    id: 'mystic-lake-and-subtle-cream',
+    name: 'Mystic Lake & Subtle Cream',
     category: 'Interior',
     colours: [
       { name: 'Mystic Lake', hex: '#5B7B88' },
-    ],
-    description: 'Tranquil and soothing lake blue-grey hue',
-  },
-  {
-    id: 'subtle-cream',
-    name: 'Subtle Cream',
-    category: 'Interior',
-    colours: [
       { name: 'Subtle Cream', hex: '#F5EDDA' },
     ],
-    description: 'Soft, delicate cream tone for warm inviting spaces',
+    description: 'Tranquil lake blue-grey paired with delicate warm cream',
   },
   {
-    id: 'gulmarg-winter',
-    name: 'Gulmarg Winter',
+    id: 'gulmarg-winter-and-swiss-coffee',
+    name: 'Gulmarg Winter & Swiss Coffee',
     category: 'Interior',
     colours: [
       { name: 'Gulmarg Winter', hex: '#DCE3EA' },
-    ],
-    description: 'Cool, crisp and serene winter ice blue',
-  },
-  {
-    id: 'swiss-coffee',
-    name: 'Swiss Coffee',
-    category: 'Interior',
-    colours: [
       { name: 'Swiss Coffee', hex: '#EAE3D2' },
     ],
-    description: 'Smooth, cozy coffee cream finish',
+    description: 'Cool winter ice blue balanced with smooth coffee cream',
   },
   {
-    id: 'taupe-tone',
-    name: 'Taupe Tone',
+    id: 'taupe-tone-and-rave-raisin',
+    name: 'Taupe Tone & Rave Raisin',
     category: 'Interior',
     colours: [
       { name: 'Taupe Tone', hex: '#A89A8B' },
-    ],
-    description: 'Sophisticated neutral taupe with earthy warmth',
-  },
-  {
-    id: 'rave-raisin',
-    name: 'Rave Raisin',
-    category: 'Interior',
-    colours: [
       { name: 'Rave Raisin', hex: '#583743' },
     ],
-    description: 'Bold, luxurious deep raisin plum accent',
-  },
-  {
-    id: 'bamboo-grove',
-    name: 'Bamboo Grove',
-    category: 'Interior',
-    colours: [
-      { name: 'Bamboo Grove', hex: '#8A9A65' },
-    ],
-    description: 'Fresh, organic earthy bamboo green',
+    description: 'Sophisticated neutral taupe with rich raisin plum accent',
   },
 
-  // EXTERIOR COLOURS
+  // EXTERIOR COLOURS (5 Cards)
   {
     id: 'tropical-tan',
     name: 'Tropical Tan',

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { m, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { submitLead } from '@/utils/leadApi';
 
 const serviceOptions = [
   'Interior Painting',
@@ -16,6 +17,46 @@ export default function BookSiteVisitSection() {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const ease = [0.16, 1, 0.3, 1] as const;
 
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    city: '',
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [honeypot, setHoneypot] = useState('');
+
+  const validate = () => {
+    const errs: Record<string, string> = {};
+    if (!formData.name.trim()) {
+      errs.name = 'Required';
+    }
+    if (!formData.phone.trim()) {
+      errs.phone = 'Required';
+    } else if (!/^[0-9+\-\s()]{10,}$/.test(formData.phone.trim())) {
+      errs.phone = 'Invalid phone number';
+    }
+    if (formData.email.trim() && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email.trim())) {
+      errs.email = 'Invalid email address';
+    }
+    if (!formData.city.trim()) {
+      errs.city = 'Required';
+    }
+    setErrors(errs);
+    return Object.keys(errs).length === 0;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
+    if (submitError) setSubmitError('');
+    if (submitted) setSubmitted(false);
+  };
+
   const toggleService = (name: string) => {
     setSelected(prev => {
       const next = new Set(prev);
@@ -26,6 +67,43 @@ export default function BookSiteVisitSection() {
       }
       return next;
     });
+    if (submitted) setSubmitted(false);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+
+    if (validate()) {
+      setIsSubmitting(true);
+      setSubmitError('');
+
+      const result = await submitLead({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        city: formData.city,
+        services: Array.from(selected),
+        sourcePage: 'Services Page - Book Site Visit Form',
+        website_url: honeypot
+      });
+
+      setIsSubmitting(false);
+
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          city: '',
+        });
+        setSelected(new Set());
+        setErrors({});
+      } else {
+        setSubmitError(result.message);
+      }
+    }
   };
 
   return (
@@ -107,26 +185,75 @@ export default function BookSiteVisitSection() {
               </p>
 
               {/* Form */}
-              <form onSubmit={e => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                 {/* Name */}
-                <FieldInput label="Full Name" type="text" placeholder="Your full name" />
+                <div>
+                  <label style={labelStyle}>Full Name *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your full name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    style={{ ...inputStyle, borderColor: errors.name ? 'red' : 'rgba(16,42,67,0.12)' }}
+                    onFocus={e => { e.currentTarget.style.borderColor = 'var(--color-accent)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(231,104,75,0.12)'; }}
+                    onBlur={e => { e.currentTarget.style.borderColor = errors.name ? 'red' : 'rgba(16,42,67,0.12)'; e.currentTarget.style.boxShadow = ''; }}
+                  />
+                  {errors.name && <p style={{ fontSize: 11, color: 'red', marginTop: 4 }}>{errors.name}</p>}
+                </div>
 
                 {/* Phone */}
                 <div>
-                  <label style={labelStyle}>Phone Number</label>
+                  <label style={labelStyle}>Phone Number *</label>
                   <div style={{ display: 'flex' }}>
                     <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 14px', background: '#F5F4F0', border: '1px solid rgba(16,42,67,0.12)', borderRight: 'none', borderRadius: '11px 0 0 11px', fontSize: 13, fontWeight: 500, color: 'var(--color-primary-dark)', flexShrink: 0, userSelect: 'none' }}>
                       +91
                     </span>
-                    <input type="tel" placeholder="Phone number" style={{ ...inputStyle, borderRadius: '0 11px 11px 0', flex: 1 }} />
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone number"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      style={{ ...inputStyle, borderRadius: '0 11px 11px 0', flex: 1, borderColor: errors.phone ? 'red' : 'rgba(16,42,67,0.12)' }}
+                      onFocus={e => { e.currentTarget.style.borderColor = 'var(--color-accent)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(231,104,75,0.12)'; }}
+                      onBlur={e => { e.currentTarget.style.borderColor = errors.phone ? 'red' : 'rgba(16,42,67,0.12)'; e.currentTarget.style.boxShadow = ''; }}
+                    />
                   </div>
+                  {errors.phone && <p style={{ fontSize: 11, color: 'red', marginTop: 4 }}>{errors.phone}</p>}
                 </div>
 
                 {/* Email */}
-                <FieldInput label="Email ID (Optional)" type="email" placeholder="you@example.com" />
+                <div>
+                  <label style={labelStyle}>Email ID (Optional)</label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    style={{ ...inputStyle, borderColor: errors.email ? 'red' : 'rgba(16,42,67,0.12)' }}
+                    onFocus={e => { e.currentTarget.style.borderColor = 'var(--color-accent)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(231,104,75,0.12)'; }}
+                    onBlur={e => { e.currentTarget.style.borderColor = errors.email ? 'red' : 'rgba(16,42,67,0.12)'; e.currentTarget.style.boxShadow = ''; }}
+                  />
+                  {errors.email && <p style={{ fontSize: 11, color: 'red', marginTop: 4 }}>{errors.email}</p>}
+                </div>
 
                 {/* City */}
-                <FieldInput label="City" type="text" placeholder="e.g. Bangalore" />
+                <div>
+                  <label style={labelStyle}>City *</label>
+                  <input
+                    type="text"
+                    name="city"
+                    placeholder="e.g. Bangalore"
+                    value={formData.city}
+                    onChange={handleChange}
+                    style={{ ...inputStyle, borderColor: errors.city ? 'red' : 'rgba(16,42,67,0.12)' }}
+                    onFocus={e => { e.currentTarget.style.borderColor = 'var(--color-accent)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(231,104,75,0.12)'; }}
+                    onBlur={e => { e.currentTarget.style.borderColor = errors.city ? 'red' : 'rgba(16,42,67,0.12)'; e.currentTarget.style.boxShadow = ''; }}
+                  />
+                  {errors.city && <p style={{ fontSize: 11, color: 'red', marginTop: 4 }}>{errors.city}</p>}
+                </div>
 
                 {/* Service Type */}
                 <div>
@@ -135,7 +262,7 @@ export default function BookSiteVisitSection() {
                     {serviceOptions.map(opt => {
                       const checked = selected.has(opt);
                       return (
-                        <label key={opt} onClick={() => toggleService(opt)} style={{ display: 'flex', alignItems: 'center', gap: 9, cursor: 'pointer' }}>
+                        <div key={opt} onClick={() => toggleService(opt)} style={{ display: 'flex', alignItems: 'center', gap: 9, cursor: 'pointer' }}>
                           <span style={{ flexShrink: 0, width: 18, height: 18, borderRadius: 5, border: `1.5px solid ${checked ? 'var(--color-accent)' : 'rgba(16,42,67,0.22)'}`, background: checked ? 'var(--color-accent)' : '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}>
                             {checked && (
                               <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
@@ -146,7 +273,7 @@ export default function BookSiteVisitSection() {
                           <span style={{ fontSize: 13, fontWeight: 500, color: checked ? 'var(--color-accent)' : 'var(--color-primary-dark)', lineHeight: 1.3, transition: 'color 0.2s' }}>
                             {opt}
                           </span>
-                        </label>
+                        </div>
                       );
                     })}
                   </div>
@@ -155,20 +282,44 @@ export default function BookSiteVisitSection() {
                 {/* Consent */}
                 <p style={{ fontSize: 11, color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
                   By booking a consultation, you agree to our{' '}
-                  <a href="/terms" style={{ textDecoration: 'underline' }}>Terms &amp; Conditions.</a>
+                  <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>Terms &amp; Conditions.</span>
                 </p>
+
+                {/* Honeypot field */}
+                <input
+                  type="text"
+                  name="website_url"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  style={{ display: 'none' }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
 
                 {/* CTA */}
                 <button
                   type="submit"
-                  style={{ width: '100%', minHeight: 54, marginTop: 8, background: 'var(--color-accent)', color: '#fff', border: 'none', borderRadius: 10, fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1.2px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, transition: 'background 0.25s, transform 0.25s, box-shadow 0.25s' }}
+                  disabled={submitted || isSubmitting}
+                  style={{ width: '100%', minHeight: 54, marginTop: 8, background: submitted ? '#22c55e' : 'var(--color-accent)', color: '#fff', border: 'none', borderRadius: 10, fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1.2px', cursor: submitted || isSubmitting ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, transition: 'background 0.25s, transform 0.25s, box-shadow 0.25s' }}
                   className="group"
-                  onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = '#cf5538'; (e.currentTarget as HTMLButtonElement).style.transform = 'translateY(-2px)'; (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 8px 20px rgba(231,104,75,0.28)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--color-accent)'; (e.currentTarget as HTMLButtonElement).style.transform = ''; (e.currentTarget as HTMLButtonElement).style.boxShadow = ''; }}
+                  onMouseEnter={e => { if (!submitted && !isSubmitting) { e.currentTarget.style.background = '#cf5538'; e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 20px rgba(231,104,75,0.28)'; } }}
+                  onMouseLeave={e => { if (!submitted && !isSubmitting) { e.currentTarget.style.background = 'var(--color-accent)'; e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = ''; } }}
                 >
-                  BOOK SITE INSPECTION
-                  <ArrowRight style={{ width: 16, height: 16 }} />
+                  {isSubmitting ? 'Sending...' : submitted ? '✓ Booking Confirmed!' : 'BOOK SITE INSPECTION'}
+                  {!isSubmitting && !submitted && <ArrowRight style={{ width: 16, height: 16 }} />}
                 </button>
+
+                {/* Success / Error Messages */}
+                {submitted && (
+                  <p style={{ color: '#22c55e', fontSize: 13, fontWeight: 600, textAlign: 'center', marginTop: 8 }}>
+                    Thank you! Your request has been received. Our team will contact you shortly.
+                  </p>
+                )}
+                {submitError && (
+                  <p style={{ color: 'red', fontSize: 13, fontWeight: 600, textAlign: 'center', marginTop: 8 }}>
+                    {submitError}
+                  </p>
+                )}
               </form>
             </div>
           </m.div>
@@ -214,18 +365,3 @@ const inputStyle: React.CSSProperties = {
   outline: 'none',
   boxSizing: 'border-box',
 };
-
-function FieldInput({ label, type, placeholder }: { label: string; type: string; placeholder: string }) {
-  return (
-    <div>
-      <label style={labelStyle}>{label}</label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        style={inputStyle}
-        onFocus={e => { e.currentTarget.style.borderColor = 'var(--color-accent)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(231,104,75,0.12)'; }}
-        onBlur={e => { e.currentTarget.style.borderColor = 'rgba(16,42,67,0.12)'; e.currentTarget.style.boxShadow = ''; }}
-      />
-    </div>
-  );
-}
