@@ -90,7 +90,7 @@ export default function LocationSection() {
   href={mapsLink}
   target="_blank"
   rel="noopener noreferrer"
-  className="relative sm:left-15 top-4 inline-flex w-full sm:w-[190px] h-14 items-center justify-center gap-2 rounded-full bg-[#F26A4B] text-white font-semibold hover:bg-[#E0593B] transition-all duration-300 shadow-lg shadow-[#F26A4B]/30 hover:-translate-y-1 text-center"
+  className="relative mt-6 sm:mt-0 sm:left-15 sm:top-4 inline-flex w-full sm:w-[190px] h-14 items-center justify-center gap-2 rounded-full bg-[#F26A4B] text-white font-semibold hover:bg-[#E0593B] transition-all duration-300 shadow-lg shadow-[#F26A4B]/30 hover:-translate-y-1 text-center"
 >
   <MapPin className="w-5 h-5" />
   Get Directions

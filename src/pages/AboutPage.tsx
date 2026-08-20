@@ -1034,26 +1034,26 @@ export default function AboutPage() {
             ===================================================== */}
 
             <m.div
-  variants={fadeUpVariant}
-  className="relative top-[30px] -translate-x-7 flex flex-col sm:flex-row justify-center items-center gap-5 w-full mt-8"
->
+              variants={fadeUpVariant}
+              className="relative top-[30px] translate-x-0 sm:-translate-x-7 flex flex-col sm:flex-row justify-center items-center gap-5 w-full mt-8 px-4 sm:px-0"
+            >
 
               <a
                 href="/contact"
-                className="w-full sm:w-auto min-w-[220px] inline-flex justify-center items-center px-9 py-4 bg-[#F26A3D] hover:bg-[#d4572f] text-white font-bold text-base md:text-lg rounded-full transition-all duration-300 shadow-lg hover:scale-105"
+                className="w-full sm:w-auto max-w-xs min-w-[220px] inline-flex justify-center items-center px-9 py-4 bg-[#F26A3D] hover:bg-[#d4572f] text-white font-bold text-base md:text-lg rounded-full transition-all duration-300 shadow-lg hover:scale-105"
               >
                 Book Free Site Visit
               </a>
 
 
               <a
-  href="/contact"
-  className="w-full sm:w-auto min-w-[180px] inline-flex justify-center items-center px-9 py-4 bg-transparent border-2 border-white/40 hover:border-white text-white font-bold text-base md:text-lg rounded-full transition-all duration-300 hover:bg-white/10"
->
-  <span className="text-white">
-    Contact Us
-  </span>
-</a>
+                href="/contact"
+                className="w-full sm:w-auto max-w-xs min-w-[180px] inline-flex justify-center items-center px-9 py-4 bg-transparent border-2 border-white/40 hover:border-white text-white font-bold text-base md:text-lg rounded-full transition-all duration-300 hover:bg-white/10"
+              >
+                <span className="text-white">
+                  Contact Us
+                </span>
+              </a>
 
             </m.div>
 

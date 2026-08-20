@@ -62,11 +62,11 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: shouldReduceMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap"
+                className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap sm:justify-start sm:items-start w-full"
               >
                 <Button
                   size="lg"
-                  className="group h-[52px] min-w-[200px] rounded-full bg-[var(--color-accent)] px-6 text-[15px] font-semibold text-white shadow-[0_18px_40px_rgba(231,104,75,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-accent-dark)]"
+                  className="group h-[52px] w-full max-w-[280px] sm:w-auto sm:max-w-none sm:min-w-[200px] rounded-full bg-[var(--color-accent)] px-6 text-[15px] font-semibold text-white shadow-[0_18px_40px_rgba(231,104,75,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-accent-dark)]"
                   rightIcon={<ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />}
                   onClick={() => navigate('/contact')}
                 >
@@ -75,7 +75,7 @@ export default function Hero() {
                 <Button
                   size="lg"
                   variant="ghost"
-                  className="h-[52px] min-w-[200px] rounded-full border border-white/20 bg-white/10 text-white shadow-none backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:border-white/30 hover:text-white"
+                  className="h-[52px] w-full max-w-[280px] sm:w-auto sm:max-w-none sm:min-w-[200px] rounded-full border border-white/20 bg-white/10 text-white shadow-none backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:border-white/30 hover:text-white"
                   onClick={() => navigate('/projects')}
                 >
                   View Our Projects
