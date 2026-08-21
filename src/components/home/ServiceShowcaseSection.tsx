@@ -16,8 +16,7 @@ const showcaseItems = [
   },
   {
     title: 'WOOD FINISHES',
-    image:
-      'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/services/wood-finishes.jpg',
     imageAlt: 'Custom wood panel finish in a premium interior',
   },
   {
@@ -191,7 +190,7 @@ export default function ServiceShowcaseSection() {
           <m.p
             variants={headingVariants}
             transition={{ duration: shouldReduceMotion ? 0 : 0.45, ease: 'easeOut' }}
-            className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-accent)]"
+            className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-accent)] translate-x-[2.9px]"
           >
             OUR SPECIALTIES
           </m.p>
@@ -205,7 +204,7 @@ export default function ServiceShowcaseSection() {
           </m.h2>
         </m.div>
 
-        <div className="mx-auto w-full max-w-[1200px] grid gap-5 lg:grid-cols-[11fr_9fr] lg:h-[600px]">
+        <div className="relative top-8 mx-auto w-full max-w-[1200px] grid gap-5 lg:grid-cols-[11fr_9fr] lg:h-[600px]">
           <ServiceCard item={showcaseItems[0]} transitionDelay={0.12} aspectClass="aspect-[4/3] lg:h-full lg:aspect-auto" supportsHover={supportsHover} />
 
           <div className="grid gap-5">

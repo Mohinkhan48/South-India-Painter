@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Hero from '@/components/home/Hero';
 import WelcomeIntroSection from '@/components/home/WelcomeIntroSection';
 import BookOurService from '@/components/home/BookOurService';
@@ -12,8 +13,22 @@ import TrustedBrandPartnerSection from '@/components/home/TrustedBrandPartnerSec
 import RecentProjectsSection from '@/components/home/RecentProjectsSection';
 import BookSiteVisitSection from '@/components/home/BookSiteVisitSection';
 import LocationSection from '@/components/home/LocationSection';
+import EnquireFormModal from '@/components/common/EnquireFormModal';
 
 export default function HomePage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const hasShownPopup = sessionStorage.getItem('hasShownPopup');
+    if (!hasShownPopup) {
+      const timer = setTimeout(() => {
+        setIsModalOpen(true);
+        sessionStorage.setItem('hasShownPopup', 'true');
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col">
       <Hero />
@@ -53,9 +68,10 @@ export default function HomePage() {
       <div style={{ marginTop: '80px' }}>
         <BookSiteVisitSection />
       </div>
-      <div style={{ marginTop: '80px' }}>
+      <div style={{ marginTop: '80px', marginBottom: '80px' }}>
         <LocationSection />
       </div>
+      <EnquireFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

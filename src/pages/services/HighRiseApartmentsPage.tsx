@@ -10,8 +10,7 @@ const config = {
   heading: 'High-Rise Apartment Painting Services',
   description:
     'South India Painters handles painting projects for apartments and high-rise residential properties of all scales. Our experienced teams coordinate seamlessly to deliver clean, professional results on time.',
-  heroImage:
-    'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80',
+  heroImage: '/images/projects/appartment 1.png',
   heroImageAlt: 'Bright apartment building exterior with balconies, windows, and blue sky',
   breadcrumbLabel: 'High-Rise Apartments',
   variant: 'apartment' as const,
@@ -27,16 +26,15 @@ const config = {
     'Strict timely completion commitment',
   ],
 
-  // One image per whyChoosePoint — apartment buildings, team coordination, safety, lobbies
   whyImages: [
-    'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+    '/images/projects/appartment 2.png',
+    '/images/projects/appartment 3.png',
+    '/images/projects/appartment 4.png',
+    '/images/projects/appartment 5.png',
+    '/images/projects/appartment 6.png',
+    '/images/projects/appartment 7.png',
+    '/images/projects/appartment 8.png',
+    '/images/projects/appartment 9.png',
   ],
 
   whyChoosePoints: [

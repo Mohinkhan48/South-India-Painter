@@ -22,33 +22,34 @@ const exteriorPaints = [
 
 export default function ProjectsBrands() {
   return (
-    <section className="pt-20 pb-28 bg-[#FAF8F4]">
+    <section className="relative isolate pt-20 pb-28 bg-transparent">
+  <div className="absolute left-0 right-0 -top-10 bottom-0 -z-10 bg-[#FAF8F4]" />
       <div className="container mx-auto px-6">
 
         {/* Heading */}
         <m.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center text-center w-full mb-10"
-        >
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="relative -top-6 flex flex-col items-center text-center w-full mb-10"
+>
           <span className="inline-flex items-center rounded-full bg-[#F26A4B]/10 text-[#F26A4B] px-5 py-2 text-xs font-bold uppercase tracking-[0.25em]">
             Premium Paint Brand
           </span>
 
-          <h2 className="mt-5 text-4xl font-extrabold text-[#163152]">
-            Trusted Asian Paints Products
-          </h2>
+          <h2 className="relative top-4 mt-5 text-4xl font-extrabold text-[#163152]">
+  Trusted Asian Paints Products
+</h2>
 
-          <p className="mt-2 max-w-3xl mx-auto text-lg leading-8 text-slate-600 text-center">
-            We proudly use premium Asian Paints products to deliver durable,
-            beautiful and long-lasting finishes for every residential,
-            commercial and luxury painting project.
-          </p>
+<p className="relative top-7 mt-2 max-w-3xl mx-auto text-lg leading-8 text-slate-600 text-center">
+  We proudly use premium Asian Paints products to deliver durable,
+  beautiful and long-lasting finishes for every residential,
+  commercial and luxury painting project.
+</p>
         </m.div>
 
         {/* Main content: Logo Left + Categories Right */}
-        <div className="relative top-6 flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+        <div className="relative top-10 flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
 
           {/* LEFT — Logo */}
           <m.div

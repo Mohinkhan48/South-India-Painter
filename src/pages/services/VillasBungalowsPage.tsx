@@ -10,8 +10,7 @@ const config = {
   heading: 'Villa & Bungalow Painting Services',
   description:
     'South India Painters provides complete painting solutions for large villas and independent homes. From interior rooms to exterior facades, we bring precision and premium finishes to every corner of your home.',
-  heroImage:
-    'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+  heroImage: '/images/projects/villas banglows 1.png',
   heroImageAlt: 'Bright daytime exterior of a premium villa with landscaping and modern architectural details',
   breadcrumbLabel: 'Villas / Bungalows',
   variant: 'villa' as const,
@@ -27,16 +26,15 @@ const config = {
     'Professional finishing and full cleanup',
   ],
 
-  // One image per whyChoosePoint — villa exteriors, landscaped homes, supervision, quality work
   whyImages: [
-    'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1600607687644-c7ddd0d03d1c?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1489171078254-c3365d6e359f?auto=format&fit=crop&w=800&q=80',
+    '/images/projects/villas banglows 2.png',
+    '/images/projects/villas banglows 3.png',
+    '/images/projects/villas banglows 4.png',
+    '/images/projects/vallas banglows 5.png',
+    '/images/projects/vallas banglows 6.png',
+    '/images/projects/vallas banglows 7.png',
+    '/images/projects/vallas banglows 8.png',
+    '/images/projects/vallas banglows 9.png',
   ],
 
   whyChoosePoints: [

@@ -48,90 +48,64 @@ export default function WelcomeIntroSection() {
 
             {/* Right Column: 2x2 Metric Cards Grid (padded right) */}
             <div className="lg:col-span-5 grid grid-cols-2 gap-4 pr-6 sm:pr-10 pl-4">
-              <div className="rounded-2xl bg-[#FAF8F4] border border-gray-100 flex flex-col justify-between hover:border-[var(--color-accent)]/30 transition-colors"
-style={{
-  padding: '20px 28px',
-}}>
+              {/* Card 1: Years Experience */}
+              <div className="rounded-2xl bg-[#FAF8F4] border border-gray-100 flex flex-col justify-between max-lg:items-center hover:border-[var(--color-accent)]/30 transition-colors"
+style={{ padding: '20px 28px' }}>
                 <div
-  className="w-10 h-10 rounded-xl bg-[rgba(231,104,75,0.12)] flex items-center justify-center mb-3"
-  style={{ transform: 'translateX(80px)' }}
->
+                  className="w-10 h-10 rounded-xl bg-[rgba(231,104,75,0.12)] flex items-center justify-center mb-3"
+                  style={{ transform: 'translateX(80px)' }}
+                >
                   <Award className="w-5 h-5 text-[var(--color-accent)]" />
                 </div>
-                <div style={{ transform: 'translateX(80px)' }}>
-  <div className="text-2xl sm:text-3xl font-extrabold text-[var(--color-primary)]">
-    27+
-  </div>
-  <div
-  className="text-xs font-bold text-gray-500 mt-1"
-  style={{ transform: 'translateX(-30px)' }}
->
-  Years Experience
-</div>
-</div>
+                <div className="max-lg:flex max-lg:flex-col max-lg:items-center" style={{ transform: 'translateX(80px)' }}>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-[var(--color-primary)]">27+</div>
+                  <div className="text-xs font-bold text-gray-500 mt-1" style={{ transform: 'translateX(-30px)' }}>Years Experience</div>
+                </div>
               </div>
 
-              <div className="rounded-2xl bg-[#FAF8F4] border border-gray-100 flex flex-col justify-between hover:border-[var(--color-accent)]/30 transition-colors"
-style={{
-  padding: '20px 28px',
-}}>
+              {/* Card 2: Skilled Workers */}
+              <div className="rounded-2xl bg-[#FAF8F4] border border-gray-100 flex flex-col justify-between max-lg:items-center hover:border-[var(--color-accent)]/30 transition-colors"
+style={{ padding: '20px 28px' }}>
                 <div
-  className="w-10 h-10 rounded-xl bg-[rgba(231,104,75,0.12)] flex items-center justify-center mb-3"
-  style={{ transform: 'translateX(80px)' }}
->
+                  className="w-10 h-10 rounded-xl bg-[rgba(231,104,75,0.12)] flex items-center justify-center mb-3"
+                  style={{ transform: 'translateX(80px)' }}
+                >
                   <Users className="w-5 h-5 text-[var(--color-accent)]" />
                 </div>
-                <div style={{ transform: 'translateX(68px)' }}>
-  <div className="text-2xl sm:text-3xl font-extrabold text-[var(--color-primary)]">234+</div>
-  <div
-  className="text-xs font-bold text-gray-500 mt-1"
-  style={{ transform: 'translateX(-12px)' }}
->
-  Skilled Workers
-</div>
-</div>
+                <div className="max-lg:flex max-lg:flex-col max-lg:items-center" style={{ transform: 'translateX(68px)' }}>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-[var(--color-primary)]">234+</div>
+                  <div className="text-xs font-bold text-gray-500 mt-1" style={{ transform: 'translateX(-12px)' }}>Skilled Workers</div>
+                </div>
               </div>
 
-              <div className="rounded-2xl bg-[#FAF8F4] border border-gray-100 flex flex-col justify-between hover:border-[var(--color-accent)]/30 transition-colors"
-style={{
-  padding: '20px 28px',
-}}>
+              {/* Card 3: Direct Execution */}
+              <div className="rounded-2xl bg-[#FAF8F4] border border-gray-100 flex flex-col justify-between max-lg:items-center hover:border-[var(--color-accent)]/30 transition-colors"
+style={{ padding: '20px 28px' }}>
                 <div
-  className="w-10 h-10 rounded-xl bg-[rgba(231,104,75,0.12)] flex items-center justify-center mb-3"
-  style={{ transform: 'translateX(80px)' }}
->
+                  className="w-10 h-10 rounded-xl bg-[rgba(231,104,75,0.12)] flex items-center justify-center mb-3"
+                  style={{ transform: 'translateX(80px)' }}
+                >
                   <ShieldCheck className="w-5 h-5 text-[var(--color-accent)]" />
                 </div>
-                <div style={{ transform: 'translateX(60px)' }}>
-  <div className="text-2xl sm:text-3xl font-extrabold text-[var(--color-primary)]">100%</div>
-  <div
-  className="text-xs font-bold text-gray-500 mt-1"
-  style={{ transform: 'translateX(-10px)' }}
->
-  Direct Execution
-</div>
-</div>
+                <div className="max-lg:flex max-lg:flex-col max-lg:items-center" style={{ transform: 'translateX(60px)' }}>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-[var(--color-primary)]">100%</div>
+                  <div className="text-xs font-bold text-gray-500 mt-1" style={{ transform: 'translateX(-10px)' }}>Direct Execution</div>
+                </div>
               </div>
 
-              <div className="rounded-2xl bg-[#FAF8F4] border border-gray-100 flex flex-col justify-between hover:border-[var(--color-accent)]/30 transition-colors"
-style={{
-  padding: '20px 28px',
-}}>
+              {/* Card 4: Asian Paints Trust */}
+              <div className="rounded-2xl bg-[#FAF8F4] border border-gray-100 flex flex-col justify-between max-lg:items-center hover:border-[var(--color-accent)]/30 transition-colors"
+style={{ padding: '20px 28px' }}>
                 <div
-  className="w-10 h-10 rounded-xl bg-[rgba(231,104,75,0.12)] flex items-center justify-center mb-3"
-  style={{ transform: 'translateX(80px)' }}
->
+                  className="w-10 h-10 rounded-xl bg-[rgba(231,104,75,0.12)] flex items-center justify-center mb-3"
+                  style={{ transform: 'translateX(80px)' }}
+                >
                   <Sparkles className="w-5 h-5 text-[var(--color-accent)]" />
                 </div>
-                <div style={{ transform: 'translateX(45px)' }}>
-  <div className="text-2xl sm:text-3xl font-extrabold text-[var(--color-primary)]">80+ Yrs</div>
-  <div
-  className="text-xs font-bold text-gray-500 mt-1"
-  style={{ transform: 'translateX(-0px)' }}
->
-  Asian Paints Trust
-</div>
-</div>
+                <div className="max-lg:flex max-lg:flex-col max-lg:items-center" style={{ transform: 'translateX(45px)' }}>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-[var(--color-primary)]">80+ Yrs</div>
+                  <div className="text-xs font-bold text-gray-500 mt-1">Asian Paints Trust</div>
+                </div>
               </div>
             </div>
           </div>

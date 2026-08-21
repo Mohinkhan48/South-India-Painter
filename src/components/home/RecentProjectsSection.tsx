@@ -5,28 +5,28 @@ import Lightbox from '@/components/common/Lightbox';
 
 const projects = [
   {
-    src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
-    alt: 'Luxury Living Room Painting',
+    src: '/images/projects/our projects 1.png',
+    alt: 'Our Recent Project 1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80',
-    alt: 'Premium Bedroom Painting',
+    src: '/images/projects/our projects 2.png',
+    alt: 'Our Recent Project 2',
   },
   {
-    src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
-    alt: 'Exterior Villa Painting',
+    src: '/images/projects/our projects 3.png',
+    alt: 'Our Recent Project 3',
   },
   {
-    src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
-    alt: 'Accent Wall Texture',
+    src: '/images/projects/our projects 4.png',
+    alt: 'Our Recent Project 4',
   },
   {
-    src: 'https://images.unsplash.com/photo-1589834390005-5d4fb9bf3d32?auto=format&fit=crop&w=800&q=80',
-    alt: 'Professional Interior Painting',
+    src: '/images/projects/our projects 5.png',
+    alt: 'Our Recent Project 5',
   },
   {
-    src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-    alt: 'Luxury Home Exterior',
+    src: '/images/projects/our projects 6.png',
+    alt: 'Our Recent Project 6',
   },
 ];
 

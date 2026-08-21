@@ -14,6 +14,7 @@ export default function ResourcesCtaSection() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="relative w-full rounded-[32px] overflow-hidden"
+style={{ minHeight: '300px' }}
         >
           {/* Premium Gradient Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#17375E] via-[#17375E] to-[#F47C20]/40 z-0" />
@@ -23,14 +24,20 @@ export default function ResourcesCtaSection() {
           <div className="absolute bottom-[-20%] left-[-10%] w-[300px] h-[300px] rounded-full bg-[#F47C20]/20 blur-3xl pointer-events-none z-0" />
 
           <div className="relative z-10 px-12 pt-24 pb-48 sm:pt-40 sm:pb-64 sm:px-24 flex flex-col items-center text-center">
-            <h2 className="text-[36px] sm:text-[48px] lg:text-[56px] font-[800] text-white mb-6 leading-tight">
-              Ready to Transform Your Home?
-            </h2>
-            <p className="text-[#b4c4d3] text-[18px] sm:text-[22px] max-w-3xl mb-12">
-              Book a free site inspection and receive a personalised quotation from our expert painting consultants.
-            </p>
+            <h2
+  className="text-[36px] sm:text-[48px] lg:text-[56px] font-[800] text-white mb-6 leading-tight"
+  style={{ transform: 'translateY(25px)' }}
+>
+  Ready to Transform Your Home?
+</h2>
+            <p
+  className="text-[#b4c4d3] text-[18px] sm:text-[22px] max-w-3xl mb-12"
+  style={{ transform: 'translateY(40px)' }}
+>
+  Book a free site inspection and receive a personalised quotation from our expert painting consultants.
+</p>
             
-            <div className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto translate-y-15">
               <Link
   to="/contact"
   className="group inline-flex items-center justify-center gap-3

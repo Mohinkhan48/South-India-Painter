@@ -44,7 +44,10 @@ export default function ResourcesFaqSection() {
           </p>
         </m.div>
 
-        <div className="flex flex-col gap-6">
+        <div
+  className="flex flex-col gap-6"
+  style={{ marginTop: '70px' }}
+>
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
@@ -69,10 +72,13 @@ export default function ResourcesFaqSection() {
                   aria-controls={`faq-answer-${index}`}
                   className="w-full flex items-center justify-between p-6 sm:p-8 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F47C20] focus-visible:ring-offset-2 rounded-[20px]"
                 >
-                  <span className={cn(
-                    "text-[18px] sm:text-[20px] font-bold transition-colors duration-300",
-                    isOpen ? "text-[#F47C20]" : "text-[#17375E]"
-                  )}>
+                  <span
+  className={cn(
+    "text-[18px] sm:text-[20px] font-bold transition-colors duration-300",
+    isOpen ? "text-[#F47C20]" : "text-[#17375E]"
+  )}
+  style={{ transform: 'translateX(20px)' }}
+>
                     {faq.question}
                   </span>
                   <div className={cn(
@@ -95,9 +101,16 @@ export default function ResourcesFaqSection() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className="px-6 sm:px-8 pb-8 pt-0 text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed">
-                        {faq.answer}
-                      </div>
+                      <div
+  className="px-6 sm:px-8 pb-8 pt-0 text-[#64748B] text-[16px] sm:text-[18px] leading-relaxed"
+  style={{
+    marginLeft: '20px',
+    marginRight: '10px',
+  }}
+>
+  {faq.answer}
+</div>
+
                     </m.div>
                   )}
                 </AnimatePresence>

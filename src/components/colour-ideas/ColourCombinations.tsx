@@ -5,15 +5,18 @@
  * Each card shows a preview of the exact colour swatch plus metadata.
  */
 
+import { useState } from 'react';
 import { m, AnimatePresence } from 'framer-motion';
 import { COLOUR_COMBINATIONS } from '@/data/colourIdeasData';
+import EnquireFormModal from '@/components/common/EnquireFormModal';
 
 export default function ColourCombinations() {
   const interiorCombos = COLOUR_COMBINATIONS.filter((c) => c.category === 'Interior');
   const exteriorCombos = COLOUR_COMBINATIONS.filter((c) => c.category === 'Exterior');
+  const [showEnquireModal, setShowEnquireModal] = useState(false);
 
   return (
-    <section className="w-full pt-[120px] pb-[120px] bg-[#FAF8F4]">
+    <section className="w-full pt-[120px] pb-[120px] bg-white">
       <div className="container mx-auto px-4">
         {/* Main Section heading */}
         <m.div
@@ -74,24 +77,34 @@ export default function ColourCombinations() {
 
                   {/* Card body: Left & Right Color Names only */}
                   <div
-  className="flex items-center justify-between text-xs sm:text-sm font-bold text-[#102A43]"
-  style={{
-    padding: '4px 14px 6px 14px',
-  }}
->
-  <span className="flex-1 text-left truncate">
-    {combo.colours[0].name}
-  </span>
+                    className="flex items-center justify-between text-xs sm:text-sm font-bold text-[#102A43]"
+                    style={{
+                      padding: '4px 14px 6px 14px',
+                    }}
+                  >
+                    <span className="flex-1 text-left truncate">
+                      {combo.colours[0].name}
+                    </span>
 
-  {combo.colours[1] && (
-    <span className="flex-1 text-right truncate">
-      {combo.colours[1].name}
-    </span>
-  )}
-</div>
+                    {combo.colours[1] && (
+                      <span className="flex-1 text-right truncate">
+                        {combo.colours[1].name}
+                      </span>
+                    )}
+                  </div>
                 </m.div>
               ))}
             </AnimatePresence>
+            {/* MORE OPTIONS button — positioned under the 4th card area */}
+            <div className="flex items-center justify-center w-full h-full sm:col-start-2 sm:row-start-3 lg:col-start-1 lg:row-start-3 xl:col-start-4 xl:row-start-2 mt-4 sm:mt-0">
+              <button
+                onClick={() => setShowEnquireModal(true)}
+                style={{ backgroundColor: '#E7684B', color: '#FFFFFF' }}
+                className="inline-flex items-center justify-center w-[250px] h-[56px] rounded-full text-[15px] font-bold tracking-[0.05em] uppercase shadow-[0_8px_24px_rgba(231,104,75,0.3)] hover:bg-[#CF5538] hover:shadow-[0_12px_32px_rgba(231,104,75,0.45)] hover:scale-[1.04] transition-all duration-300"
+              >
+                MORE OPTIONS
+              </button>
+            </div>
           </m.div>
         </div>
 
@@ -108,7 +121,7 @@ export default function ColourCombinations() {
           </div>
 
           {/* Exterior Cards */}
-          <m.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <m.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             <AnimatePresence>
               {exteriorCombos.map((combo, idx) => (
                 <m.div
@@ -138,6 +151,9 @@ export default function ColourCombinations() {
           </m.div>
         </div>
       </div>
+
+      {/* Enquire Form Modal */}
+      <EnquireFormModal isOpen={showEnquireModal} onClose={() => setShowEnquireModal(false)} />
     </section>
   );
 }

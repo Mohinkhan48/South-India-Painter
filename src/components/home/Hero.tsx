@@ -25,48 +25,44 @@ export default function Hero() {
       <Container className="relative z-10 py-16 sm:py-20 lg:py-0 lg:min-h-[680px] lg:h-[clamp(680px,78vh,820px)]">
         <div className="grid min-h-full items-center gap-10 lg:grid-cols-[1.4fr_0.9fr] lg:gap-16">
           <div className="max-w-[760px]">
-            <AnimatePresence>
-              <m.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: shouldReduceMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
-                className="mb-6 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-[var(--color-gold)]"
-              >
-                <span>{business.heroEyebrow}</span>
-                <span className="hidden h-px w-8 rounded-full bg-[var(--color-accent)] sm:inline-block" />
-              </m.div>
-            </AnimatePresence>
+  <AnimatePresence>
+    <m.div
+      initial={{ opacity: 0, y: 28 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.55,
+        ease: [0.22, 1, 0.36, 1],
+        delay: 0.08,
+      }}
+      className="space-y-6"
+    >
+      <h1 className="max-w-[760px] text-[clamp(3rem,4.4vw,4.5rem)] font-extrabold leading-[1.03] tracking-[-0.03em] text-white">
+        <span className="block">Transforming Spaces</span>
+        <span className="block text-[var(--color-accent)]">
+          with Premium Finishes
+        </span>
+      </h1>
 
-            <AnimatePresence>
-              <m.div
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: shouldReduceMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
-                className="space-y-6"
-              >
-                <h1 className="max-w-[760px] text-[clamp(3rem,4.4vw,4.5rem)] font-extrabold leading-[1.03] tracking-[-0.03em] text-white">
-                  <span className="block">Transforming Spaces</span>
-                  <span className="block text-[var(--color-accent)]">with Premium Finishes</span>
-                </h1>
-
-                <p className="max-w-[620px] text-[17px] leading-[1.85] text-white/88 sm:text-[18px]">
-                27+ Years of Trusted Painting Services 234+ skilled professionals. 27+ years of experience. Zero outsourcing. We provide professional fresh painting and repainting for residential, commercial, apartment, villa, bungalow and industrial projects, using trusted Asian Paints products for a quality finish.
-
-
-                </p>
-              </m.div>
-            </AnimatePresence>
+      <p className="max-w-[620px] translate-x-3 translate-y-4 text-[17px] leading-[1.85] text-white/88 sm:text-[18px]">
+        27+ Years of Trusted Painting Services 234+ skilled professionals.
+        27+ years of experience. Zero outsourcing. We provide professional
+        fresh painting and repainting for residential, commercial, apartment,
+        villa, bungalow and industrial projects, using trusted Asian Paints
+        products for a quality finish.
+      </p>
+    </m.div>
+  </AnimatePresence>
 
             <AnimatePresence>
               <m.div
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: shouldReduceMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap sm:justify-start sm:items-start w-full"
+                className="mt-10 translate-y-8 translate-x-2 flex flex-col items-center justify-center gap-10 sm:flex-row sm:flex-wrap sm:justify-start sm:items-start w-full"
               >
                 <Button
                   size="lg"
-                  className="group h-[52px] w-full max-w-[280px] sm:w-auto sm:max-w-none sm:min-w-[200px] rounded-full bg-[var(--color-accent)] px-6 text-[15px] font-semibold text-white shadow-[0_18px_40px_rgba(231,104,75,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-accent-dark)]"
+                  className="group h-[52px] w-full max-w-[280px] sm:w-auto sm:max-w-none sm:min-w-[200px] rounded-full !bg-[#E7684B] hover:!bg-[#CF5538] px-6 text-[15px] font-semibold text-white shadow-[0_18px_40px_rgba(231,104,75,0.22)] transition-all duration-200 hover:-translate-y-0.5"
                   rightIcon={<ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />}
                   onClick={() => navigate('/contact')}
                 >

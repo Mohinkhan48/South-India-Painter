@@ -10,8 +10,7 @@ const config = {
   heading: 'Industrial Painting Services',
   description:
     'South India Painters provides painting solutions for industrial and large-scale properties. Our experienced team handles complex projects safely and efficiently, delivering durable protective coatings built for demanding environments.',
-  heroImage:
-    'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80',
+  heroImage: '/images/projects/industry 1.png',
   heroImageAlt: 'Large industrial property exterior with professional painting and protective coatings',
   breadcrumbLabel: 'Industries',
   variant: 'industrial' as const,
@@ -27,16 +26,15 @@ const config = {
     'Safety-first, compliant execution',
   ],
 
-  // One image per whyChoosePoint — factories, safety gear, workers, industrial sites, coatings
   whyImages: [
-    'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1571019613576-2b22c76fd955?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
+    '/images/projects/industry 2.png',
+    '/images/projects/industry 3.png',
+    '/images/projects/industry 4.png',
+    '/images/projects/industry 5.png',
+    '/images/projects/industry 6.png',
+    '/images/projects/industry 7.png',
+    '/images/projects/industry 8.png',
+    '/images/projects/industry 9.png',
   ],
 
   whyChoosePoints: [

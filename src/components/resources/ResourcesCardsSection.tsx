@@ -69,7 +69,10 @@ export default function ResourcesCardsSection() {
         </m.div>
 
         {/* Resource Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-[32px]">
+        <div
+  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-[32px]"
+  style={{ transform: 'translateY(50px)' }}
+>
           {cards.map((card, index) => (
             <m.div
               key={card.title}

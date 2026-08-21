@@ -255,7 +255,7 @@ export default function ColourIdeasRoomPage() {
 
       {/* ─── Before & After ─── */}
       {beforeAfter && (
-        <section className="mt-24 mb-32 pt-20 pb-32 md:pb-40 bg-[#FAF8F4]">
+        <section className="mt-[200px] mb-32 pt-20 pb-32 md:pb-40 bg-[#FAF8F4]">
           <div className="container mx-auto px-4 relative top-[80px]">
             <m.div
               initial={{ opacity: 0, y: 20 }}

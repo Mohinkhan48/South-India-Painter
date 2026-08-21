@@ -148,7 +148,8 @@ export default function ExperienceSection() {
     ease: 'easeOut',
     delay: 0.26,
   }}
-  className="relative z-[50] mt-[40px] flex justify-center w-full"
+  className="relative z-[50] mt-0 flex justify-center w-full"
+style={{ marginTop: '20px' }}
 >
   <button
     type="button"

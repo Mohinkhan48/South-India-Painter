@@ -10,8 +10,7 @@ const config = {
   heading: 'Residential Painting Services',
   description:
     'South India Painters provides complete painting services for residential buildings and homes of all sizes. We combine skilled workmanship with premium materials to deliver results that stand the test of time.',
-  heroImage:
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80',
+  heroImage: '/images/projects/residential buildings 1.png',
   heroImageAlt: 'Modern residential building with clean lines and professional finish',
   breadcrumbLabel: 'Residential Buildings',
   variant: 'residential' as const,
@@ -27,16 +26,15 @@ const config = {
     'Post-project quality inspection',
   ],
 
-  // One image per whyChoosePoint — residential homes, exteriors, colour choices, family-friendly work
   whyImages: [
-    'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1525438160292-a4a860951216?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80',
+    '/images/projects/residential buildings 2.png',
+    '/images/projects/residential buildings 3.png',
+    '/images/projects/residential buildings 4.png',
+    '/images/projects/residential buildings 5.png',
+    '/images/projects/residential buildings 6.png',
+    '/images/projects/residential buildings 7.png',
+    '/images/projects/residential buildings 8.png',
+    '/images/projects/residential buildings 9.png',
   ],
 
   whyChoosePoints: [

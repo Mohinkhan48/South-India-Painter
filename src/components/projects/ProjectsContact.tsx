@@ -6,11 +6,13 @@ export default function ProjectsContact() {
   return (
     <section className="section bg-[#FAF8F4]">
       <div className="container">
-        <SectionHeading
-          title="Visit Our Office"
-          description="Drop by for a consultation or reach out to us directly."
-          align="center"
-        />
+        <div className="relative -top-8">
+          <SectionHeading
+            title="Visit Our Office"
+            description="Drop by for a consultation or reach out to us directly."
+            align="center"
+          />
+        </div>
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Contact Information Card */}

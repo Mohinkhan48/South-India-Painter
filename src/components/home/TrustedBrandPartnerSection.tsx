@@ -74,7 +74,10 @@ export default function TrustedBrandPartnerSection() {
         </m.div>
 
         {/* ── Infinite Scrolling Marquee ── */}
-        <div className="w-full overflow-hidden flex group">
+        <div
+  className="w-full overflow-hidden flex group"
+  style={{ marginTop: '40px' }}
+>
           {/* First Track */}
           <div
             className="flex shrink-0 marquee-track"

@@ -176,24 +176,24 @@ function buildInspirations(roomSlug: string, roomName: string): Inspiration[] {
   const roomImages: Record<string, string[]> = {
     'living-room': [
       livingRoomImg,
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=80',
+      '/images/projects/living-room-luxury.jpg',
       'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=80',
-      'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=900&q=80',
-      'https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=900&q=80',
+      '/images/projects/living-room-scandinavian.jpg',
+      '/images/projects/living-room-contemporary.jpg',
     ],
     'bedroom': [
       bedroomImg,
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&q=80',
-      'https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=900&q=80',
+      '/images/projects/bedroom-minimal.jpg',
+      '/images/projects/bedroom-luxury.jpg',
       'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=900&q=80',
       'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900&q=80',
     ],
     'kids-bedroom': [
       kidsBedroomImg,
-      'https://images.unsplash.com/photo-1617331140180-e8262094733a?w=900&q=80',
-      'https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?w=900&q=80',
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&q=80',
-      'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=900&q=80',
+      '/images/projects/kids-bedroom-luxury.jpg',
+      '/images/projects/kids-bedroom-minimal.jpg',
+      '/images/projects/kids-bedroom-scandinavian.jpg',
+      '/images/projects/kids-bedroom-contemporary.jpg',
     ],
     'kitchen': [
       kitchenImg,
@@ -204,10 +204,10 @@ function buildInspirations(roomSlug: string, roomName: string): Inspiration[] {
     ],
     'dining-room': [
       diningRoomImg,
-      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=900&q=80',
-      'https://images.unsplash.com/photo-1615968679312-9b7ed9f04e87?w=900&q=80',
-      'https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=900&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=80',
+      '/images/projects/dining-room-luxury.jpg',
+      '/images/projects/dining-room-minimal.jpg',
+      '/images/projects/dining-room-scandinavian.jpg',
+      '/images/projects/dining-room-contemporary.jpg',
     ],
     'bathroom': [
       'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=80',

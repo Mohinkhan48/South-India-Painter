@@ -41,14 +41,14 @@ export default function BookOurService() {
           <m.p
             variants={headingVariants}
             transition={{ duration: shouldReduceMotion ? 0 : 0.45, ease: 'easeOut' }}
-            className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-accent)]"
+            className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-accent)] translate-x-[1.7px]"
           >
             CHOOSE YOUR SPACE
           </m.p>
           <m.h2
             variants={headingVariants}
             transition={{ duration: shouldReduceMotion ? 0 : 0.55, ease: 'easeOut', delay: 0.08 }}
-            className="text-4xl font-extrabold leading-[1.03] text-[var(--color-primary-dark)] sm:text-5xl lg:text-[3.6rem] lg:leading-[1.02]"
+            className="text-4xl font-extrabold leading-[1.03] text-[var(--color-primary-dark)] sm:text-5xl lg:text-[3.6rem] lg:leading-[1.02] -translate-x-[1.9px]"
           >
             Book Our Service
           </m.h2>

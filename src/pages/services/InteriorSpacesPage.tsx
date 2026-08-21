@@ -10,8 +10,7 @@ const config = {
   heading: 'Interior Painting Services',
   description:
     'South India Painters provides professional interior painting for homes, offices and all kinds of indoor spaces. Our skilled team ensures a flawless, long-lasting finish that enhances the beauty and comfort of every room.',
-  heroImage:
-    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80',
+  heroImage: '/images/projects/interior spaces 9.png',
   heroImageAlt: 'Bright residential living room interior with sofa, coffee table, and large windows',
   breadcrumbLabel: 'Interior Spaces',
   variant: 'interior' as const,
@@ -27,16 +26,15 @@ const config = {
     'Final inspection and cleanup',
   ],
 
-  // One image per whyChoosePoint — interior rooms, colour swatches, painting work
   whyImages: [
-    'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1513519245088-0e12902e35ca?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80',
+    '/images/projects/interior spaces 1.png',
+    '/images/projects/interior spaces 2.png',
+    '/images/projects/interior spaces 3.png',
+    '/images/projects/interior spaces 4.png',
+    '/images/projects/interior spaces 5.png',
+    '/images/projects/interior spaces 6.png',
+    '/images/projects/interior spaces 7.png',
+    '/images/projects/interior spaces 8.png',
   ],
 
   whyChoosePoints: [

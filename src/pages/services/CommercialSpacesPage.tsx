@@ -10,8 +10,7 @@ const config = {
   heading: 'Commercial Painting Services',
   description:
     'South India Painters provides professional painting solutions for offices, retail spaces, showrooms and other commercial properties. We work efficiently to minimise business disruption while delivering durable, brand-aligned results.',
-  heroImage:
-    'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=80',
+  heroImage: '/images/projects/commercial spaces 1.png',
   heroImageAlt: 'Bright modern office interior with desks, chairs, and large windows',
   breadcrumbLabel: 'Commercial Spaces',
   variant: 'commercial' as const,
@@ -27,16 +26,15 @@ const config = {
     'Zero-mess professional cleanup',
   ],
 
-  // One image per whyChoosePoint — offices, brand colours, safety, workers, documentation
   whyImages: [
-    'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1562664348-a407eda58f20?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+    '/images/projects/commercial spaces 2.png',
+    '/images/projects/commercial spaces 3.png',
+    '/images/projects/commercial spaces 4.png',
+    '/images/projects/commercial spaces 5.png',
+    '/images/projects/commercial spaces 6.png',
+    '/images/projects/commercial spaces 7.png',
+    '/images/projects/commercial spaces 8.png',
+    '/images/projects/commercial spaces 9.png',
   ],
 
   whyChoosePoints: [

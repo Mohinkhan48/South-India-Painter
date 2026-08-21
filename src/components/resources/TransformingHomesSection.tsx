@@ -39,7 +39,7 @@ export default function TransformingHomesSection() {
 </p>
         </m.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[32px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[32px] translate-y-[50px]">
           {cities.map((city, index) => (
             <m.div
               key={city.name}

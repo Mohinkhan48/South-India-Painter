@@ -9,7 +9,7 @@ export default function ProjectsByCity() {
 
   return (
     <section className="section bg-white overflow-hidden">
-      <div className="container">
+  <div className="container relative -top-6">
         <div className="relative -top-10">
           <SectionHeading 
             title="Projects By City"

@@ -49,7 +49,10 @@ export default function ProductsAndServicesSection() {
           </p>
         </m.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[24px] sm:gap-[32px]">
+        <div
+  className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[24px] sm:gap-[32px]"
+  style={{ transform: 'translateY(35px)' }}
+>
           {services.map((service, index) => {
             const Icon = service.icon;
             return (

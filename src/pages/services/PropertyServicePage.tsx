@@ -209,25 +209,36 @@ export default function PropertyServicePage({ config }: { config: PropertyServic
           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(9,35,57,0.92)] via-[rgba(9,35,57,0.55)] to-[rgba(9,35,57,0.20)]" />
         </div>
 
-        {/* Breadcrumb */}
-        <div className="relative z-10 w-full" style={{ padding: '28px var(--container-padding) 0' }}>
-          <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto' }}>
-            <button
-              type="button"
-              onClick={() => navigate(-1)}
-              className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors duration-200 text-sm font-medium"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back
-            </button>
-            <span className="mx-3 text-white/30 text-sm">|</span>
-            <Link to="/" className="text-white/60 hover:text-white transition-colors text-sm">Home</Link>
-            <span className="mx-2 text-white/30 text-sm">/</span>
-            <Link to="/services" className="text-white/60 hover:text-white transition-colors text-sm">Services</Link>
-            <span className="mx-2 text-white/30 text-sm">/</span>
-            <span className="text-white/90 text-sm font-medium">{config.breadcrumbLabel}</span>
-          </div>
-        </div>
+        <div className="absolute top-7 left-6 z-10 sm:left-10">
+  <button
+    type="button"
+    onClick={() => navigate(-1)}
+    className="inline-flex items-center rounded-full shadow-md"
+    style={{
+      backgroundColor: '#E7684B',
+      color: '#ffffff',
+      padding: '7px 14px',
+      minHeight: '34px',
+      minWidth: '70px',
+      gap: '5px',
+      fontSize: '14px',
+      fontWeight: 600,
+      lineHeight: 1,
+      border: 'none',
+      cursor: 'pointer',
+      whiteSpace: 'nowrap',
+    }}
+  >
+    <ArrowLeft
+      style={{
+        width: '14px',
+        height: '14px',
+        flexShrink: 0,
+      }}
+    />
+    <span>Back</span>
+  </button>
+</div>
 
         {/* Hero text */}
         <div className="relative z-10 w-full" style={{ padding: '80px var(--container-padding) 56px' }}>
@@ -405,12 +416,7 @@ export default function PropertyServicePage({ config }: { config: PropertyServic
       {config.whyImages && config.whyImages.length > 0 && (
         <section style={{ background: theme.offerBg, padding: 'clamp(40px,6vw,72px) var(--container-padding)' }}>
           <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto' }}>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gridTemplateRows: 'auto auto',
-              gap: 12,
-            }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {config.whyImages.map((imgSrc, i) => (
                 <m.div
                   key={i}
@@ -421,8 +427,7 @@ export default function PropertyServicePage({ config }: { config: PropertyServic
                   style={{
                     borderRadius: 14,
                     overflow: 'hidden',
-                    aspectRatio: i === 0 || i === 3 ? '4/3' : '1/1',
-                    gridColumn: i === 0 ? 'span 2' : i === 3 ? 'span 2' : 'span 1',
+                    aspectRatio: '4/3',
                   }}
                 >
                   <img
@@ -611,8 +616,8 @@ export default function PropertyServicePage({ config }: { config: PropertyServic
                     transition: 'all 0.25s ease',
                     boxShadow: '0 8px 24px rgba(231,104,75,0.3)',
                   }}
-                  onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#CF5538'; el.style.transform = 'translateY(-3px)'; el.style.boxShadow = '0 12px 32px rgba(231,104,75,0.45)'; }}
-                  onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'var(--color-accent)'; el.style.transform = ''; el.style.boxShadow = '0 8px 24px rgba(231,104,75,0.3)'; }}
+                  onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { const el = e.currentTarget as HTMLElement; el.style.background = '#CF5538'; el.style.transform = 'translateY(-3px)'; el.style.boxShadow = '0 12px 32px rgba(231,104,75,0.45)'; }}
+                  onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { const el = e.currentTarget as HTMLElement; el.style.background = 'var(--color-accent)'; el.style.transform = ''; el.style.boxShadow = '0 8px 24px rgba(231,104,75,0.3)'; }}
                 >
                   Book a Free Site Inspection
                   <ArrowRight style={{ width: 16, height: 16 }} />

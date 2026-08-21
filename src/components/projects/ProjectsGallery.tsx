@@ -1,9 +1,9 @@
 import { useState, useMemo } from 'react';
-import { galleryImages, projectCategories } from '@/data/projectsData';
+import { galleryImages } from '@/data/projectsData';
 import Lightbox from '@/components/common/Lightbox';
 
 export default function ProjectsGallery() {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory] = useState('All');
   const [visibleCount, setVisibleCount] = useState(16);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -25,11 +25,6 @@ export default function ProjectsGallery() {
     setVisibleCount((prev) => prev + 16);
   };
 
-  const handleCategoryChange = (category: string) => {
-    setActiveCategory(category);
-    setVisibleCount(16);
-  };
-
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
     setLightboxOpen(true);
@@ -42,13 +37,13 @@ export default function ProjectsGallery() {
   }));
 
   return (
-    <section style={{ width: '100%', boxSizing: 'border-box', background: '#FAF8F4', paddingBottom: '96px' }}>
+    <section style={{ width: '100%', boxSizing: 'border-box', background: '#FAF8F4', paddingTop: '80px', paddingBottom: '96px' }}>
       
       {/* Title & Divider */}
       <div className="w-full text-center px-5">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0F2745] tracking-[0.1em] uppercase">
-          PROJECTS
-        </h1>
+        <h1 className="relative -top-10 text-4xl md:text-5xl lg:text-6xl font-black text-[#0F2745] tracking-[0.1em] uppercase">
+  PROJECTS
+</h1>
         <div className="w-16 md:w-24 h-[1px] bg-[#0F2745]/20 mx-auto mt-6 mb-[60px]" />
       </div>
 
@@ -70,22 +65,7 @@ export default function ProjectsGallery() {
           </div>
         )}
 
-        {/* Category Filters */}
-        <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, marginBottom: 48 }}>
-          {projectCategories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => handleCategoryChange(cat)}
-              className={`px-5 py-2 rounded-full font-semibold text-[13px] sm:text-[14px] border transition-all duration-200 ${
-                activeCategory === cat
-                  ? 'bg-[#F26A4B] text-white border-[#F26A4B] shadow'
-                  : 'bg-white text-[#0F2745] border-gray-200 hover:border-[#F26A4B] hover:text-[#F26A4B]'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+
 
         {/* Gallery Grid — 4 equal columns, always complete rows */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, width: '100%' }}>
@@ -109,13 +89,13 @@ export default function ProjectsGallery() {
 
         {/* Load More */}
         {hasMore && (
-          <div className="relative top-6 flex justify-center mt-[80px]">
+          <div className="relative top-12 flex justify-center mt-[80px]">
             <button
-              onClick={handleLoadMore}
-              className="flex items-center justify-center w-[200px] h-[56px] border-2 border-[#F26A4B] text-[#F26A4B] font-bold text-[16px] rounded-full transition-all duration-300 hover:bg-[#F26A4B] hover:text-white hover:scale-105 shadow-sm"
-            >
-              Load More
-            </button>
+  onClick={handleLoadMore}
+  className="flex items-center justify-center w-[200px] h-[56px] !bg-white !text-[#F26A4B] border-2 border-[#F26A4B] font-bold text-[16px] rounded-full transition-all duration-300 hover:!bg-white hover:!text-[#F26A4B] shadow-sm"
+>
+  Load More
+</button>
           </div>
         )}
         
