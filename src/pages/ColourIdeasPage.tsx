@@ -33,6 +33,9 @@ export default function ColourIdeasPage() {
 
       {/* Consultation CTA */}
       <ColourIdeasCta />
+
+      {/* Extra spacing before footer in mobile view only */}
+      <div className="h-0 sm:h-0 bg-white" />
     </main>
   );
 }

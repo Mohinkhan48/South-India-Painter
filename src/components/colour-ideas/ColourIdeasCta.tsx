@@ -16,7 +16,7 @@ const actions = [
 
 export default function ColourIdeasCta() {
   return (
-    <section className="relative max-sm:top-0 sm:-top-8 w-full max-sm:mt-0 max-sm:pt-6 -mt-20 sm:-mt-28 pb-8">
+    <section className="relative max-sm:top-0 sm:-top-8 w-full max-sm:mt-0 max-sm:pt-6 -mt-20 sm:-mt-28 pb-8 max-sm:pb-16 max-sm:mb-6">
       <div className="container mx-auto px-4">
         <div className="relative w-full min-h-[280px] sm:min-h-[300px] md:min-h-[320px] px-4 sm:px-6 py-10 sm:py-12 rounded-[32px] overflow-hidden shadow-2xl flex items-center justify-center">
           {/* Background */}

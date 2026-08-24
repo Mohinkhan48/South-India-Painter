@@ -80,7 +80,7 @@ export default function Hero() {
             </AnimatePresence>
           </div>
 
-          <div className="flex justify-start lg:justify-end">
+          <div className="flex justify-center lg:justify-end">
             <AnimatePresence>
               <m.div
                 initial={{ opacity: 0, x: 30 }}

@@ -23,15 +23,15 @@ style={{ minHeight: '300px' }}
           <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-white/5 blur-3xl pointer-events-none z-0" />
           <div className="absolute bottom-[-20%] left-[-10%] w-[300px] h-[300px] rounded-full bg-[#F47C20]/20 blur-3xl pointer-events-none z-0" />
 
-          <div className="relative z-10 px-6 pt-16 pb-20 sm:pt-24 sm:pb-48 sm:px-24 flex flex-col items-center text-center">
+          <div className="relative z-10 px-6 pt-20 pb-20 sm:pt-24 sm:pb-48 sm:px-24 flex flex-col items-center text-center">
             <h2 className="text-[32px] sm:text-[36px] lg:text-[56px] font-[800] text-white mb-4 leading-tight sm:mb-6 sm:translate-y-6">
               Ready to Transform Your Home?
             </h2>
-            <p className="text-[#b4c4d3] text-[16px] sm:text-[18px] max-w-3xl mb-8 sm:mb-12 sm:translate-y-10">
+            <p className="text-[#b4c4d3] text-[16px] sm:text-[18px] max-w-3xl mb-8 sm:mb-12 sm:translate-y-10 px-4 sm:px-0">
               Book a free site inspection and receive a personalised quotation from our expert painting consultants.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto sm:translate-y-15 px-4 sm:px-0 mt-4 sm:mt-0">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto sm:translate-y-15 px-4 sm:px-0 mt-8 sm:mt-0">
               <Link
                 to="/contact"
                 className="group inline-flex items-center justify-center gap-3
