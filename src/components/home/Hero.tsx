@@ -36,12 +36,12 @@ export default function Hero() {
       }}
       className="space-y-6"
     >
-      <h1 className="max-w-[760px] text-[clamp(3rem,4.4vw,4.5rem)] font-extrabold leading-[1.03] tracking-[-0.03em] text-white">
-        <span className="block">Transforming Spaces</span>
-        <span className="block text-[var(--color-accent)]">
-          with Premium Finishes
-        </span>
-      </h1>
+      <h1 className="max-w-[760px] text-[clamp(2.35rem,4.4vw,4.5rem)] font-extrabold leading-[1.03] tracking-[-0.03em] text-white">
+  <span className="block whitespace-nowrap">Transforming Spaces</span>
+  <span className="block whitespace-nowrap text-[var(--color-accent)]">
+    with Premium Finishes
+  </span>
+</h1>
 
       <p className="max-w-[620px] translate-x-3 translate-y-4 text-[17px] leading-[1.85] text-white/88 sm:text-[18px]">
         27+ years of painting experience with 234+ skilled professionals. Professional painting services for residential and commercial spaces.
