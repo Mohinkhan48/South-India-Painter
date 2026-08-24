@@ -15,7 +15,9 @@ interface ColourIdeasHeroProps {
   onSearchChange: (query: string) => void;
 }
 
-export default function ColourIdeasHero({ onSearchChange }: ColourIdeasHeroProps) {
+export default function ColourIdeasHero({
+  onSearchChange,
+}: ColourIdeasHeroProps) {
   const [query, setQuery] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,35 +26,71 @@ export default function ColourIdeasHero({ onSearchChange }: ColourIdeasHeroProps
   };
 
   return (
-    <section className="relative w-full min-h-[520px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative flex w-full min-h-[520px] md:min-h-[600px] items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src={HERO_IMAGE}
           alt="Luxury home interior"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
           loading="eager"
         />
+
         {/* Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0F2745]/80 via-[#0F2745]/60 to-[#0F2745]/85" />
+
         <div className="absolute inset-0 bg-gradient-to-r from-[#17375E]/30 to-transparent" />
       </div>
 
       {/* Floating Decorative Elements */}
-      <div className="absolute top-[10%] right-[15%] w-[200px] h-[200px] rounded-full bg-[#F47C20]/10 blur-[80px] pointer-events-none z-0" />
-      <div className="absolute bottom-[15%] left-[10%] w-[300px] h-[300px] rounded-full bg-[#4A90D9]/8 blur-[100px] pointer-events-none z-0" />
+      <div className="pointer-events-none absolute right-[15%] top-[10%] z-0 h-[200px] w-[200px] rounded-full bg-[#F47C20]/10 blur-[80px]" />
+
+      <div className="pointer-events-none absolute bottom-[15%] left-[10%] z-0 h-[300px] w-[300px] rounded-full bg-[#4A90D9]/8 blur-[100px]" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 py-20 md:py-28 w-full max-w-4xl mx-auto">
+      <div
+        className="
+          relative
+          z-10
+          flex
+          w-full
+          max-w-4xl
+          flex-col
+          items-center
+          px-6
+          py-20
+          text-center
+          gap-3
+          sm:gap-4
+          md:py-28
+          md:gap-0
+        "
+      >
         {/* Eyebrow */}
         <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 mb-8"
+          transition={{
+            duration: 0.6,
+            delay: 0.1,
+          }}
+          className="
+            inline-flex
+            items-center
+            gap-2
+            rounded-full
+            border
+            border-white/15
+            bg-white/10
+            px-5
+            py-2
+            backdrop-blur-md
+            md:mb-8
+          "
         >
-          <div className="w-2 h-2 rounded-full bg-[#F47C20]" />
-          <span className="text-white/80 text-[13px] font-semibold tracking-[0.1em] uppercase">
+          <div className="h-2 w-2 rounded-full bg-[#F47C20]" />
+
+          <span className="text-[13px] font-semibold uppercase tracking-[0.1em] text-white/80">
             Paint Inspiration Gallery
           </span>
         </m.div>
@@ -61,37 +99,90 @@ export default function ColourIdeasHero({ onSearchChange }: ColourIdeasHeroProps
         <m.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-[42px] sm:text-[56px] md:text-[72px] font-[800] text-white leading-[1.05] tracking-[-0.03em] mb-6"
+          transition={{
+            duration: 0.7,
+            delay: 0.2,
+          }}
+          className="
+            text-[42px]
+            font-[800]
+            leading-[1.05]
+            tracking-[-0.03em]
+            text-white
+            sm:text-[56px]
+            md:mb-6
+            md:text-[72px]
+          "
         >
           Colour Ideas
         </m.h1>
 
-        {/* Subtle divider */}
+        {/* Subtle Divider */}
         <m.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="w-16 h-[3px] bg-gradient-to-r from-[#F47C20] to-[#E7684B] rounded-full mb-10"
+          transition={{
+            duration: 0.8,
+            delay: 0.4,
+          }}
+          className="
+            h-[3px]
+            w-16
+            rounded-full
+            bg-gradient-to-r
+            from-[#F47C20]
+            to-[#E7684B]
+            md:mb-10
+          "
         />
 
         {/* Search Box */}
         <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="w-full max-w-lg"
+          transition={{
+            duration: 0.6,
+            delay: 0.5,
+          }}
+          className="
+            w-full
+            max-w-[330px]
+            sm:max-w-lg
+          "
         >
           <div className="relative group">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#F47C20]/20 to-[#4A90D9]/20 blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-500" />
-            <div className="relative flex items-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl px-6 py-4 transition-all duration-300 group-focus-within:bg-white/15 group-focus-within:border-white/30">
-              <Search className="w-5 h-5 text-white/50 mr-4 flex-shrink-0" />
+            {/* Search Glow */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#F47C20]/20 to-[#4A90D9]/20 blur-xl opacity-0 transition-opacity duration-500 group-focus-within:opacity-100" />
+
+            {/* Search Container */}
+            <div
+              className="
+                relative
+                flex
+                items-center
+                rounded-2xl
+                border
+                border-white/20
+                bg-white/10
+                px-4
+                py-3
+                backdrop-blur-xl
+                transition-all
+                duration-300
+                group-focus-within:border-white/30
+                group-focus-within:bg-white/15
+                sm:px-6
+                sm:py-4
+              "
+            >
+              <Search className="mr-3 h-5 w-5 flex-shrink-0 text-white/50 sm:mr-4" />
+
               <input
                 type="text"
                 value={query}
                 onChange={handleChange}
                 placeholder="Search room ideas..."
-                className="w-full bg-transparent text-white text-[16px] placeholder:text-white/40 focus:outline-none"
+                className="w-full bg-transparent text-[15px] text-white placeholder:text-white/40 focus:outline-none sm:text-[16px]"
                 id="colour-ideas-search"
               />
             </div>

@@ -19,7 +19,15 @@ export default function WhyChooseUsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '3px', color: 'var(--color-accent)', marginBottom: 14 }}
+            style={{
+  fontSize: 11,
+  fontWeight: 600,
+  textTransform: 'uppercase',
+  letterSpacing: '3px',
+  color: 'var(--color-accent)',
+  marginBottom: 14,
+  marginLeft: 3
+}}
           >
             WHY CHOOSE US
           </m.p>
