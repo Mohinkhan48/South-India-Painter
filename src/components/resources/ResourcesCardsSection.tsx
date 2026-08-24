@@ -102,16 +102,11 @@ export default function ResourcesCardsSection() {
                 <div className="absolute inset-0 border-[3px] border-transparent group-hover:border-[#F47C20]/50 rounded-[24px] transition-colors duration-500" />
 
                 {/* Content */}
-                <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
-                  <h3 className="text-white text-[28px] font-bold mb-4 leading-tight transform transition-transform duration-500 group-hover:-translate-y-2">
-                    {card.title}
-                  </h3>
-
-                  <div className="flex items-center gap-2 text-[#F47C20] text-[16px] font-bold uppercase tracking-wider opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                    <span>Explore</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
-                </div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end items-center text-center z-10">
+  <h3 className="relative bottom-[20px] text-white text-[28px] font-bold mb-4 leading-tight transform transition-transform duration-500 group-hover:-translate-y-2">
+    {card.title}
+  </h3>
+</div>
               </div>
             </m.div>
           ))}

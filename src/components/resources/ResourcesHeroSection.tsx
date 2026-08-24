@@ -71,9 +71,17 @@ export default function ResourcesHeroSection() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="inline-flex items-center gap-2 mb-6"
             >
-              <span className="text-[12px] font-bold text-[#F47C20] uppercase tracking-[0.2em] bg-[#F47C20]/10 px-3 py-1 rounded-full border border-[#F47C20]/20">
-                Resources Center
-              </span>
+              <span
+  className="relative left-[3px] inline-block text-[12px] font-bold text-[#F47C20] uppercase tracking-[0.2em] bg-[#F47C20]/10 rounded-full border border-[#F47C20]/20"
+  style={{
+    paddingLeft: '18px',
+    paddingRight: '18px',
+    paddingTop: '3px',
+    paddingBottom: '3px',
+  }}
+>
+  Resources Center
+</span>
             </m.div>
 
             <m.h1
@@ -90,7 +98,7 @@ export default function ResourcesHeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="text-[18px] sm:text-[20px] text-[#e0e4e8] leading-relaxed max-w-[540px] mb-10"
+              className="relative left-[4px] text-[18px] sm:text-[20px] text-[#e0e4e8] leading-relaxed max-w-[540px] mb-10"
             >
               Everything you need to plan your painting project. Cost calculators, colour visualizers, guides and expert tools in one place.
             </m.p>
@@ -99,7 +107,7 @@ export default function ResourcesHeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="relative top-[12px] left-[5px] flex flex-col sm:flex-row gap-4"
             >
               {[
                 { text: 'Paint Cost Calculator', icon: Calculator },
@@ -108,7 +116,11 @@ export default function ResourcesHeroSection() {
               ].map((feature, idx) => {
                 const Icon = feature.icon;
                 return (
-                  <div key={idx} className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-3 rounded-[12px] border border-white/10">
+                  <div
+  key={idx}
+  className="flex items-center gap-3 bg-white/10 backdrop-blur-sm pl-4 py-3 rounded-[12px] border border-white/10"
+  style={{ paddingRight: '20px' }}
+>
                     <div className="w-6 h-6 rounded-full bg-[#F47C20]/20 flex items-center justify-center shrink-0">
                       <Icon className="w-3.5 h-3.5 text-[#F47C20]" />
                     </div>

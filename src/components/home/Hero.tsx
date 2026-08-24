@@ -44,11 +44,7 @@ export default function Hero() {
       </h1>
 
       <p className="max-w-[620px] translate-x-3 translate-y-4 text-[17px] leading-[1.85] text-white/88 sm:text-[18px]">
-        27+ Years of Trusted Painting Services 234+ skilled professionals.
-        27+ years of experience. Zero outsourcing. We provide professional
-        fresh painting and repainting for residential, commercial, apartment,
-        villa, bungalow and industrial projects, using trusted Asian Paints
-        products for a quality finish.
+        27+ years of painting experience with 234+ skilled professionals. Professional painting services for residential and commercial spaces.
       </p>
     </m.div>
   </AnimatePresence>
