@@ -1661,6 +1661,10 @@ export default function ContactPage() {
 
         </div>
       </section>
+      
+      {/* Mobile-only spacer to create gap before footer */}
+      <div className="h-10 sm:h-0" />
     </div>
+    
   );
 }
