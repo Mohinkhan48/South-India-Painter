@@ -1,8 +1,6 @@
 import { m } from 'framer-motion';
 import Container from '@/components/common/Container';
 
-import { ArrowRight } from 'lucide-react';
-
 const cards = [
   {
     title: 'Colour Visualizer',
