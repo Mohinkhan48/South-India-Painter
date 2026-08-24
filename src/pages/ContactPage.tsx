@@ -1595,7 +1595,7 @@ export default function ContactPage() {
             {/* DESCRIPTION */}
             <m.p
   variants={fadeUp}
-  className="text-white/75 text-base sm:text-lg leading-relaxed mb-10 max-w-xl mx-auto translate-x-90"
+  className="text-white/75 text-base sm:text-lg leading-relaxed mb-10 max-w-xl mx-auto max-sm:translate-x-0 sm:translate-x-[373px]"
 >
   Book your free inspection today — zero cost, zero commitment.
 </m.p>

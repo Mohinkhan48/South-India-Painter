@@ -128,9 +128,9 @@ export const ROOMS: Room[] = [
   { slug: 'dining-room', name: 'Dining Room', image: diningRoomImg, description: 'Warm gatherings over meals' },
   { slug: 'bathroom', name: 'Bathroom', image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80', description: 'Spa-like sanctuaries' },
   { slug: 'home-office', name: 'Home Office', image: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=800&q=80', description: 'Productive workspaces at home' },
-  { slug: 'balcony', name: 'Balcony', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80', description: 'Open-air retreats' },
-  { slug: 'exterior', name: 'Exterior', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80', description: 'Stunning kerb appeal' },
-  { slug: 'ceiling', name: 'Ceiling', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80', description: 'The fifth wall transformed' },
+  { slug: 'balcony', name: 'Balcony', image: '/images/projects/balcony main.png', description: 'Open-air retreats' },
+  { slug: 'exterior', name: 'Exterior', image: '/images/projects/exterior main.png', description: 'Stunning kerb appeal' },
+  { slug: 'ceiling', name: 'Ceiling', image: '/images/projects/ceiling main.png', description: 'The fifth wall transformed' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -224,25 +224,25 @@ function buildInspirations(roomSlug: string, roomName: string): Inspiration[] {
       'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=80',
     ],
     'balcony': [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80',
-      'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=900&q=80',
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&q=80',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80',
+      '/images/projects/balcony modern.png',
+      '/images/projects/balcony luxury.png',
+      '/images/projects/balcony minimal.png',
+      '/images/projects/balcony scandinavian.png',
+      '/images/projects/balcony contemporary.png',
     ],
     'exterior': [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80',
-      'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=900&q=80',
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=900&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=80',
+      '/images/projects/exterior modern.png',
+      '/images/projects/exterior luxury.png',
+      '/images/projects/exterior minimal.png',
+      '/images/projects/exterior scandinavian.png',
+      '/images/projects/exterior contemporary.png',
     ],
     'ceiling': [
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80',
       'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80',
       'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=900&q=80',
-      'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=900&q=80',
-      'https://images.unsplash.com/photo-1616627988170-85843d3c5e13?w=900&q=80',
+      '/images/projects/ceiling scandinavian.png',
+      '/images/projects/ceiling contemporary.png',
     ],
   };
 

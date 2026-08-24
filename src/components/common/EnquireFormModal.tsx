@@ -16,8 +16,16 @@ interface EnquireFormModalProps {
   onClose: () => void;
 }
 
-export default function EnquireFormModal({ isOpen, onClose }: EnquireFormModalProps) {
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
+export default function EnquireFormModal({
+  isOpen,
+  onClose,
+}: EnquireFormModalProps) {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+  });
+
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,6 +39,7 @@ export default function EnquireFormModal({ isOpen, onClose }: EnquireFormModalPr
     } else {
       document.body.style.overflow = '';
     }
+
     return () => {
       document.body.style.overflow = '';
     };
@@ -39,41 +48,84 @@ export default function EnquireFormModal({ isOpen, onClose }: EnquireFormModalPr
   // Close on Escape key
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        onClose();
+      }
     };
-    if (isOpen) window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
+
+    if (isOpen) {
+      window.addEventListener('keydown', handleEsc);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
   }, [isOpen, onClose]);
 
   const validate = () => {
     const errs: Record<string, string> = {};
-    if (!formData.name.trim()) errs.name = 'Required';
+
+    if (!formData.name.trim()) {
+      errs.name = 'Required';
+    }
+
     if (!formData.phone.trim()) {
       errs.phone = 'Required';
-    } else if (!/^[0-9+\-\s()]{10,}$/.test(formData.phone.trim())) {
+    } else if (
+      !/^[0-9+\-\s()]{10,}$/.test(formData.phone.trim())
+    ) {
       errs.phone = 'Invalid phone number';
     }
-    if (formData.email.trim() && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email.trim())) {
+
+    if (
+      formData.email.trim() &&
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
+        formData.email.trim()
+      )
+    ) {
       errs.email = 'Invalid email address';
     }
+
     setErrors(errs);
+
     return Object.keys(errs).length === 0;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData((p) => ({ ...p, [name]: value }));
-    if (errors[name]) setErrors((p) => ({ ...p, [name]: '' }));
-    if (submitError) setSubmitError('');
-    if (submitted) setSubmitted(false);
+
+    setFormData((p) => ({
+      ...p,
+      [name]: value,
+    }));
+
+    if (errors[name]) {
+      setErrors((p) => ({
+        ...p,
+        [name]: '',
+      }));
+    }
+
+    if (submitError) {
+      setSubmitError('');
+    }
+
+    if (submitted) {
+      setSubmitted(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (isSubmitting) return;
+
     if (validate()) {
       setIsSubmitting(true);
       setSubmitError('');
+
       const result = await submitLead({
         name: formData.name,
         phone: formData.phone,
@@ -81,10 +133,18 @@ export default function EnquireFormModal({ isOpen, onClose }: EnquireFormModalPr
         sourcePage: 'Enquire Form Modal',
         website_url: honeypot,
       });
+
       setIsSubmitting(false);
+
       if (result.success) {
         setSubmitted(true);
-        setFormData({ name: '', phone: '', email: '' });
+
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+        });
+
         setErrors({});
       } else {
         setSubmitError(result.message);
@@ -96,7 +156,7 @@ export default function EnquireFormModal({ isOpen, onClose }: EnquireFormModalPr
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
       onClick={onClose}
     >
       {/* Blurred dark backdrop */}
@@ -104,85 +164,151 @@ export default function EnquireFormModal({ isOpen, onClose }: EnquireFormModalPr
 
       {/* Modal card */}
       <div
-        className="relative z-10 bg-white rounded-lg shadow-2xl flex flex-col sm:flex-row w-[90vw] max-w-[680px] max-h-[90vh] overflow-hidden"
-        style={{ minHeight: '520px' }}
+        className="relative z-10 flex w-[92vw] max-w-[760px] flex-col overflow-hidden rounded-xl bg-white shadow-2xl sm:flex-row"
+        style={{
+          minHeight: '500px',
+          maxHeight: '90vh',
+        }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Left image */}
-        <div className="hidden sm:block sm:w-[45%] relative">
+        {/* =====================================================
+            LEFT IMAGE
+            ===================================================== */}
+        <div
+          className="relative hidden overflow-hidden bg-[#f0f4f8] sm:block sm:w-[52%]"
+        >
           <img
             src="/images/projects/interior painting.png"
             alt="Painting Service"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{
+              /*
+               * Image itself is shifted slightly right.
+               * The image frame/container does NOT move.
+               */
+              objectPosition: '56% center',
+            }}
           />
         </div>
 
-        {/* Right form */}
-        <div className="flex-1 p-6 sm:p-8 relative flex flex-col justify-center">
+        {/* =====================================================
+            RIGHT FORM
+            ===================================================== */}
+        <div
+          className="relative flex min-w-0 flex-1 flex-col justify-start overflow-y-auto"
+          style={{
+  padding: '50px 38px 32px 38px',
+}}
+        >
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-700 transition-colors"
+            className="absolute right-4 top-3 flex h-8 w-8 items-center justify-center text-gray-400 transition-colors hover:text-gray-700"
             aria-label="Close"
           >
-            <X className="w-5 h-5" />
+            <X className="h-5 w-5" />
           </button>
 
-          <h3 className="text-[22px] font-bold text-[#17375E] mb-1">
+          {/* Heading */}
+          <h3 className="mb-1 text-[22px] font-bold text-[#17375E]">
             BUILD YOUR VISION
           </h3>
-          <p className="text-[13px] text-gray-500 mb-6 leading-relaxed">
-            Get a free consultation for your next major project.<br />
+
+          {/* Description */}
+          <p className="mb-5 text-[13px] leading-relaxed text-gray-500">
+            Get a free consultation for your next major project.
+            <br />
             Leave your details and we'll be in touch.
           </p>
 
-          <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
-            {/* Name */}
+          {/* Form */}
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            className="flex flex-col gap-4"
+          >
+            {/* =================================================
+                NAME
+                ================================================= */}
             <div>
-              <label className="block text-[11px] font-semibold text-[#17375E] tracking-[0.12em] uppercase mb-1.5">
+              <label className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.12em] text-[#17375E]">
                 Name
               </label>
+
               <input
                 type="text"
                 name="name"
                 placeholder="YOUR NAME"
                 value={formData.name}
                 onChange={handleChange}
-                className={`w-full h-[44px] border-b ${errors.name ? 'border-red-400' : 'border-gray-300'} bg-transparent text-[14px] text-[#1a1a1a] placeholder-gray-400 focus:outline-none focus:border-[#17375E] transition-colors`}
+                className={`h-[42px] w-full border-b ${
+                  errors.name
+                    ? 'border-red-400'
+                    : 'border-gray-300'
+                } bg-transparent text-[14px] text-[#1a1a1a] placeholder-gray-400 transition-colors focus:border-[#17375E] focus:outline-none`}
               />
-              {errors.name && <p className="mt-1 text-[11px] text-red-500">{errors.name}</p>}
+
+              {errors.name && (
+                <p className="mt-1 text-[11px] text-red-500">
+                  {errors.name}
+                </p>
+              )}
             </div>
 
-            {/* Phone */}
+            {/* =================================================
+                PHONE
+                ================================================= */}
             <div>
-              <label className="block text-[11px] font-semibold text-[#17375E] tracking-[0.12em] uppercase mb-1.5">
+              <label className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.12em] text-[#17375E]">
                 Phone
               </label>
+
               <input
                 type="tel"
                 name="phone"
                 placeholder="YOUR PHONE"
                 value={formData.phone}
                 onChange={handleChange}
-                className={`w-full h-[44px] border-b ${errors.phone ? 'border-red-400' : 'border-gray-300'} bg-transparent text-[14px] text-[#1a1a1a] placeholder-gray-400 focus:outline-none focus:border-[#17375E] transition-colors`}
+                className={`h-[42px] w-full border-b ${
+                  errors.phone
+                    ? 'border-red-400'
+                    : 'border-gray-300'
+                } bg-transparent text-[14px] text-[#1a1a1a] placeholder-gray-400 transition-colors focus:border-[#17375E] focus:outline-none`}
               />
-              {errors.phone && <p className="mt-1 text-[11px] text-red-500">{errors.phone}</p>}
+
+              {errors.phone && (
+                <p className="mt-1 text-[11px] text-red-500">
+                  {errors.phone}
+                </p>
+              )}
             </div>
 
-            {/* Email */}
+            {/* =================================================
+                EMAIL
+                ================================================= */}
             <div>
-              <label className="block text-[11px] font-semibold text-[#17375E] tracking-[0.12em] uppercase mb-1.5">
+              <label className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.12em] text-[#17375E]">
                 Email
               </label>
+
               <input
                 type="email"
                 name="email"
                 placeholder="YOUR EMAIL"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full h-[44px] border-b ${errors.email ? 'border-red-400' : 'border-gray-300'} bg-transparent text-[14px] text-[#1a1a1a] placeholder-gray-400 focus:outline-none focus:border-[#17375E] transition-colors`}
+                className={`h-[42px] w-full border-b ${
+                  errors.email
+                    ? 'border-red-400'
+                    : 'border-gray-300'
+                } bg-transparent text-[14px] text-[#1a1a1a] placeholder-gray-400 transition-colors focus:border-[#17375E] focus:outline-none`}
               />
-              {errors.email && <p className="mt-1 text-[11px] text-red-500">{errors.email}</p>}
+
+              {errors.email && (
+                <p className="mt-1 text-[11px] text-red-500">
+                  {errors.email}
+                </p>
+              )}
             </div>
 
             {/* Honeypot */}
@@ -196,32 +322,41 @@ export default function EnquireFormModal({ isOpen, onClose }: EnquireFormModalPr
               autoComplete="off"
             />
 
-            {/* Submit */}
+            {/* =================================================
+                SUBMIT BUTTON (RE-ADDED)
+                ================================================= */}
             <button
               type="submit"
               disabled={submitted || isSubmitting}
-              className={`w-full h-[48px] rounded-none font-bold text-[14px] text-white flex items-center justify-center gap-2 transition-all duration-300 ${
+              className={`mt-4 flex h-[48px] min-h-[48px] w-full shrink-0 translate-y-4 items-center justify-center gap-2 rounded-md text-[14px] font-bold text-white transition-all duration-300 ${
                 submitted
-                  ? 'bg-green-500 cursor-not-allowed'
-                  : 'bg-[#17375E] hover:bg-[#0F2745]'
+                  ? 'cursor-not-allowed bg-green-500'
+                  : 'hover:opacity-90'
               }`}
+              style={!submitted ? { backgroundColor: '#E7684B' } : undefined}
             >
               {isSubmitting ? (
                 'Sending...'
               ) : submitted ? (
                 '✓ Request Sent!'
               ) : (
-                <>GET STARTED <ArrowRight className="w-4 h-4" /></>
+                <>
+                  GET STARTED
+                  <ArrowRight className="h-4 w-4" />
+                </>
               )}
             </button>
 
+            {/* Success message */}
             {submitted && (
-              <p className="text-green-600 text-sm font-semibold text-center">
+              <p className="text-center text-sm font-semibold text-green-600">
                 Thank you! Our team will contact you shortly.
               </p>
             )}
+
+            {/* Error message */}
             {submitError && (
-              <p className="text-red-500 text-sm font-semibold text-center">
+              <p className="text-center text-sm font-semibold text-red-500">
                 {submitError}
               </p>
             )}

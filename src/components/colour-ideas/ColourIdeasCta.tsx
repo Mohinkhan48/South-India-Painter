@@ -63,7 +63,7 @@ export default function ColourIdeasCta() {
   className="flex flex-col items-center gap-4 w-full -translate-y-8"
 >
   {/* First row */}
-  <div className="flex flex-row items-center justify-center gap-5 w-full -translate-y-3">
+  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full -translate-y-3">
     {actions.slice(0, 2).map((action, idx) => {
       const Icon = action.icon;
 
@@ -72,7 +72,7 @@ export default function ColourIdeasCta() {
           key={action.label}
           href={action.href}
           className={`inline-flex items-center justify-center gap-3
-            w-[250px]
+            w-full sm:w-[250px]
             h-[60px]
             px-8
             rounded-full
@@ -103,7 +103,7 @@ export default function ColourIdeasCta() {
         <a
           href={action.href}
           className="inline-flex items-center justify-center gap-3
-            w-[250px]
+            w-full sm:w-[250px]
             h-[60px]
             px-8
             rounded-full

@@ -475,12 +475,8 @@ export default function PropertyServicePage({ config }: { config: PropertyServic
             Our Process
           </m.h2>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: `repeat(${config.processSteps.length}, minmax(0, 1fr))`,
-            gap: 12,
-          }}
-          className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-none"
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${config.processSteps.length} gap-3`}
           >
             {config.processSteps.map((ps, i) => {
               const isEven = i % 2 === 0;
