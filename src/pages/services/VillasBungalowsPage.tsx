@@ -10,7 +10,7 @@ const config = {
   heading: 'Villa & Bungalow Painting Services',
   description:
     'South India Painters provides complete painting solutions for large villas and independent homes. From interior rooms to exterior facades, we bring precision and premium finishes to every corner of your home.',
-  heroImage: '/images/projects/villas banglows 1.png',
+  heroImage: '/images/projects/villas and banglows.png',
   heroImageAlt: 'Bright daytime exterior of a premium villa with landscaping and modern architectural details',
   breadcrumbLabel: 'Villas / Bungalows',
   variant: 'villa' as const,

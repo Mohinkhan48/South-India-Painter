@@ -55,7 +55,7 @@ const PHONE_2 = '080 23391256';
 const PHONE_1_RAW = '08023391256';
 const PHONE_2_RAW = '08023391256';
 
-const EMAIL = 'care@southindiapainter.com';
+const EMAIL = 'care@southindiapainters.com';
 
 const MAP_EMBED =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.163353457007!2d77.53127811482187!3d12.961395890862757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3dd84e20b329%3A0xc48c1ea99fb0a241!2sChandra%20Layout%20Bus%20Stand!5e0!3m2!1sen!2sin!4v1689255018612!5m2!1sen!2sin';

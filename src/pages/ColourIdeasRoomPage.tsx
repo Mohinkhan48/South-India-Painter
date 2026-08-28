@@ -74,13 +74,13 @@ export default function ColourIdeasRoomPage() {
         </div>
 
         {/* Back link */}
-        <Link
-          to="/colour-ideas"
-          className="absolute top-6 left-6 z-20 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white text-sm font-medium hover:bg-white/20 transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          All Rooms
-        </Link>
+<Link
+  to="/colour-ideas"
+  className="absolute top-6 left-6 z-20 inline-flex min-w-[90px] h-[36px] items-center justify-center gap-1.5 !px-3 !py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium hover:bg-white/20 transition-colors"
+>
+  <ArrowLeft className="w-3.5 h-3.5" />
+  All Rooms
+</Link>
             </section>
 
       {/* ─── Space between hero and room controls ─── */}

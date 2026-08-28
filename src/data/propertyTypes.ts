@@ -21,7 +21,7 @@ export const propertyTypes: PropertyType[] = [
   {
     id: 'villas-independent-homes',
     title: 'VILLAS/BUNGALOWS',
-    image: '/images/projects/banglows.png',
+    image: '/images/projects/villas and banglows.png',
     imageAlt: 'Villas and bungalows painting by South India Painters',
     imagePosition: 'center center',
     bookingValue: 'Villas & Independent Homes',
@@ -48,7 +48,7 @@ export const propertyTypes: PropertyType[] = [
   {
     id: 'residential-buildings',
     title: 'RESIDENTIAL BUILDINGS',
-    image: '/images/projects/residential buildings.png',
+    image: '/images/projects/residential building.png',
     imageAlt: 'Residential buildings painting by South India Painters',
     imagePosition: 'center center',
     bookingValue: 'Residential Buildings',

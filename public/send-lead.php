@@ -65,7 +65,7 @@ if (is_array($services)) {
     $servicesStr = strip_tags(trim($services));
 }
 
-$to = "care@southindiapainter.com";
+$to = "care@southindiapainters.com";
 $subject = "New Website Lead - South India Painters";
 
 // Construct the email body
@@ -94,8 +94,8 @@ $body .= "Submitted At: " . date("Y-m-d H:i:s") . "\n";
 $body .= "IP Address: " . $_SERVER['REMOTE_ADDR'] . "\n";
 
 // Email headers
-$headers = "From: South India Painters Website <noreply@southindiapainter.com>\r\n";
-$headers .= "Reply-To: " . ($email ? $email : "noreply@southindiapainter.com") . "\r\n";
+$headers = "From: South India Painters Website <noreply@southindiapainters.com>\r\n";
+$headers .= "Reply-To: " . ($email ? $email : "noreply@southindiapainters.com") . "\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
 // Send email

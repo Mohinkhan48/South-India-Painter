@@ -10,7 +10,7 @@ const config = {
   heading: 'Residential Painting Services',
   description:
     'South India Painters provides complete painting services for residential buildings and homes of all sizes. We combine skilled workmanship with premium materials to deliver results that stand the test of time.',
-  heroImage: '/images/projects/residential buildings 1.png',
+  heroImage: '/images/projects/residential building.png',
   heroImageAlt: 'Modern residential building with clean lines and professional finish',
   breadcrumbLabel: 'Residential Buildings',
   variant: 'residential' as const,
