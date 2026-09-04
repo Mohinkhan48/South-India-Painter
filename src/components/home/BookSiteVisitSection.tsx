@@ -127,6 +127,9 @@ export default function BookSiteVisitSection() {
           <img
             src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=85"
             alt="Luxury home interior"
+            width="900"
+            height="600"
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"
           />
           {/* Dark overlay */}

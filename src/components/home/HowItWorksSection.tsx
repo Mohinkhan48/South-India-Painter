@@ -506,6 +506,9 @@ function StepCard({
         <img
           src={step.image}
           alt={step.imageAlt}
+          width="400"
+          height="200"
+          loading="lazy"
           className="
             h-[200px]
             w-full

@@ -22,7 +22,7 @@ const showcaseItems = [
   {
     title: 'WATERPROOFING',
     image:
-      'https://images.unsplash.com/photo-1634853982486-c06f0e17940f?auto=format&fit=crop&w=1400&q=80',
+      '/images/projects/waterproofing new image.png',
     imageAlt: 'Waterproof terrace edge with a clean finish',
   },
 ];
@@ -130,6 +130,8 @@ function ServiceCard({ item, transitionDelay, aspectClass, supportsHover }: Serv
       <img
         src={item.image}
         alt={item.imageAlt}
+        width="600"
+        height="400"
         loading="lazy"
         decoding="async"
         className={`absolute inset-0 h-full w-full object-cover transition-transform duration-[700ms] ease-out`}

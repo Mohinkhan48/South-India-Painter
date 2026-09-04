@@ -1,16 +1,13 @@
-/**
- * pages/services/CommercialPaintingPage.tsx
- *
- * PLACEHOLDER — Commercial Painting service detail page.
- *
- * Planned sections:
- *   - Service hero
- *   - Commercial project types (offices, retail, industrial)
- *   - Gallery
- *   - Quote / enquiry CTA
- */
+import { useSEO } from '@/hooks/useSEO';
 
 export default function CommercialPaintingPage() {
+  useSEO({
+    title: 'Commercial Painting Services | South India Painters',
+    description:
+      'Professional commercial painting by South India Painters. Offices, retail spaces, tech parks, hospitality and industrial projects across Bangalore and South India.',
+    canonical: 'https://southindiapainters.com/services/commercial-painting',
+  });
+
   return (
     <section className="section container">
       <h1 style={{ fontFamily: 'var(--font-display)', marginBottom: '1rem' }}>

@@ -41,17 +41,15 @@ export default function ProjectsByCity() {
 
               {/* Content */}
               <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-2xl font-bold flex items-center mb-1">
-                      <MapPin className="w-5 h-5 mr-2" />
-                      {city.name}
-                    </h3>
-                    <p className="text-white/80 font-medium">
-                      {city.count}+ Completed Projects
-                    </p>
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transform group-hover:bg-white group-hover:text-[#F26A4B] transition-all duration-300">
+                <div className="relative w-full flex flex-col items-center text-center">
+                  <h3 className="text-2xl font-bold flex items-center justify-center mb-1">
+                    <MapPin className="w-5 h-5 mr-2" />
+                    {city.name}
+                  </h3>
+                  <p className="text-white/80 font-medium">
+                    {city.count}+ Completed Projects
+                  </p>
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transform group-hover:bg-white group-hover:text-[#F26A4B] transition-all duration-300">
                     <ArrowRight className="w-5 h-5" />
                   </div>
                 </div>

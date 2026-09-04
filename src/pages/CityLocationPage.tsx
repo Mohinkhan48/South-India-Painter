@@ -10,14 +10,21 @@ import ProjectEstimateSection from '@/components/services/ProjectEstimateSection
 import TrustedMaterialsSection from '@/components/services/TrustedMaterialsSection';
 import FinalCtaSection from '@/components/services/FinalCtaSection';
 
+import { useSEO } from '@/hooks/useSEO';
+
 export default function CityLocationPage() {
   const { city } = useParams<{ city: string }>();
   const cityName = city ? city.charAt(0).toUpperCase() + city.slice(1) : 'Your City';
 
+  useSEO({
+    title: `Professional Painters in ${cityName} | South India Painters`,
+    description: `Top-rated residential, commercial, interior & exterior painting services in ${cityName}. Trusted painting contractors by South India Painters. Get a free quote today.`,
+    canonical: `https://southindiapainters.com/locations/${city || 'bangalore'}`,
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Painters in ${cityName} | South India Painters`;
-  }, [cityName]);
+  }, []);
 
   return (
     <main className="w-full bg-white">

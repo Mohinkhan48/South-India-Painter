@@ -78,6 +78,9 @@ export default function ServiceLookingForSection() {
                 <img
                   src={service.image}
                   alt={service.name}
+                  width="600"
+                  height="420"
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.08]"
                 />
 

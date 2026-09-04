@@ -17,12 +17,20 @@ import {
   BEFORE_AFTER_PAIRS,
 } from '@/data/colourIdeasData';
 import BeforeAfterSlider from '@/components/common/BeforeAfterSlider';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function ColourIdeasRoomPage() {
   const { roomSlug = '' } = useParams();
   const room = ROOMS.find(r => r.slug === roomSlug);
   const inspirations = ROOM_INSPIRATIONS[roomSlug] || [];
   const beforeAfter = BEFORE_AFTER_PAIRS[roomSlug];
+
+  useSEO({
+    title: room ? `${room.name} Colour Ideas & Combinations | South India Painters` : 'Room Colour Ideas | South India Painters',
+    description: room ? `Explore modern ${room.name.toLowerCase()} wall colour combinations, palettes and decor ideas from South India Painters.` : 'Inspiring wall color schemes and palettes for South Indian homes.',
+    canonical: `https://southindiapainters.com/colour-ideas/${roomSlug}`,
+    ogImage: room?.image,
+  });
 
   const [activeColour, setActiveColour] = useState(COLOUR_SWATCHES[0]);
   const [activeStyle, setActiveStyle] = useState(STYLE_FILTERS[0]); // "All Styles"

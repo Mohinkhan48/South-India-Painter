@@ -84,6 +84,8 @@ export default function RecentProjectsSection() {
                 <img
                   src={project.src}
                   alt={project.alt}
+                  width="400"
+                  height="320"
                   className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   loading="lazy"
                 />

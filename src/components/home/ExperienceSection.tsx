@@ -66,42 +66,42 @@ export default function ExperienceSection() {
             <div className="pointer-events-none absolute inset-0 z-[1] opacity-45 blur-[1px] hidden lg:block">
               <div className="absolute left-[5%] top-[10%] w-[260px]">
                 <div className="float-card-1 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/projects/luxury-interior.jpg" alt="Interior painting project" className="h-[220px] w-full object-cover" />
+                  <img src="/images/projects/luxury-interior.jpg" alt="Interior painting project" width="260" height="220" loading="lazy" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>
 
               <div className="absolute right-[5%] top-[10%] w-[260px]">
                 <div className="float-card-2 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/projects/luxury-exterior.jpg" alt="Exterior painting project" className="h-[220px] w-full object-cover" />
+                  <img src="/images/projects/luxury-exterior.jpg" alt="Exterior painting project" width="260" height="220" loading="lazy" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>
 
               <div className="absolute left-[2%] top-[38%] w-[240px]">
                 <div className="float-card-3 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/projects/wall-texture.jpg" alt="Wall textures project" className="h-[220px] w-full object-cover" />
+                  <img src="/images/projects/wall-texture.jpg" alt="Wall textures project" width="240" height="220" loading="lazy" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>
 
               <div className="absolute right-[2%] top-[38%] w-[240px]">
                 <div className="float-card-4 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/projects/waterproofing-roof.jpg" alt="Waterproofing project" className="h-[220px] w-full object-cover" />
+                  <img src="/images/projects/waterproofing-roof.jpg" alt="Waterproofing project" width="240" height="220" loading="lazy" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>
 
               <div className="absolute left-[12%] bottom-[8%] w-[270px]">
                 <div className="float-card-5 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/projects/wallpaper-install.jpg" alt="Wallpaper project" className="h-[220px] w-full object-cover" />
+                  <img src="/images/projects/wallpaper-install.jpg" alt="Wallpaper project" width="270" height="220" loading="lazy" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>
 
               <div className="absolute right-[12%] bottom-[8%] w-[270px]">
                 <div className="float-card-6 group relative scale-[0.9] overflow-hidden rounded-[22px] border border-white/10 bg-white/5 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                  <img src="/images/projects/wood-polish.jpg" alt="Wood finishes project" className="h-[220px] w-full object-cover" />
+                  <img src="/images/projects/wood-polish.jpg" alt="Wood finishes project" width="270" height="220" loading="lazy" className="h-[220px] w-full object-cover" />
                   <div className="absolute inset-0 bg-[rgba(19,43,70,0.12)]" />
                 </div>
               </div>

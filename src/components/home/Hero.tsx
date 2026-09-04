@@ -14,8 +14,11 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src="/images/hero-bg.jpg"
-          alt="Premium interior living room"
-          aria-hidden="true"
+          alt="Professional interior painting by South India Painters — premium living room finish"
+          width="1920"
+          height="1080"
+          fetchPriority="high"
+          loading="eager"
           className="h-full w-full object-cover object-[50%_20%]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(16,42,67,0.72)] via-[rgba(16,42,67,0.48)] to-[rgba(16,42,67,0.18)]" />
@@ -36,12 +39,17 @@ export default function Hero() {
                 }}
                 className="space-y-6"
               >
-                <h1 className="relative top-[10px] max-w-[760px] text-[clamp(2.35rem,4.4vw,4.5rem)] font-extrabold leading-[1.03] tracking-[-0.03em] text-white">
-                  <span className="block whitespace-nowrap">Transforming Spaces</span>
-                  <span className="block whitespace-nowrap text-[var(--color-accent)]">
-                    with Premium Finishes
-                  </span>
-                </h1>
+                <div className="space-y-4">
+                  <h1 className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 w-fit min-w-[220px] px-6 py-1.5 text-xs sm:text-[13px] font-bold uppercase tracking-[0.2em] text-[var(--color-accent)] backdrop-blur-md shadow-sm">
+  South India Painters
+</h1>
+                  <p className="max-w-[760px] text-[clamp(2.35rem,4.4vw,4.5rem)] font-extrabold leading-[1.03] tracking-[-0.03em] text-white">
+                    <span className="block whitespace-nowrap">Transforming Spaces</span>
+                    <span className="block whitespace-nowrap text-[var(--color-accent)]">
+                      with Premium Finishes
+                    </span>
+                  </p>
+                </div>
 
                 <p className="max-w-[620px] max-sm:translate-x-1.5 sm:translate-x-3 translate-y-4 text-[17px] leading-[1.85] text-white/88 sm:text-[18px]">
                   27+ years of experience with 234+ skilled professionals. Professional painting for homes & businesses.

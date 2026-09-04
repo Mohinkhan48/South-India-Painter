@@ -66,7 +66,7 @@ const testimonials = [
 
 function GoogleLogo({ className = 'h-7 w-7 shrink-0' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} aria-label="Google" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 24 24" className={className} role="img" aria-label="Google" xmlns="http://www.w3.org/2000/svg">
       <path
         fill="#4285F4"
         d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
@@ -89,7 +89,7 @@ function GoogleLogo({ className = 'h-7 w-7 shrink-0' }: { className?: string }) 
 
 function StarRating({ className = 'h-4 w-4' }: { className?: string }) {
   return (
-    <div className="flex items-center gap-1 text-[#FFB800]" aria-label="5 out of 5 rating">
+    <div className="flex items-center gap-1 text-[#FFB800]" role="img" aria-label="5 out of 5 rating">
       {Array.from({ length: 5 }).map((_, index) => (
         <svg key={index} viewBox="0 0 24 24" className={className} fill="#FFB800" stroke="#FFB800" strokeWidth="0.5" aria-hidden="true">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -324,6 +324,7 @@ export default function WhatPeopleSaySection() {
                         alt={testimonial.name}
                         width={56}
                         height={56}
+                        loading="lazy"
                         className="h-14 w-14 shrink-0 rounded-full object-cover"
                       />
                       <div>

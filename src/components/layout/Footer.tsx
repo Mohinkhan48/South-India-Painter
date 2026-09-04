@@ -40,8 +40,11 @@ export default function Footer() {
               aria-label={`${business.companyName} — Home`}
             >
               <img
-                src="/images/logo.png"
+                src="/images/logo.png?v=2"
                 alt="South India Painters Logo"
+                width="44"
+                height="44"
+                loading="lazy"
                 className="h-11 w-auto object-contain"
               />
               <span className="font-sans text-2xl font-extrabold tracking-tight text-white">

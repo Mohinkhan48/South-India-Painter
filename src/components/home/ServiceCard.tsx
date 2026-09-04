@@ -29,6 +29,8 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
         <img
           src={service.image}
           alt={service.imageAlt}
+          width="400"
+          height="250"
           loading="lazy"
           decoding="async"
           className="h-[0] min-h-[220px] w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:min-h-[260px]"

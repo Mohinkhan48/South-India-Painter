@@ -1,17 +1,13 @@
-/**
- * pages/services/WaterproofingPage.tsx
- *
- * PLACEHOLDER — Waterproofing service detail page.
- *
- * Planned sections:
- *   - Service hero
- *   - What's included (roof, basement, bathroom waterproofing, etc.)
- *   - Products and methods used
- *   - Gallery
- *   - Quote CTA
- */
+import { useSEO } from '@/hooks/useSEO';
 
 export default function WaterproofingPage() {
+  useSEO({
+    title: 'Waterproofing Services | South India Painters',
+    description:
+      'Expert waterproofing services by South India Painters. Roof, terrace, bathroom and basement waterproofing for homes and commercial buildings across Bangalore and South India.',
+    canonical: 'https://southindiapainters.com/services/waterproofing',
+  });
+
   return (
     <section className="section container">
       <h1 style={{ fontFamily: 'var(--font-display)', marginBottom: '1rem' }}>

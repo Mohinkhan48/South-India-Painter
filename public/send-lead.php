@@ -94,8 +94,12 @@ $body .= "Submitted At: " . date("Y-m-d H:i:s") . "\n";
 $body .= "IP Address: " . $_SERVER['REMOTE_ADDR'] . "\n";
 
 // Email headers
-$headers = "From: South India Painters Website <noreply@southindiapainters.com>\r\n";
-$headers .= "Reply-To: " . ($email ? $email : "noreply@southindiapainters.com") . "\r\n";
+$headers  = "From: South India Painters <care@southindiapainters.com>\r\n";
+$headers .= "Reply-To: " . ($email ? $email : "care@southindiapainters.com") . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers .= "Content-Transfer-Encoding: 8bit\r\n";
+$headers .= "X-Priority: 1\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
 // Send email

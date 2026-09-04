@@ -76,8 +76,10 @@ export default function Header() {
             aria-label={`${business.companyName} — Home`}
           >
             <img
-              src="/images/logo.png"
+              src="/images/logo.png?v=2"
               alt="South India Painters Logo"
+              width="48"
+              height="48"
               className="h-11 sm:h-12 w-auto object-contain"
             />
             <span className="text-[20px] font-extrabold uppercase tracking-[0.3em] text-[var(--color-primary)] sm:text-[22px]">
@@ -185,7 +187,7 @@ export default function Header() {
               <div className="px-6 pt-6 pb-4 border-b border-white/10">
                 <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3">
                   <img
-                    src="/images/logo.png"
+                    src="/images/logo.png?v=2"
                     alt="South India Painters Logo"
                     className="h-8 w-auto object-contain"
                   />

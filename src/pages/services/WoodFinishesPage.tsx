@@ -1,16 +1,13 @@
-/**
- * pages/services/WoodFinishesPage.tsx
- *
- * PLACEHOLDER — Wood Finishes service detail page.
- *
- * Planned sections:
- *   - Service hero
- *   - Types (varnish, lacquer, stain, polishing, etc.)
- *   - Gallery
- *   - Quote CTA
- */
+import { useSEO } from '@/hooks/useSEO';
 
 export default function WoodFinishesPage() {
+  useSEO({
+    title: 'Wood & Metal Finishes | South India Painters',
+    description:
+      'Premium wood and metal finishing services by South India Painters. Varnish, lacquer, stain, polishing and protective coatings for homes and offices across South India.',
+    canonical: 'https://southindiapainters.com/services/wood-finishes',
+  });
+
   return (
     <section className="section container">
       <h1 style={{ fontFamily: 'var(--font-display)', marginBottom: '1rem' }}>

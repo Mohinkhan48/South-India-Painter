@@ -203,7 +203,7 @@ export default function EnquireFormModal({
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute right-4 top-3 flex h-8 w-8 items-center justify-center text-gray-400 transition-colors hover:text-gray-700"
+            className="absolute right-4 top-3 flex h-8 w-8 items-center justify-center text-gray-600 transition-colors hover:text-gray-900"
             aria-label="Close"
           >
             <X className="h-5 w-5" />

@@ -5,8 +5,16 @@ import ProductsAndServicesSection from '@/components/resources/ProductsAndServic
 import TransformingHomesSection from '@/components/resources/TransformingHomesSection';
 import ResourcesFaqSection from '@/components/resources/ResourcesFaqSection';
 import ResourcesCtaSection from '@/components/resources/ResourcesCtaSection';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function ResourcesPage() {
+  useSEO({
+    title: 'Painting Resources & Guides | South India Painters',
+    description:
+      'Painting resources, guides and expert tips by South India Painters. Learn about wall preparation, waterproofing, colour selection and more for your next project.',
+    canonical: 'https://southindiapainters.com/resources',
+  });
+
   // Scroll to top when page loads
   useEffect(() => {
     window.scrollTo(0, 0);

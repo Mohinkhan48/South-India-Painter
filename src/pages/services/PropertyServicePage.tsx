@@ -11,9 +11,10 @@
  */
 
 import { m } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2, Phone, MessageCircle, ArrowRight } from 'lucide-react';
 import business from '@/config/business';
+import { useSEO } from '@/hooks/useSEO';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -185,7 +186,15 @@ const stagger = {
 
 export default function PropertyServicePage({ config }: { config: PropertyServiceConfig }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const theme = VARIANT_THEMES[config.variant];
+
+  useSEO({
+    title: `${config.pageTitle} | South India Painters`,
+    description: config.description,
+    canonical: `https://southindiapainters.com${location.pathname}`,
+    ogImage: config.heroImage.startsWith('http') ? config.heroImage : `https://southindiapainters.com${config.heroImage}`,
+  });
 
   const whatsappUrl = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(
     `Hi, I would like to book a free site inspection for ${config.breadcrumbLabel} painting services.`

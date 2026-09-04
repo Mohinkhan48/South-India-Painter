@@ -8,6 +8,7 @@ import {
   Sparkles,
   HeartHandshake
 } from 'lucide-react';
+import { useSEO } from '@/hooks/useSEO';
 
 const fadeUpVariant: Variants = {
   hidden: {
@@ -151,6 +152,13 @@ function SectionBadge({
 }
 
 export default function AboutPage() {
+  useSEO({
+    title: 'About South India Painters | 27+ Years of Professional Painting',
+    description:
+      'Learn about South India Painters — 27+ years of experience, 234+ skilled professionals, serving Bangalore and South India with premium residential and commercial painting services.',
+    canonical: 'https://southindiapainters.com/about',
+  });
+
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const testimonials = [

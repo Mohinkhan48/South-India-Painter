@@ -210,17 +210,17 @@ function buildInspirations(roomSlug: string, roomName: string): Inspiration[] {
       '/images/projects/dining-room-contemporary.jpg',
     ],
     'bathroom': [
-      'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=80',
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=900&q=80',
+      '/images/projects/bathroom modern.jpg',
+      '/images/projects/bathroom luxury.jpg',
+      '/images/projects/bathroom minimal.jpg',
       'https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=900&q=80',
       'https://images.unsplash.com/photo-1620626011761-996317b8d101?w=900&q=80',
     ],
     'home-office': [
       'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=900&q=80',
       'https://images.unsplash.com/photo-1618220179428-22790b461013?w=900&q=80',
-      'https://images.unsplash.com/photo-1616627988170-85843d3c5e13?w=900&q=80',
-      'https://images.unsplash.com/photo-1600494603562-d4b40f5da39e?w=900&q=80',
+      '/images/projects/home office minimal.jpg',
+      '/images/projects/home office scandinavian.jpg',
       'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=80',
     ],
     'balcony': [

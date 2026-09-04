@@ -5,14 +5,20 @@ import { ArrowLeft, Calendar, User } from 'lucide-react';
 import { useEffect } from 'react';
 
 import FinalCtaSection from '@/components/services/FinalCtaSection';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
   const blogTitle = slug?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) || 'Painting Guide';
 
+  useSEO({
+    title: `${blogTitle} | South India Painters`,
+    description: `Read "${blogTitle}" - expert painting advice, tips, and practical guidelines from the South India Painters professional team.`,
+    canonical: `https://southindiapainters.com/resources/blogs/${slug || ''}`,
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `${blogTitle} | South India Painters`;
   }, [blogTitle]);
 
   return (

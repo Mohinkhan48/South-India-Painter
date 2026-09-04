@@ -110,7 +110,7 @@ export default function LocationSection() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="South India Painter office location"
+                  title="South India Painters office location in Vijayanagar, Bangalore"
                 ></iframe>
 
               </div>

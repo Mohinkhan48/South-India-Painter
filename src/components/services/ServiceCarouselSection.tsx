@@ -38,7 +38,9 @@ export default function ServiceCarouselSection() {
   const handleScrollEnd = useCallback(() => {
     if (!trackRef.current) return;
     const idx = Math.round(trackRef.current.scrollLeft / STEP);
-    setCurrentIndex(Math.max(0, Math.min(idx, maxIndex)));
+    const clamped = Math.max(0, Math.min(idx, maxIndex));
+    setCurrentIndex(clamped);
+    trackRef.current.scrollTo({ left: clamped * STEP, behavior: 'smooth' });
   }, [maxIndex]);
 
   const startAuto = useCallback(() => {
@@ -67,27 +69,23 @@ export default function ServiceCarouselSection() {
     return () => { stopAuto(); if (resumeTimer.current) clearTimeout(resumeTimer.current); };
   }, [startAuto, stopAuto]);
 
-  const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!trackRef.current) return;
     setIsDragging(true);
+    trackRef.current.setPointerCapture(e.pointerId);
     dragStart.current = e.clientX;
     scrollStart.current = trackRef.current.scrollLeft;
     pauseAndResume();
   };
-  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!isDragging || !trackRef.current) return;
     trackRef.current.scrollLeft = scrollStart.current + (dragStart.current - e.clientX);
   };
-  const onMouseUp = () => { if (!isDragging) return; setIsDragging(false); handleScrollEnd(); };
-  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!trackRef.current) return;
-    dragStart.current = e.touches[0].clientX;
-    scrollStart.current = trackRef.current.scrollLeft;
-    pauseAndResume();
-  };
-  const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!trackRef.current) return;
-    trackRef.current.scrollLeft = scrollStart.current + (dragStart.current - e.touches[0].clientX);
+  const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDragging || !trackRef.current) return;
+    setIsDragging(false);
+    trackRef.current.releasePointerCapture(e.pointerId);
+    handleScrollEnd();
   };
 
   const goTo = (idx: number) => { scrollToIndex(idx); pauseAndResume(); };
@@ -97,7 +95,6 @@ export default function ServiceCarouselSection() {
       id="services"
       style={{ background: 'var(--color-surface)', padding: '90px 0 30px' }}
     >
-      {/* Constrained header — same 1400px grid */}
       <div style={{ width: 'min(1400px, calc(100% - 32px))', margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 24, marginBottom: 48, flexWrap: 'wrap' }}>
           <div>
@@ -122,7 +119,6 @@ export default function ServiceCarouselSection() {
             </m.h2>
           </div>
 
-          {/* Arrow controls */}
           <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
             <button
               onClick={() => goTo(currentIndex - 1)}
@@ -154,24 +150,21 @@ export default function ServiceCarouselSection() {
       >
         <div
           ref={trackRef}
-          onMouseDown={onMouseDown}
-          onMouseMove={onMouseMove}
-          onMouseUp={onMouseUp}
-          onMouseLeave={onMouseUp}
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={handleScrollEnd}
-          onScroll={handleScrollEnd}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerLeave={onPointerUp}
+          onPointerCancel={onPointerUp}
           style={{
             display: 'flex',
             gap: GAP,
             overflowX: 'auto',
             overflowY: 'visible',
             paddingBottom: 16,
-            scrollSnapType: 'x mandatory',
             scrollbarWidth: 'none',
             cursor: isDragging ? 'grabbing' : 'grab',
             WebkitOverflowScrolling: 'touch',
+            touchAction: 'pan-y'
           } as React.CSSProperties}
         >
           {services.map((service, idx) => (
@@ -181,7 +174,7 @@ export default function ServiceCarouselSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6, delay: Math.min(idx * 0.08, 0.45), ease: [0.16, 1, 0.3, 1] }}
-              style={{ scrollSnapAlign: 'start', flex: `0 0 ${CARD_W}px` }}
+              style={{ flex: `0 0 ${CARD_W}px` }}
               className="carousel-card-wrapper"
             >
               <div
@@ -191,7 +184,6 @@ export default function ServiceCarouselSection() {
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-8px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 16px 40px rgba(16,42,67,0.12)'; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ''; (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 18px rgba(16,42,67,0.06)'; }}
               >
-                {/* Image */}
                 <div style={{ height: 240, overflow: 'hidden' }}>
                   <img
                     src={service.image}
@@ -203,7 +195,6 @@ export default function ServiceCarouselSection() {
                     onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = ''}
                   />
                 </div>
-                {/* Card content */}
                 <div style={{ padding: '20px 22px 22px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 10 }}>
                   <span style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px', color: 'rgba(16,42,67,0.35)' }}>{service.id}</span>
                   <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--color-primary-dark)', lineHeight: 1.3, margin: 0 }}>{service.title}</h3>
@@ -214,12 +205,10 @@ export default function ServiceCarouselSection() {
               </div>
             </m.div>
           ))}
-          {/* trailing spacer so last card isn't flush with viewport edge */}
           <div style={{ flexShrink: 0, width: 32 }} aria-hidden />
         </div>
       </div>
 
-      {/* Dot indicators */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 28, width: 'min(1400px, calc(100% - 64px))', marginLeft: 'auto', marginRight: 'auto' }}>
         {services.map((_, idx) => (
           <button

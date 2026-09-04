@@ -35,7 +35,7 @@ const cards = [
   {
     title: 'Waterproofing Guide',
     image:
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
+      '/images/projects/waterproofing new image 1.png',
     link: '/resources/blogs',
   },
 ];

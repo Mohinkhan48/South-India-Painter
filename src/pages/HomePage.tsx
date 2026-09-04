@@ -14,9 +14,20 @@ import RecentProjectsSection from '@/components/home/RecentProjectsSection';
 import BookSiteVisitSection from '@/components/home/BookSiteVisitSection';
 import LocationSection from '@/components/home/LocationSection';
 import EnquireFormModal from '@/components/common/EnquireFormModal';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Per-page SEO: sets document.title, meta description, and canonical URL
+  useSEO({
+    title: 'South India Painters | Professional Painting Services in Karnataka',
+    description:
+      'South India Painters — 27+ years of professional residential, commercial and industrial painting services in Bangalore and across South India. 234+ skilled painters. Free estimates.',
+    canonical: 'https://southindiapainters.com/',
+    ogImage: 'https://southindiapainters.com/images/hero-bg.jpg',
+    twitterImage: 'https://southindiapainters.com/images/hero-bg.jpg',
+  });
 
   useEffect(() => {
     const hasShownPopup = sessionStorage.getItem('hasShownPopup');

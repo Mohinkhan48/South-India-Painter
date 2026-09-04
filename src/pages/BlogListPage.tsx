@@ -49,10 +49,17 @@ const blogs = [
   }
 ];
 
+import { useSEO } from '@/hooks/useSEO';
+
 export default function BlogListPage() {
+  useSEO({
+    title: 'Painting Guides, Color Tips & Expert Blogs | South India Painters',
+    description: 'Expert painting guides, interior design inspiration, wall texture trends, and house painting cost insights by South India Painters.',
+    canonical: 'https://southindiapainters.com/resources/blogs',
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Painting Guides & Blogs | South India Painters';
   }, []);
 
   return (

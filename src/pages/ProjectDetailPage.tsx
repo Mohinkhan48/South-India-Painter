@@ -6,6 +6,7 @@ import { projectsData } from '@/data/projectsData';
 import BeforeAfterSlider from '@/components/common/BeforeAfterSlider';
 import Button from '@/components/common/Button';
 import Lightbox from '@/components/common/Lightbox';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -13,12 +14,19 @@ export default function ProjectDetailPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
+  const project = projectsData.find((p) => p.slug === slug);
+
+  useSEO({
+    title: project ? `${project.title} | South India Painters` : 'Project Showcase | South India Painters',
+    description: project ? `${project.title} in ${project.city}. ${(project.shortDescription || project.overview).slice(0, 120)}... Completed by South India Painters.` : 'Explore our portfolio of residential and commercial painting projects across South India.',
+    canonical: `https://southindiapainters.com/projects/${slug || ''}`,
+    ogImage: project?.coverImage,
+  });
+
   // Scroll to top on mount or route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
-
-  const project = projectsData.find((p) => p.slug === slug);
 
   if (!project) {
     return (

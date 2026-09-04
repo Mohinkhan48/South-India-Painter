@@ -11,9 +11,17 @@ import ColourIdeasHero from '@/components/colour-ideas/ColourIdeasHero';
 import RoomGrid from '@/components/colour-ideas/RoomGrid';
 import ColourCombinations from '@/components/colour-ideas/ColourCombinations';
 import ColourIdeasCta from '@/components/colour-ideas/ColourIdeasCta';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function ColourIdeasPage() {
   const [searchQuery, setSearchQuery] = useState('');
+
+  useSEO({
+    title: 'Colour Ideas & Inspiration | South India Painters',
+    description:
+      'Explore colour ideas and paint inspiration for every room by South India Painters. Living room, bedroom, kitchen, exterior and more — find the perfect palette for your home.',
+    canonical: 'https://southindiapainters.com/colour-ideas',
+  });
 
   // Scroll to top on mount
   useEffect(() => {

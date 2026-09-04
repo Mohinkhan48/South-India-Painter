@@ -1,18 +1,13 @@
-/**
- * pages/services/InteriorPaintingPage.tsx
- *
- * PLACEHOLDER — Interior Painting service detail page.
- *
- * Planned sections:
- *   - Service hero
- *   - What's included
- *   - Paint brands / products used
- *   - Gallery of interior work
- *   - Pricing guide
- *   - Quote CTA
- */
+import { useSEO } from '@/hooks/useSEO';
 
 export default function InteriorPaintingPage() {
+  useSEO({
+    title: 'Interior Painting Services | South India Painters',
+    description:
+      'Professional interior painting services by South India Painters. Expert wall prep, premium paints and flawless finishes for homes, apartments and commercial spaces across South India.',
+    canonical: 'https://southindiapainters.com/services/interior-painting',
+  });
+
   return (
     <section className="section container">
       <h1 style={{ fontFamily: 'var(--font-display)', marginBottom: '1rem' }}>

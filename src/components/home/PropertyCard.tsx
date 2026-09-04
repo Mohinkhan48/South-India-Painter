@@ -40,6 +40,8 @@ export default function PropertyCard({ propertyType, index, onBook }: PropertyCa
       <img
         src={propertyType.image}
         alt={propertyType.imageAlt}
+        width="400"
+        height="340"
         loading="lazy"
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"

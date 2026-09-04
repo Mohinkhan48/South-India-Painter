@@ -49,10 +49,9 @@ export interface BusinessConfig {
 
 const business: BusinessConfig = {
   companyName: 'SOUTH INDIA PAINTERS',
-  tagline: 'Your Tagline Goes Here',
+  tagline: 'Professional Painting Services Across South India',
   description:
-    'A professional painting and home improvement company serving South India. ' +
-    'Replace this description with real company information before launch.',
+    'South India Painters provides professional residential, commercial and industrial painting services with 27+ years of expertise. Serving Bangalore and across South India with 234+ skilled painters using Asian Paints.',
 
   // Contact — replace with real details before launch
   phone: '080 23391256',
@@ -81,18 +80,18 @@ const business: BusinessConfig = {
     sunday: 'Closed',
   },
 
-  // Social links — replace with real URLs before launch
+  // Social links — remove placeholder URLs; set real URLs when available
   socialLinks: {
-    facebook: 'https://facebook.com/placeholder',
-    instagram: 'https://instagram.com/placeholder',
-    youtube: 'https://youtube.com/placeholder',
-    linkedin: 'https://linkedin.com/company/placeholder',
+    facebook: undefined,
+    instagram: undefined,
+    youtube: undefined,
+    linkedin: undefined,
   },
 
   // Google Maps embed URL — replace with real URL before launch
   googleMapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=No.+35,+1st+Stage,+2nd+Phase,+Near+Chandra+Layout+Bus+Depot,+Vijayanagar,+Bangalore+-+560040',
 
-  foundedYear: 2010,
+  foundedYear: 1999,
   heroEyebrow: 'PROFESSIONAL PAINTING & HOME IMPROVEMENT',
   heroStats: [
     { value: '4.9/5', label: 'Average Rating' },

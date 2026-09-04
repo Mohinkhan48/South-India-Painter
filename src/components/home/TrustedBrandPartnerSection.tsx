@@ -41,6 +41,9 @@ export default function TrustedBrandPartnerSection() {
       <img
         src={brand.logo}
         alt={`${brand.name} Logo`}
+        width="120"
+        height="38"
+        loading="lazy"
         className="h-[38px] w-auto object-contain mb-[8px]"
         onError={(e) => {
           e.currentTarget.style.display = 'none';
