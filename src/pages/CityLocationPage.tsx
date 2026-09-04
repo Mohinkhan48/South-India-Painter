@@ -42,16 +42,16 @@ export default function CityLocationPage() {
         <Container className="relative z-10 w-full">
           <div className="max-w-3xl">
             <m.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2 mb-6 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20"
-            >
-              <MapPin className="w-4 h-4 text-[#F47C20]" />
-              <span className="text-[13px] font-bold text-white uppercase tracking-wider">
-                Now Serving {cityName}
-              </span>
-            </m.div>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+  className="inline-flex items-center justify-center gap-2 mb-6 bg-white/10 backdrop-blur-sm px-6 py-2.5 min-w-[220px] rounded-full border border-white/20"
+>
+  <MapPin className="w-5 h-5 flex-shrink-0 text-[#F47C20]" />
+  <span className="text-[14px] font-bold text-white uppercase tracking-wider whitespace-nowrap">
+    Now Serving {cityName}
+  </span>
+</m.div>
 
             <m.h1
               initial={{ opacity: 0, y: 20 }}
@@ -78,13 +78,13 @@ export default function CityLocationPage() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link 
-                to="/contact"
-                className="group flex items-center justify-center gap-3 h-[60px] px-10 bg-[#F47C20] hover:bg-[#d96c18] text-white text-[16px] font-bold rounded-[14px] shadow-[0_12px_24px_rgba(244,124,32,0.4)] hover:-translate-y-1 transition-all duration-300"
-              >
-                Book Free Inspection 
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              <Link
+  to="/contact"
+  className="group flex items-center justify-center gap-4 h-[64px] w-[250px] px-8 bg-[#F47C20] hover:bg-[#d96c18] text-white text-[17px] font-bold rounded-[14px] shadow-[0_12px_24px_rgba(244,124,32,0.4)] translate-y-2 hover:-translate-y-1 transition-all duration-300"
+>
+  Book Free Inspection
+  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+</Link>
             </m.div>
           </div>
         </Container>
